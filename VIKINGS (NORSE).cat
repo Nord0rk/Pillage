@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue library="false" id="10c5-139d-8f93-83fe" name="VIKINGS (NORSE)" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="a523-ee84-3145-d966" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="9bf1-d9cf-f65c-e770" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="30" field="4163-7d26-88e5-be23"/>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Warrior" hidden="false" id="c636-833f-6d6c-6c6e" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="8732-ab5b-fc8c-59a0" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="10" field="4163-7d26-88e5-be23"/>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Berserker" hidden="false" id="a42c-871f-ace3-8159" type="selectionEntry" targetId="aaaf-c8ef-3840-8e3f" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Berserker" hidden="false" id="de5f-e75a-012c-32f2" targetId="8a90-9bee-5758-3283" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="50" field="4163-7d26-88e5-be23"/>
+        <modifier type="set" value="false" field="hidden"/>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Healer" hidden="false" id="930a-b060-7bf6-3a29" type="selectionEntry" targetId="5abc-f2dd-4427-94a9">
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="e578-be19-2dda-050c" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="30" field="4163-7d26-88e5-be23"/>
+        <modifier type="set" value="false" field="hidden"/>
+      </modifiers>
+    </entryLink>
+  </entryLinks>
+  <forceEntries>
+    <forceEntry name="Viking Warband" id="75cd-1314-2655-e810" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="b017-52f2-98a5-8cb9" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d29d-7c05-7c1a-4c1b"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f1e9-ea67-59e2-412b"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="d29d-7c05-7c1a-4c1b">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="642d-448c-f40e-a394" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="a036-d7e4-7660-d130" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="7e0a-1904-91b7-a909" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="6649-1297-fab1-11d1" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="3c5a-2b4c-ad3f-84dd" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="2dc6-eb19-223f-7132" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ff60-3e32-61fb-2e2a"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="23b2-f23f-a918-600a" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2a30-1fd0-7e52-590f"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="b020-944d-ccd6-30b2" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9c95-a1dc-7229-fe65" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="9c95-a1dc-7229-fe65">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="a565-b61c-49f6-3646" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="cf79-40bf-b4dd-0572" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="cf79-40bf-b4dd-0572">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+    </forceEntry>
+  </forceEntries>
+</catalogue>
