@@ -1,2 +1,108 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="ab83-8e50-505f-83ed" name="RUS’ AND VARANGIANS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="ab83-8e50-505f-83ed" name="RUS’ AND VARANGIANS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Rus/Varangian Warband" id="92e5-0369-c4de-017f" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="f2e8-2aad-09f0-6650" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70a2-49e2-5ce5-ff84"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="db7d-a06f-dedc-69b2"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="70a2-49e2-5ce5-ff84">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="da7b-8ffa-634d-6254" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="6d9a-3d36-5754-a106" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="7188-2562-2173-7210" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="ed96-08c6-0f57-7ad8" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="6b88-1a56-e907-ef41" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="bd8e-19a0-12d4-e723" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="528d-be78-c3fb-54f4"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="47b2-45a9-82f3-64de" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="445b-0a46-44d7-70b5"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="e093-932f-6947-7a3e" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="c934-eba3-c845-8294" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="c934-eba3-c845-8294">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="5155-7454-fb88-8679" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="0629-062a-025a-2a0f" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="0629-062a-025a-2a0f">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Hedge of Spears" id="3741-ddd9-455b-4136" hidden="false">
+          <description>The warriors in a hedge of spears inflict a -1 penalty to their enemies’ rolls to hit.
+This can stack with a spearman’s support.
+
+Medieval texts covering the Rus’ and Varangians’ battle tactics describe a “wall bristling with spears.”
+
+A hedge of spears works in the same way as a shieldwall, except with spears.
+A hedge of spears can be combined with a shieldwall. In this case, the two effects stack: the defence bonus from the shieldwall and the penalty to enemy rolls to hit.
+Every figure in the wall must be equipped with a shield AND a spear.</description>
+        </rule>
+        <rule name="Weather" id="df4a-679e-62be-2c34" hidden="false">
+          <description>Rus’ and Varangians aren’t affected by the effects of snow.</description>
+        </rule>
+        <rule name="Romphaia" id="6347-f989-4929-faf3" hidden="false">
+          <description>Rus&apos; and Varangians don’t strike last with their Dane axes. They fight simultaneously with this weapon, even when they haven’t charged.</description>
+        </rule>
+        <rule name="Two Hand Weapons" id="413b-9bfb-7f72-da9d" hidden="false">
+          <description>The Rus’ can carry two hand weapons to get an additional attack. This also inflicts a -1 penalty to their defence rolls.
+
+
+A figure carrying two hand weapons can’t carry a shield or a ranged weapon.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="a56e-6c63-af88-d499" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="f543-63cc-fa49-91f1" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="98d5-e444-6a9e-f784" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="4d7f-322a-9d05-b548" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Berserkers" hidden="false" id="2269-f237-73c6-e88b" type="selectionEntry" targetId="aaaf-c8ef-3840-8e3f" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Berserker" hidden="false" id="4622-594d-bcf8-c255" targetId="8a90-9bee-5758-3283" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden"/>
+      </modifiers>
+    </entryLink>
+  </entryLinks>
+</catalogue>

@@ -1,2 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="2663-865d-3ec5-cfde" name="MAGYARS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="2663-865d-3ec5-cfde" name="MAGYARS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Magyar Warband" id="dc98-4659-f195-9ed7" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="3087-d9db-6bf6-673d" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3f93-f12c-c2ab-0b34"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8365-af29-401c-5b16"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="3f93-f12c-c2ab-0b34">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="e0ec-47c1-933f-e023" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="60bd-2791-9ff3-b5c8" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="e479-2599-2a92-7b72" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="c650-f83f-e17c-72f7" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="445e-481d-83f7-0c8e" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="7a2d-b56c-90af-486c" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0e2d-4ab8-504d-f421"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="7a6a-b05d-b409-9c31" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3486-9f19-223d-bc8e"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="7438-c156-c5f9-11b5" targetId="163f-1820-848c-271d"/>
+        <categoryLink name="Cavalry" hidden="false" id="dcc6-97be-6c04-56c8" targetId="373d-f121-420b-4837"/>
+      </categoryLinks>
+      <rules>
+        <rule name="Composite Bows" id="5cbd-eeeb-54cc-97fc" hidden="false">
+          <description>Magyar warriors don’t have access to bows, only composite bows. These have the same characteristics as bows, except that their range is 30”</description>
+        </rule>
+        <rule name="The Bők" id="ed8d-8970-c85d-49af" hidden="false">
+          <description>A Magyar chieftain is automatically a Bők.
+
+
+A Bők can carry a spear, a sabre, a composite bow, a shield, and/or armour. Therefore, a Bők figure can choose which weapon from their arsenal to use at
+the start of each combat.
+
+Even once engaged, a Bők fighter can choose to change equipment during a fight, for example during a multiple combat.</description>
+        </rule>
+        <rule name="Sabres" id="cc2d-df37-f370-1048" hidden="false">
+          <description>Magyars don’t have hand weapons, they have sabres. A warrior equipped with a sabre has a -1 penalty to rolls to hit SA and FA enemy figures wearing armour.</description>
+        </rule>
+        <rule name="All Cavalry, All Archers" id="34d8-cc94-5dba-928b" hidden="false">
+          <description>The 25% limit on shooters and cavalry don’t apply to the Magyars.</description>
+        </rule>
+        <rule name="Poor Bloody Infantry" id="79aa-f351-3853-7dde" hidden="false">
+          <description>Magyar infantry figures have a -1 penalty to all their defence rolls in melee.
+
+
+Magyar infantry figures have a -1 penalty to all their morale checks. 
+
+
+Magyar infantry figures all have a -1” movement penalty. This penalty stacks with other movement penalties like armour, difficult terrain, etc.</description>
+        </rule>
+        <rule name="Mounted Archers" id="2336-b346-fcd8-7205" hidden="false">
+          <description>Magyar cavalry figures can be equipped with composite bows. Cavalry use composite bows with the same rules and restrictions as if they were infantry.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="390a-c4ad-ea9e-da33" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="de5d-edf8-755d-0ddf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2"/>
+    <entryLink import="true" name="Bők" hidden="false" id="f0a4-68e9-2f10-9960" type="selectionEntry" targetId="e5a3-64d9-2534-e409" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Bők" hidden="false" id="f707-648a-a4d3-79f8" targetId="a638-5e21-8172-d006" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="25"/>
+      </costs>
+    </entryLink>
+  </entryLinks>
+</catalogue>

@@ -65,15 +65,9 @@
   </forceEntries>
   <entryLinks>
     <entryLink import="true" name="Chieftain" hidden="false" id="285c-0e33-29d0-249c" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
-      <modifiers>
-        <modifier type="set" value="true" field="hidden"/>
-      </modifiers>
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
       </costs>
-      <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="b47a-e354-927c-8880" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
-      </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Warriors" hidden="false" id="72af-f154-ba18-535a" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>

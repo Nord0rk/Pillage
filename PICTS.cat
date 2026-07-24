@@ -1,2 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="2159-64d0-353d-3870" name="PICTS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="2159-64d0-353d-3870" name="PICTS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Pict Warband" id="db67-3437-70b6-7fa4" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="2eec-fc4c-5466-e668" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e581-dd38-b9f8-f824"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="aa2c-5596-32ac-5628"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="e581-dd38-b9f8-f824">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="688d-741d-cdfa-c9b8" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="6f93-5093-f8d1-2f46" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="6889-9911-843e-ceda" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="212a-3fba-1aed-22f1" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="3ad9-2926-eb96-49fc" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="447f-7f4e-2902-430d" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b509-026d-1d07-3ddb"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="88a6-3ac4-2b9b-5aab" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="437d-04b0-1e9f-efa5"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="b7c3-b176-4c20-7469" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ee4e-7b12-2068-9522" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="ee4e-7b12-2068-9522">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="7fe1-a538-08bb-2626" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="db26-5a74-01ed-7c69" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="db26-5a74-01ed-7c69">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="War Tattoos" id="0596-fc9a-bd30-93fa" hidden="false">
+          <description>Picts can re-roll a failed morale check.</description>
+        </rule>
+        <rule name="Javelin Masters" id="f2cf-4b4f-5eb6-36c5" hidden="false">
+          <description>Picts ignore the long range penalty when shooting with javelins.</description>
+        </rule>
+        <rule name="Weather" id="d04b-bd97-5920-16bd" hidden="false">
+          <description>Picts ignore the effects of heavy rain and fog.</description>
+        </rule>
+        <rule name="Castrum Raiders" id="aa15-fffe-427a-545d" hidden="false">
+          <description>For each chieftain in your army, two of your warriors can be equipped with chainmail for free.</description>
+        </rule>
+        <rule name="Highland Guerrillas" id="ff0d-a751-c76a-c992" hidden="false">
+          <description>Picts can’t be targeted by shooting attacks while within an area of rocky ground.
+
+
+In addition, Picts ignore the difficult terrain penalty for moving through a rocky area of difficult terrain.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="d0e9-ba7a-d880-389b" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="b564-49ef-38bf-6cd9" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="fcdf-2f48-49be-2068" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="190b-a9bc-7f60-2ccb" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Healers" hidden="false" id="3841-ece9-0510-1874" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="4413-62d9-7208-fe64" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

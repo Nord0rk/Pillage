@@ -934,6 +934,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 <condition type="atLeast" value="1" field="selections" scope="roster" childId="f3eb-4b6d-b6f9-c693" shared="true" childName="Scramaseax" includeChildSelections="true" includeChildForces="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -966,9 +971,10 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -992,6 +998,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="03f9-3c25-1bff-a4ef" sortIndex="3">
@@ -1003,11 +1014,28 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
                 <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
               </characteristics>
+              <modifiers>
+                <modifier type="set" value="Sabre" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="*Magyars have sabres rather than hand weapons. These have a -1 penalty to rolls to hit figure in armour." field="c8e2-d135-1e5f-04c6"/>
+                <modifier type="set" value="5+" field="24af-bc22-9d7a-7846">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="5+" field="b570-92f0-a14a-f39b">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </profile>
           </profiles>
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2c30-f28d-12a2-870f" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="dcce-5ff6-6eef-6b85" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="self" shared="true" id="2c30-f28d-12a2-870f" includeChildSelections="false"/>
           </constraints>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
@@ -1020,9 +1048,10 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1031,9 +1060,10 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1042,10 +1072,40 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
             </modifierGroup>
           </modifierGroups>
           <modifiers>
-            <modifier type="set" value="1" field="dcce-5ff6-6eef-6b85">
+            <modifier type="set" value="Sabre" field="name">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
               </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="2c30-f28d-12a2-870f">
+              <conditionGroups>
+                <conditionGroup type="count" min="2" max="2">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="1" field="2c30-f28d-12a2-870f">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="count" min="1">
+                      <conditions>
+                        <condition type="equalTo" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </selectionEntry>
@@ -1071,15 +1131,22 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                     <condition type="equalTo" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
                     <condition type="equalTo" value="1" field="selections" scope="self" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
                     <condition type="equalTo" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
             </modifier>
           </modifiers>
           <costs>
@@ -1105,6 +1172,15 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
@@ -1123,6 +1199,13 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d70c-3153-60ca-892a" includeChildSelections="false" automatic="true"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Hasta" hidden="true" id="cf44-a98d-2ce5-a714" sortIndex="5">
           <constraints>
@@ -1156,9 +1239,6 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
             </profile>
           </profiles>
           <comment>ranged</comment>
-          <categoryLinks>
-            <categoryLink name="Ranged Weapon" hidden="false" id="a698-254a-88d1-3e89" targetId="163f-1820-848c-271d" primary="false"/>
-          </categoryLinks>
           <modifierGroups>
             <modifierGroup type="and">
               <comment>COSTS</comment>
@@ -1193,6 +1273,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
             </modifier>
           </modifiers>
           <costs>
@@ -1294,7 +1379,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a638-5e21-8172-d006" shared="true" childName="Bők"/>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
               </conditions>
             </conditionGroup>
@@ -1311,6 +1396,26 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
           </conditionGroups>
         </modifier>
         <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
+          <conditions>
+            <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon"/>
+                <condition type="equalTo" value="1" field="selections" scope="self" childId="8334-ccc2-7566-7812" shared="true" childName="Dane Axe"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" value="2" field="f112-2730-8551-011f">
           <conditions>
             <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
           </conditions>
@@ -1375,6 +1480,16 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="2" max="2">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -1389,8 +1504,9 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1469,6 +1585,15 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="1" max="">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
@@ -1504,23 +1629,34 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
             <modifierGroup type="and">
               <comment>COSTS</comment>
               <modifiers>
-                <modifier type="set" value="5" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
                 <modifier type="set" value="0" field="4163-7d26-88e5-be23">
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="5" field="4163-7d26-88e5-be23">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="15" field="4163-7d26-88e5-be23">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1562,15 +1698,31 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   </conditions>
                 </modifier>
                 <modifier type="set" value="30&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
                 <modifier type="set" value="32&quot;" field="9775-d55d-f35e-0a05">
                   <conditionGroups>
-                    <conditionGroup type="and">
+                    <conditionGroup type="count" min="2" max="2">
                       <conditions>
                         <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="Composite Bow" field="name">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
                       </conditions>
                     </conditionGroup>
@@ -1599,9 +1751,27 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
               </conditionGroups>
             </modifier>
             <modifier type="set" value="Composite Bow" field="name">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="2" max="2">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <modifierGroups>
@@ -1612,12 +1782,14 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1641,6 +1813,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                     <conditionGroup type="or">
                       <conditions>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
                       </conditions>
                     </conditionGroup>
@@ -1697,6 +1870,15 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="1" max="">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1777,6 +1959,15 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="1" max="">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
@@ -1817,6 +2008,15 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 <conditionGroup type="or">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="1" max="">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1862,10 +2062,11 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 <conditionGroup type="count" min="2" max="2">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1879,8 +2080,9 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1915,11 +2117,22 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
               <conditionGroups>
                 <conditionGroup type="count" min="2" max="2">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="2" max="2">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1991,9 +2204,21 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 <conditionGroup type="count" min="2" max="2">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="count" min="2" max="2">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2031,8 +2256,9 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -2041,11 +2267,12 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -2103,18 +2330,21 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl" includeChildSelections="true"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a638-5e21-8172-d006" shared="true" childName="Bők" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2154,8 +2384,9 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -2298,7 +2529,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true"/>
+                <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
               </conditions>
@@ -2314,6 +2545,11 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
               </conditions>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="set" value="0" field="b9e0-e747-6176-5071">
+          <conditions>
+            <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <costs>
@@ -2339,19 +2575,29 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
       </constraints>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" value="true" field="hidden">
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="count" min="2">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="set" value="1" field="1740-e997-c399-c929">
           <conditions>
             <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
           </conditions>
+        </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="count" min="1">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <costs>
@@ -2365,18 +2611,24 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
             <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier type="set" value="15" field="4163-7d26-88e5-be23">
               <conditionGroups>
@@ -2392,9 +2644,10 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
         </modifierGroup>
       </modifierGroups>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Wagons" hidden="true" id="a5e8-b14b-1d77-5bf5" sortIndex="9">
+    <selectionEntry type="unit" import="true" name="Wagons" hidden="false" id="a5e8-b14b-1d77-5bf5" sortIndex="9">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="35c7-6259-8bd0-7f17" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="f07f-1b53-6359-fdab" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Wagon" hidden="false" id="9853-687f-b6a9-faf4">
@@ -2478,10 +2731,14 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
       <infoLinks>
         <infoLink name="New Profile" id="0391-43d5-a387-c085" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="0046-a1d8-63f5-f5ba" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Warriors" hidden="false" id="2478-7327-3509-6d5f" sortIndex="3">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="201e-b8c8-f68c-99e0" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Warrior" hidden="false" id="0c1f-5a78-e5dd-502e" targetId="fbfe-2e24-1e84-8984" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Warrior" hidden="false" id="5c39-fa7e-e707-3800">
@@ -2529,9 +2786,10 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Berserkers" hidden="true" id="aaaf-c8ef-3840-8e3f" sortIndex="4">
+    <selectionEntry type="unit" import="true" name="Berserkers" hidden="false" id="aaaf-c8ef-3840-8e3f" sortIndex="4">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="8569-4b12-e7b0-898d" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Berserker" hidden="false" id="a8b7-2d00-7d82-8aea" targetId="8a90-9bee-5758-3283" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Berserker" hidden="false" id="0579-10d1-5d15-4eab">
@@ -2582,15 +2840,25 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
+                <modifier type="set" value="80" field="4163-7d26-88e5-be23">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Huscarls" hidden="true" id="493d-4409-9952-8860" sortIndex="5">
+    <selectionEntry type="unit" import="true" name="Huscarls" hidden="false" id="493d-4409-9952-8860" sortIndex="5">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="69cd-8fda-0d0b-5f44" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Huscarl" hidden="false" id="c4ba-8d9f-8fb6-f755" targetId="a9b5-1198-781f-a9d1" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Huscarl" hidden="false" id="49d6-e070-57f5-e692">
@@ -2650,6 +2918,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
     <selectionEntry type="unit" import="true" name="Healers" hidden="false" id="5abc-f2dd-4427-94a9" sortIndex="8">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="072a-13b5-83ab-7a71" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Healer" hidden="false" id="ef1d-9012-d084-15c5" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Healer" hidden="false" id="bf8f-d34a-9e6e-5ae5">
@@ -2721,9 +2990,14 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                   </conditions>
                 </modifier>
                 <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </modifierGroup>
@@ -2731,7 +3005,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Bők" hidden="true" id="e5a3-64d9-2534-e409" sortIndex="2">
+    <selectionEntry type="model" import="true" name="Bők" hidden="false" id="e5a3-64d9-2534-e409" sortIndex="2">
       <entryLinks>
         <entryLink import="true" name="Armour" hidden="false" id="c4ab-74c3-be34-6d9c" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
         <entryLink import="true" name="Shield" hidden="false" id="09a5-02bc-bec2-5ba3" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
@@ -2770,6 +3044,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
     <selectionEntry type="unit" import="true" name="Kataphraktois" hidden="true" id="99e5-d364-e70b-b37f" sortIndex="7">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="88e5-e22f-005c-dca7" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Kataphraktoi" hidden="false" id="7cc7-4340-5a3a-f70c" targetId="bcab-8d6c-324c-2c1d" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Kataphraktoi" hidden="false" id="94a6-9ee0-c5fc-7642">
@@ -2814,9 +3089,10 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Cataphracts" hidden="true" id="3fae-340a-ff4a-27e4" sortIndex="6">
+    <selectionEntry type="unit" import="true" name="Cataphracts" hidden="false" id="3fae-340a-ff4a-27e4" sortIndex="6">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="2cb5-49c6-1482-3f7a" targetId="d936-c270-e692-1054" primary="false"/>
+        <categoryLink name="Cataphracts" hidden="false" id="8373-6a91-7142-d9c3" targetId="9106-4ef0-0942-8c50" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Cataphract" hidden="false" id="4c07-8146-72b6-4368">
@@ -2865,9 +3141,14 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
       </selectionEntries>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="count" min="1" max="1">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="false" includeChildForces="false"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
     </selectionEntry>
