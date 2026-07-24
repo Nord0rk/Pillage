@@ -1,2 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="fe4a-6852-b9e2-f300" name="SAXONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="fe4a-6852-b9e2-f300" name="SAXONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Saxon Warband" id="57e1-0bf3-4f72-5ec8" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="9801-607a-7b09-c038" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="26a9-3ca9-fdbc-004f"/>
+            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5594-08c0-0875-8b5e"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="26a9-3ca9-fdbc-004f">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="a278-ec9a-f6a4-b6eb" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="6108-9e6d-a8bd-5109" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="eeb1-b7db-ecd4-ad1b" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="61c0-c98c-556f-3313" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="4a9e-986b-ed04-dce2" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="db12-5195-373b-f741" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="94c2-7656-e157-8563"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="02b8-6e2d-3e07-ab17" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4288-390a-157c-d170"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="2a03-8cf6-8e96-4130" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="7194-dd01-7531-b02e" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="7194-dd01-7531-b02e">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="b279-e67a-b625-2d7b" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="bad8-e935-97e6-8713" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="bad8-e935-97e6-8713">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Weather" id="b7e1-f36f-f14b-5a5b" hidden="false">
+          <description>Saxons aren’t affected by the effects of heavy rain.</description>
+        </rule>
+        <rule name="Children of the Marshes" id="0f05-6dd1-0cd7-ab17" hidden="false">
+          <description>Saxons also get a +1 bonus to their defence rolls in melee while in marshy or muddy terrain. Agree with your opponent which parts of the board trigger this special rule before the start of the game.</description>
+        </rule>
+        <rule name="Idol" id="26b1-ab01-b14c-a330" hidden="false">
+          <description>The Saxons are pagans, and worship many gods. The Saxon player must place a wooden idol anywhere on the table that’s outside both deployment areas. 
+
+
+If this idol is destroyed, the Saxons must make a morale check at the end of the turn. 
+
+
+The idol is rated FA – 2 HP. Being wooden, it can be burned. Once set alight, the idol is considered destroyed.</description>
+        </rule>
+        <rule name="Men Without Kings" id="8bc2-d7a1-3376-3446" hidden="false">
+          <description>A Saxon army doesn’t have to include a chieftain. If no chieftain is chosen, the Saxons never have to check for morale because their chieftain has been killed – logical, right? They didn’t have one to start with!</description>
+        </rule>
+        <rule name="Peerless Sailors" id="b364-401f-1b1e-fc80" hidden="false">
+          <description>Saxons always get their charge bonus when fighting aboard ships, even attacking across obstacles. 
+
+
+What’s more, Saxon ships move 25” instead of the usual 20”.</description>
+        </rule>
+        <rule name="Shieldwall" id="90b1-823b-fc3f-1c89" hidden="false">
+          <description>Saxons can’t form shieldwalls.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="6021-24a9-5926-4aa9" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="dd73-9b8c-7fcc-c491" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Healers" hidden="false" id="d45a-cb2a-bc99-6691" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="883b-46a0-827e-9f94" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="2f4e-b3e4-8337-4118" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="63e2-bc6f-cbf5-f6ef" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

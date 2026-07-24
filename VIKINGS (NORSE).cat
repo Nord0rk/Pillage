@@ -8,16 +8,22 @@
       <modifiers>
         <modifier type="set" value="30" field="4163-7d26-88e5-be23"/>
       </modifiers>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
     </entryLink>
-    <entryLink import="true" name="Warrior" hidden="false" id="c636-833f-6d6c-6c6e" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+    <entryLink import="true" name="Warriors" hidden="false" id="c636-833f-6d6c-6c6e" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>
         <categoryLink name="Warrior" hidden="false" id="8732-ab5b-fc8c-59a0" targetId="fbfe-2e24-1e84-8984" primary="true"/>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="10" field="4163-7d26-88e5-be23"/>
       </modifiers>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
     </entryLink>
-    <entryLink import="true" name="Berserker" hidden="false" id="a42c-871f-ace3-8159" type="selectionEntry" targetId="aaaf-c8ef-3840-8e3f" sortIndex="3">
+    <entryLink import="true" name="Berserkers" hidden="false" id="a42c-871f-ace3-8159" type="selectionEntry" targetId="aaaf-c8ef-3840-8e3f" sortIndex="3">
       <categoryLinks>
         <categoryLink name="Berserker" hidden="false" id="de5f-e75a-012c-32f2" targetId="8a90-9bee-5758-3283" primary="true"/>
       </categoryLinks>
@@ -25,8 +31,11 @@
         <modifier type="set" value="50" field="4163-7d26-88e5-be23"/>
         <modifier type="set" value="false" field="hidden"/>
       </modifiers>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
     </entryLink>
-    <entryLink import="true" name="Healer" hidden="false" id="930a-b060-7bf6-3a29" type="selectionEntry" targetId="5abc-f2dd-4427-94a9">
+    <entryLink import="true" name="Healers" hidden="false" id="930a-b060-7bf6-3a29" type="selectionEntry" targetId="5abc-f2dd-4427-94a9">
       <categoryLinks>
         <categoryLink name="Healer" hidden="false" id="e578-be19-2dda-050c" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
       </categoryLinks>
@@ -34,6 +43,9 @@
         <modifier type="set" value="30" field="4163-7d26-88e5-be23"/>
         <modifier type="set" value="false" field="hidden"/>
       </modifiers>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
     </entryLink>
   </entryLinks>
   <forceEntries>
@@ -92,6 +104,11 @@
           </modifiers>
         </categoryLink>
       </categoryLinks>
+      <rules>
+        <rule name="Morale" id="142c-0d8f-4b04-ecac" hidden="false">
+          <description>Viking morale never takes any penalties of any sort. That means their morale only ever breaks on a roll of 1.</description>
+        </rule>
+      </rules>
     </forceEntry>
   </forceEntries>
 </catalogue>

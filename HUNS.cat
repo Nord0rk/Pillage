@@ -1,2 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="1643-b8f8-d7ff-fd24" name="HUNS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="1643-b8f8-d7ff-fd24" name="HUNS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Hun Warband" id="7088-5e09-b964-a3e0" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="06b4-20f3-c98f-8751" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4a82-e84b-e8e2-3cff"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4096-91d3-6999-40a7"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="4a82-e84b-e8e2-3cff">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="a77b-b1ed-e6ea-b335" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="86cc-068d-1d0b-8d11" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="ff7c-0de0-f799-e9d1" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="d9c9-dc56-60c4-4512" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="2e61-7e58-bc3b-3682" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="2b89-1243-bc16-087b" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e795-7a53-d300-61ee"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="b7fe-8084-a968-6534" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="87eb-2203-b265-bf19"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="bc56-02b3-cc31-4bc2" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="7899-3a19-5884-cf67" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="7899-3a19-5884-cf67">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="ef43-74b9-c414-de1b" targetId="373d-f121-420b-4837"/>
+      </categoryLinks>
+      <rules>
+        <rule name="Mounted Archers" id="a062-6da0-9b88-d74b" hidden="false">
+          <description>Hun riders can be equipped with composite bows or slings.
+
+
+Their use imposes the same restrictions on these cavalry figures as they do on infantry (see the rulebook, p.45).</description>
+        </rule>
+        <rule name="Composite Bow" id="7e7f-1b3d-fe9a-4d77" hidden="false">
+          <description>Hun warriors can be equipped with composite bows.
+
+
+These have the same characteristics as an ordinary bow, but their range is 30” rather than 20”. 
+
+
+Composite bows also don’t have a penalty for shooting at long range.</description>
+        </rule>
+        <rule name="Alan Heavy Cavalry" id="7d47-d391-1bf1-3b93" hidden="false">
+          <description>The Alans were the Huns’ allies during several campaigns 
+and their heavy cavalry was deployed to great advantage.
+
+
+Huns therefore have access to cataphracts.</description>
+        </rule>
+        <rule name="Every Man A Rider" id="76a7-8582-781a-e4e0" hidden="false">
+          <description>The Huns don’t have the usual 25% limit on mounted figures.</description>
+        </rule>
+        <rule name="Inflammatory Approach" id="c4e2-9f28-808c-675e" hidden="false">
+          <description>Hun cavalry can pick up torches and use them to start fires, in the same way as any infantry figure.</description>
+        </rule>
+        <rule name="Lasso" id="cedd-00cc-6d9b-5d81" hidden="false">
+          <description>All mounted Huns have a lasso. 
+
+
+The lasso can only be used by a mounted figure.
+
+
+On a roll of 6 to hit in melee, the lasso cancels the enemy’s attack.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="6bfa-592a-dbfa-6133" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="10f1-773d-7f15-b012" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Cataphracts" hidden="false" id="9d3d-41ae-63b8-628a" type="selectionEntry" targetId="3fae-340a-ff4a-27e4" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Cataphracts" hidden="false" id="72e3-8293-a6b8-444d" targetId="9106-4ef0-0942-8c50" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="bbc7-5175-b20b-820e" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="a385-b63a-99f1-ca71" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

@@ -1,2 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="feb9-5636-4b61-e263" name="ROMANS (WESTERN AND EASTERN)" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="feb9-5636-4b61-e263" name="ROMANS (WESTERN AND EASTERN)" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Roman Warband" id="5724-90b0-2498-9f63" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="3633-ed50-ff33-5f91" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f79-157d-e32a-ea2f"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0912-0de2-ddbd-d1a9"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="8f79-157d-e32a-ea2f">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="b611-13db-9a94-0f0a" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="7dc9-74e3-2670-e929" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="af71-190d-eada-bcdf" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="71ed-6dde-bc26-3e5e" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="3366-d0dc-adb3-a546" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="720c-075b-5669-0e5a" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25aa-4d73-9808-88b1"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="e485-43a5-92e9-286d" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c508-3e12-6628-1a52"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="89ad-1ed5-27ee-9513" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5d06-2dcb-1991-5371" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="5d06-2dcb-1991-5371">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="f6c3-e423-2326-947c" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="793e-7f01-718a-2e38" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="793e-7f01-718a-2e38">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Missing Pay" id="0965-b1ba-d49c-5b3c" hidden="false">
+          <description>If one of your chieftains dies, your warriors suffer a -1 penalty to the ensuing morale check. That means that your warriors will flee the battlefield on a result of 1 or 2.</description>
+        </rule>
+        <rule name="Mounted Archers" id="2299-5329-f82e-eb7e" hidden="false">
+          <description>Roman cavalry can be equipped with bows. Their use imposes the same constraints on cavalry as it does on infantry (see the rulebook, p.45).</description>
+        </rule>
+        <rule name="Symbol of Rome" id="a039-0024-6c27-743b" hidden="false">
+          <description>Roman banners follow the same rules as ordinary banners (see the rulebook, p.79). 
+
+
+**However, instead of allowing to hit rolls of 1 to be re-rolled, this banner lets you re-roll all failed defense rolls instead.**</description>
+        </rule>
+        <rule name="Death to the False Emperor" id="c5c9-88c4-8a99-f8ae" hidden="false">
+          <description>If you field this faction against this faction (i.e. either Western or Eastern Romans), you can re-roll all your rolls to hit the enemy chieftain or chieftains.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="7877-6c49-b39e-c8ae" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="aa57-a82e-2b0a-95cb" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="6a6b-a670-e3ef-bd0b" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="6cde-02a4-f05a-f381" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Cataphracts" hidden="false" id="e58c-92b3-e1b9-6838" type="selectionEntry" targetId="3fae-340a-ff4a-27e4" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Cataphracts" hidden="false" id="e27b-4c6a-ed7a-ff69" targetId="9106-4ef0-0942-8c50" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

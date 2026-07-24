@@ -1,2 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="56c4-377c-431b-ea69" name="MEROVINGIAN FRANKS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="56c4-377c-431b-ea69" name="MEROVINGIAN FRANKS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Merovingian Frank Warband" id="4792-652b-0ed7-2028" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="d7a0-c850-702d-43e0" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1bc0-7d18-b006-4640"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="305c-21d8-2918-d9f5"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="1bc0-7d18-b006-4640">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="0f61-88b9-bc96-8fab" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="f6b5-f93b-329c-6215" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="6260-76be-301b-4d51" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="e24a-a085-61b6-5935" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="db9d-222c-cbc8-720c" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="a1ab-71e1-759c-a655" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cc3c-6c90-9db9-8731"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="7624-4c22-de17-9c8b" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="930f-bfd6-b1cd-21a1"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="55dd-1f0d-0d6b-8750" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="30eb-3cfc-0882-a665" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="30eb-3cfc-0882-a665">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="9391-e749-ba09-62e9" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="70ea-38d4-deff-50d4" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="70ea-38d4-deff-50d4">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Chieftain’s Aura" id="0eb0-8c6c-3ef8-77e2" hidden="false">
+          <description>While a Merovingian chieftain still has all his hit points (and all his hair), his Franks’ morale cannot be dented, and they automatically pass all their Morale checks.</description>
+        </rule>
+        <rule name="Difficult Terrain Experts" id="625a-876e-c2c3-0bbb" hidden="false">
+          <description>Merovingian infantry don’t take penalties when moving through the following difficult terrain: forests and marshes.
+
+
+hey are also excellent swimmers. Add +2 to all their swimming rolls.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="1287-1da8-36c4-d1b8" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="d76c-2306-eef2-e00c" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="fe0d-da02-40b3-3678" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="8156-e899-3fb1-40ee" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Wagons" hidden="false" id="e923-5d1c-4c15-562d" type="selectionEntry" targetId="a5e8-b14b-1d77-5bf5" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Supply Wagon" hidden="false" id="7065-7fc0-12c2-ccfa" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

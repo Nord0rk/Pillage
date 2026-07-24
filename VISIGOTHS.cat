@@ -1,2 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="18a2-ccba-60ed-3332" name="VISIGOTHS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="18a2-ccba-60ed-3332" name="VISIGOTHS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Visigoth Warband" id="0272-e4d6-c3ac-0688" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="ae0a-b8ac-e8bc-9f12" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e709-c255-dc31-f95f"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d009-0dd1-48a8-3391"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="e709-c255-dc31-f95f">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="26d9-04c0-16bf-8989" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="aeaa-018c-1db7-f3e9" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="aae1-e193-38f5-ad75" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="69d1-5f4f-84ce-45ab" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="56cb-9dbc-5623-c634" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="2e62-4fcd-a3bb-ada9" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6be7-46f9-09a9-ae3e"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="ad9a-5b15-9877-f6e6" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8ec-afbf-2e99-ba31"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="d6aa-f1a1-874f-3b6d" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="3562-dfed-4bb9-3f5f" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="3562-dfed-4bb9-3f5f">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="10df-1f24-044e-8cf6" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f94c-e073-6989-40e1" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="f94c-e073-6989-40e1">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Weather" id="48e1-2afc-f3ad-b6ca" hidden="false">
+          <description>Visigoths aren’t affected by the effects of fog.</description>
+        </rule>
+        <rule name="Visigothic Banner" id="98b5-7906-292f-2a54" hidden="false">
+          <description>Visigothic banners follow the same rules as ordinary banners (see the rulebook, p.79). 
+
+
+However, they let you re-roll all failed to hit rolls, not just results of 1.</description>
+        </rule>
+        <rule name="Protect the Loot!" id="aea3-a878-147e-c693" hidden="false">
+          <description>While a Visigoth figure with a loot marker (or in contact with a loot marker) is in contact with an enemy figure, it can re-roll all its failed defence rolls against melee attacks.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="3b96-964b-3ef3-4d30" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="fbbc-c7b2-9669-acc8" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="8ac6-8607-6766-b0cf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="22c6-c29d-ec00-8e57" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Healers" hidden="false" id="7336-856b-e713-d3b5" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="c75f-cc88-03f1-e13f" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Wagons" hidden="false" id="526a-2881-a503-e7b6" type="selectionEntry" targetId="a5e8-b14b-1d77-5bf5" sortIndex="4">
+      <categoryLinks>
+        <categoryLink name="Supply Wagon" hidden="false" id="8fdd-5795-b1fc-66a2" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>

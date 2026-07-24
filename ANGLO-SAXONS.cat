@@ -1,2 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="f221-00fb-187b-5ab9" name="ANGLO-SAXONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="f221-00fb-187b-5ab9" name="ANGLO-SAXONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Anglo-Saxon Warband" id="0ce0-bb7c-4010-5734" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="81ad-7f81-c090-f029" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7243-dc93-d348-7764"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2415-5fb6-925f-6201"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="7243-dc93-d348-7764">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="53d0-34f2-5ae9-eaef" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="3899-d1aa-5882-f35e" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="b885-8c80-1734-d16a" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="8c4a-57fb-be9d-98e8" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="7c15-d197-69b3-5b28" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="77f2-3757-16a9-64fd" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8501-79be-81fd-0b0a"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="4ee5-4260-01b1-bfd8" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b3b9-4e45-1e81-6052"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="5eb8-cf2c-60fd-1449" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="79f6-24df-d3e7-f3a4" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="79f6-24df-d3e7-f3a4">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="a2a0-4255-6b3c-2388" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="adbe-fb16-d83d-86ca" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="adbe-fb16-d83d-86ca">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Weather" id="2890-7eb3-72a7-391a" hidden="false">
+          <description>Anglo-Saxons ignore the eﬀects of fog, except for the reduced range of bows.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="285c-0e33-29d0-249c" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <modifiers>
+        <modifier type="set" value="true" field="hidden"/>
+      </modifiers>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="b47a-e354-927c-8880" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="72af-f154-ba18-535a" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="d528-a4ea-15dc-687d" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Huscarls" hidden="false" id="c924-ce57-2200-316e" type="selectionEntry" targetId="493d-4409-9952-8860" sortIndex="3">
+      <modifiers>
+        <modifier type="set" value="false" field="hidden"/>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink name="Huscarl" hidden="false" id="8def-10e0-9fcd-fa39" targetId="a9b5-1198-781f-a9d1" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Healers" hidden="false" id="d63b-d1e7-9189-437d" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="4">
+      <modifiers>
+        <modifier type="set" value="false" field="hidden"/>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="ba84-b6e4-4881-d86e" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+      </costs>
+    </entryLink>
+  </entryLinks>
+</catalogue>

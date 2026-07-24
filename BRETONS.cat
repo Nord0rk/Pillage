@@ -1,2 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="1059-60d7-841a-8c03" name="BRETONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="1059-60d7-841a-8c03" name="BRETONS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Breton Warband" id="0f7f-9e0c-0439-8641" hidden="false">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="3bb5-7dc8-d0c7-babb" targetId="beac-c21e-5fb5-9ec0">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="69ab-7e95-7910-c2db"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5d71-36d4-c18a-172f"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="69ab-7e95-7910-c2db">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="ba86-5d18-720b-1eee" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Berserker" hidden="false" id="30ea-8230-ab39-056e" targetId="8a90-9bee-5758-3283"/>
+        <categoryLink name="Huscarl" hidden="false" id="6a08-2414-53a0-35de" targetId="a9b5-1198-781f-a9d1"/>
+        <categoryLink name="Healer" hidden="false" id="2b72-53d5-a4d1-0584" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" hidden="false" id="0357-c27d-ba1f-1f9c" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" hidden="false" id="4d3a-6561-5a64-1660" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd9d-fdd0-5019-c25b"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="3001-7d0c-d95a-1e4a" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d06-dc50-a983-a3bd"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="c651-63d6-8507-8337" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="44df-797c-a0cd-1322" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="44df-797c-a0cd-1322">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="2235-487e-7e9c-d771" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ee3c-490c-0f68-ca7f" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="ee3c-490c-0f68-ca7f">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+      </categoryLinks>
+      <rules>
+        <rule name="Shieldwall" id="bd21-a6af-36cd-494f" hidden="false">
+          <description>Bretons can’t form shieldwalls.</description>
+        </rule>
+        <rule name="Weather" id="fb07-eb67-4243-eadc" hidden="false">
+          <description>Bretons ignore the eﬀects of strong wind and heavy rain.</description>
+        </rule>
+      </rules>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="a868-67f3-ca0f-06cd" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="7c80-dc2f-bb01-d514" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="a485-fcc9-7920-8d9d" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="3efc-9c15-89a8-b12d" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Healers" hidden="false" id="5a18-ade1-159b-d5aa" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Healer" hidden="false" id="8074-c145-00c9-8627" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Wagons" hidden="false" id="e6f6-becd-de8e-05bc" type="selectionEntry" targetId="a5e8-b14b-1d77-5bf5" sortIndex="4">
+      <categoryLinks>
+        <categoryLink name="Supply Wagon" hidden="false" id="7710-4b89-2ec3-4d9b" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+</catalogue>
