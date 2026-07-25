@@ -1,2 +1,118 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="bbc6-7eda-f613-00dd" name="BYZANTINES" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema"/>
+<catalogue library="false" id="bbc6-7eda-f613-00dd" name="BYZANTINES" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Byzantine Warband" id="9914-1328-5044-a052" hidden="false" sortIndex="1">
+      <categoryLinks>
+        <categoryLink name="Banner" hidden="false" id="9320-d8ed-66b6-13cd" targetId="0d90-fe5f-a1e1-8fc5">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5da2-baa2-ad93-5887"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Warhorn" hidden="false" id="fc6d-0fe2-c359-719a" targetId="ef59-7677-afdd-3f24">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7db5-83ca-cce1-1e3d"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Ranged Weapon" hidden="false" id="ca63-1a6c-021e-7c7d" targetId="163f-1820-848c-271d">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ad54-65b7-6423-3a21" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="ad54-65b7-6423-3a21">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Cavalry" hidden="false" id="0a94-716b-a39e-fe18" targetId="373d-f121-420b-4837">
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="1423-f08c-f5c3-ebab" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="1423-f08c-f5c3-ebab">
+              <repeats>
+                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Chieftain" hidden="false" id="b0e8-116b-8f3a-0ced" targetId="169c-6a7e-0a19-f904">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4f81-9ad8-bc22-45aa"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="be21-74fc-7471-2147"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="4f81-9ad8-bc22-45aa">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="5686-e7a5-ef8d-ef6b" targetId="5cb3-d364-a1be-d0e0"/>
+        <categoryLink name="Kataphraktoi" hidden="false" id="cf10-5dd8-0d68-d9e4" targetId="6741-e369-3e15-cc96"/>
+      </categoryLinks>
+      <rules>
+        <rule name="Pikes" id="5704-eb2d-b360-b499" hidden="false">
+          <description>A warrior equipped with a pike can support an allied figure in contact with an enemy in the same way as a spearman. It can also support an allied figure through another supporting figure in a straight line. To do so, the pikeman must be in contact with the figure supporting the engaged model in such a way that a straight line can be traced between the centre of its base, the support’s base, and the engaged ally’s base.
+
+A pike inflicts a -1 penalty to the enemy’s defence rolls.
+
+
+Watch out though, because pikes are unwieldy weapons. A pike also inflicts a -1 penalty to its bearer’s defence rolls against both melee and shooting attacks.</description>
+        </rule>
+        <rule name="Mercenaries" id="de3f-4794-cae0-a0f3" hidden="false">
+          <description>50% of your Byzantine army can be composed of warriors or special characters recruited from other armies.
+
+Your chieftain must always be Byzantine.</description>
+        </rule>
+        <rule name="Composite Bows" id="6b65-2a3c-b62b-8bd3" hidden="false">
+          <description>Byzantine warriors don’t have access to bows, only composite bows. These have the same characteristics as bows, except that their range is 30”</description>
+        </rule>
+        <rule name="Mounted Archers" id="08cb-66e7-31f2-bcbd" hidden="false">
+          <description>Byzantine cavalry can be equipped with composite bows.
+
+
+Their use imposes the same restrictions on cavalry as on infantry</description>
+        </rule>
+      </rules>
+      <constraints>
+        <constraint type="min" value="50" field="4163-7d26-88e5-be23" scope="roster" shared="true" id="6c42-2ee7-71f8-75e0" percentValue="true" includeChildSelections="true" includeChildForces="true"/>
+        <constraint type="min" value="1" field="forces" scope="roster" shared="true" id="8760-19ef-ec38-7259-min" includeChildSelections="true" includeChildForces="true"/>
+        <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="8760-19ef-ec38-7259-max" includeChildSelections="true" includeChildForces="true"/>
+      </constraints>
+    </forceEntry>
+  </forceEntries>
+  <entryLinks>
+    <entryLink import="true" name="Chieftain" hidden="false" id="b8ef-169c-d116-b51c" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="1764-9596-2314-45ff" targetId="169c-6a7e-0a19-f904" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Warriors" hidden="false" id="15b5-5e08-c178-6cae" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="ebff-d50b-1b0d-fb11" targetId="5cb3-d364-a1be-d0e0" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Kataphraktois" hidden="false" id="5dc1-3c92-09cc-cddc" type="selectionEntry" targetId="99e5-d364-e70b-b37f" sortIndex="3">
+      <categoryLinks>
+        <categoryLink name="Kataphraktoi" hidden="false" id="b04d-1661-996d-5169" targetId="6741-e369-3e15-cc96" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+  <categoryEntries>
+    <categoryEntry name="Kataphraktoi" id="6741-e369-3e15-cc96" hidden="false">
+      <comment>BYZANTINE</comment>
+    </categoryEntry>
+    <categoryEntry name="Chieftain" id="169c-6a7e-0a19-f904" hidden="false">
+      <comment>BYZANTINE</comment>
+    </categoryEntry>
+    <categoryEntry name="Warrior" id="5cb3-d364-a1be-d0e0" hidden="false">
+      <comment>BYZANTINE</comment>
+    </categoryEntry>
+  </categoryEntries>
+</catalogue>

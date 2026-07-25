@@ -33,6 +33,7 @@
         </categoryLink>
         <categoryLink name="Ranged Weapon" hidden="false" id="7438-c156-c5f9-11b5" targetId="163f-1820-848c-271d"/>
         <categoryLink name="Cavalry" hidden="false" id="dcc6-97be-6c04-56c8" targetId="373d-f121-420b-4837"/>
+        <categoryLink name="Bők" hidden="false" id="03f4-8e03-ae53-2b1e" targetId="a638-5e21-8172-d006"/>
       </categoryLinks>
       <rules>
         <rule name="Composite Bows" id="5cbd-eeeb-54cc-97fc" hidden="false">

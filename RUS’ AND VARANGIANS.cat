@@ -80,6 +80,9 @@ Every figure in the wall must be equipped with a shield AND a spear.</descriptio
 A figure carrying two hand weapons can’t carry a shield or a ranged weapon.</description>
         </rule>
       </rules>
+      <constraints>
+        <constraint type="max" value="1" field="forces" scope="primary-catalogue" shared="true" id="228a-e4ad-6459-9c9b"/>
+      </constraints>
     </forceEntry>
   </forceEntries>
   <entryLinks>
@@ -90,6 +93,13 @@ A figure carrying two hand weapons can’t carry a shield or a ranged weapon.</
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
       </costs>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Warriors" hidden="false" id="98d5-e444-6a9e-f784" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>
