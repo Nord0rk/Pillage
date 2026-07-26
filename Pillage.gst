@@ -1099,6 +1099,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="0" field="61d6-f61d-c8f0-9171">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Dane Axe" hidden="false" id="8334-ccc2-7566-7812" sortIndex="4">
@@ -1379,7 +1384,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
                 <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
                 <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Having two hand weapons gives this model an extra attack. </characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Having two hand weapons gives this model an extra attack.</characteristic>
               </characteristics>
               <modifiers>
                 <modifier type="set" value="Sabre" field="name">
@@ -1416,10 +1421,6 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
             <modifier type="set" value="false" field="hidden">
               <conditionGroups>
                 <conditionGroup type="and">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                  </conditions>
                   <conditionGroups>
                     <conditionGroup type="and">
                       <conditions>
@@ -1427,6 +1428,13 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                         <condition type="lessThan" value="1" field="selections" scope="parent" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
                         <condition type="lessThan" value="1" field="selections" scope="parent" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
                         <condition type="lessThan" value="1" field="selections" scope="parent" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="count" min="2" max="2">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1585,16 +1593,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
             </modifier>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
                 <conditionGroup type="count" min="2">
                   <conditionGroups>
                     <conditionGroup type="or">
@@ -1607,6 +1605,16 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
+              <conditionGroups>
+                <conditionGroup type="count" min="2">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1706,11 +1714,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="true" field="hidden">
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
               <conditionGroups>
                 <conditionGroup type="count" min="1">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1886,16 +1894,22 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="true" field="hidden">
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
               <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
+                <conditionGroup type="count" min="2">
                   <conditions>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)" includeChildSelections="true"/>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="true"/>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -2001,11 +2015,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="true" field="hidden">
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
               <conditionGroups>
                 <conditionGroup type="count" min="1">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2086,11 +2100,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="true" field="hidden">
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
               <conditionGroups>
                 <conditionGroup type="count" min="1">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2139,11 +2153,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="true" field="hidden">
+            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
               <conditionGroups>
                 <conditionGroup type="count" min="1">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2802,7 +2816,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Wagons" hidden="false" id="a5e8-b14b-1d77-5bf5" sortIndex="9">
       <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="35c7-6259-8bd0-7f17" targetId="d936-c270-e692-1054" primary="false"/>
         <categoryLink name="Supply Wagon" hidden="false" id="f07f-1b53-6359-fdab" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
       </categoryLinks>
       <selectionEntries>
@@ -2872,16 +2885,23 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
         </modifier>
         <modifier type="add" value="163f-1820-848c-271d" field="category">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -2895,14 +2915,10 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
       <infoLinks>
         <infoLink name="New Profile" id="0391-43d5-a387-c085" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
       </infoLinks>
-      <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="0046-a1d8-63f5-f5ba" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Warriors" hidden="false" id="2478-7327-3509-6d5f" sortIndex="3">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="201e-b8c8-f68c-99e0" targetId="d936-c270-e692-1054" primary="false"/>
-        <categoryLink name="Warrior" hidden="false" id="0c1f-5a78-e5dd-502e" targetId="fbfe-2e24-1e84-8984" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Warrior" hidden="false" id="5c39-fa7e-e707-3800">
@@ -2922,23 +2938,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
@@ -2974,23 +2997,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -3044,23 +3074,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -3101,23 +3138,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -3190,16 +3234,23 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
         </modifier>
         <modifier type="add" value="163f-1820-848c-271d" field="category">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -3212,7 +3263,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
     <selectionEntry type="unit" import="true" name="Kataphraktois" hidden="false" id="99e5-d364-e70b-b37f" sortIndex="7">
       <categoryLinks>
         <categoryLink name="CHIEFCON" hidden="false" id="88e5-e22f-005c-dca7" targetId="d936-c270-e692-1054" primary="false"/>
-        <categoryLink name="Kataphraktoi" hidden="false" id="7cc7-4340-5a3a-f70c" targetId="bcab-8d6c-324c-2c1d" primary="true"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Kataphraktoi" hidden="false" id="94a6-9ee0-c5fc-7642">
@@ -3232,23 +3282,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">
@@ -3281,23 +3338,30 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="1" field="defaultAmount"/>
             <modifier type="add" value="163f-1820-848c-271d" field="category">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
           </modifiers>
           <modifierGroups>
             <modifierGroup type="and">

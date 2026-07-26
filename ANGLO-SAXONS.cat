@@ -14,6 +14,16 @@
                 <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
               </repeats>
             </modifier>
+            <modifier type="set" value="0" field="2415-5fb6-925f-6201">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Warrior" hidden="false" id="53d0-34f2-5ae9-eaef" targetId="fbfe-2e24-1e84-8984"/>
@@ -68,6 +78,21 @@
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
       </costs>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="e58c-45e8-abd2-5312" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Warriors" hidden="false" id="72af-f154-ba18-535a" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>

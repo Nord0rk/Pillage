@@ -14,6 +14,16 @@
                 <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
               </repeats>
             </modifier>
+            <modifier type="set" value="0" field="8365-af29-401c-5b16">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Warrior" hidden="false" id="e0ec-47c1-933f-e023" targetId="fbfe-2e24-1e84-8984"/>
@@ -74,8 +84,27 @@ Magyar infantry figures all have a -1” movement penalty. This penalty stacks 
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
       </costs>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink name="Chieftain" hidden="false" id="d218-8879-65f4-71b0" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+      </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Warriors" hidden="false" id="de5d-edf8-755d-0ddf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2"/>
+    <entryLink import="true" name="Warriors" hidden="false" id="de5d-edf8-755d-0ddf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Warrior" hidden="false" id="d2d1-228d-90ae-9e94" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Bők" hidden="false" id="f0a4-68e9-2f10-9960" type="selectionEntry" targetId="e5a3-64d9-2534-e409" sortIndex="3">
       <categoryLinks>
         <categoryLink name="Bők" hidden="false" id="f707-648a-a4d3-79f8" targetId="a638-5e21-8172-d006" primary="true"/>

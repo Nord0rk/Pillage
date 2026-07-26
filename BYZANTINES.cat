@@ -48,6 +48,16 @@
                 <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
               </repeats>
             </modifier>
+            <modifier type="set" value="0" field="be21-74fc-7471-2147">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Warrior" hidden="false" id="5686-e7a5-ef8d-ef6b" targetId="5cb3-d364-a1be-d0e0"/>
@@ -82,6 +92,13 @@ Their use imposes the same restrictions on cavalry as on infantry</description>
         <constraint type="min" value="1" field="forces" scope="roster" shared="true" id="8760-19ef-ec38-7259-min" includeChildSelections="true" includeChildForces="true"/>
         <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="8760-19ef-ec38-7259-max" includeChildSelections="true" includeChildForces="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="6c42-2ee7-71f8-75e0">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </forceEntry>
   </forceEntries>
   <entryLinks>
@@ -92,16 +109,37 @@ Their use imposes the same restrictions on cavalry as on infantry</description>
       <categoryLinks>
         <categoryLink name="Chieftain" hidden="false" id="1764-9596-2314-45ff" targetId="169c-6a7e-0a19-f904" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="unset-primary" value="beac-c21e-5fb5-9ec0" field="category"/>
+        <modifier type="set-primary" value="169c-6a7e-0a19-f904" field="category"/>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Warriors" hidden="false" id="15b5-5e08-c178-6cae" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>
         <categoryLink name="Warrior" hidden="false" id="ebff-d50b-1b0d-fb11" targetId="5cb3-d364-a1be-d0e0" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="unset-primary" value="fbfe-2e24-1e84-8984" field="category"/>
+        <modifier type="set-primary" value="5cb3-d364-a1be-d0e0" field="category"/>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Kataphraktois" hidden="false" id="5dc1-3c92-09cc-cddc" type="selectionEntry" targetId="99e5-d364-e70b-b37f" sortIndex="3">
       <categoryLinks>
         <categoryLink name="Kataphraktoi" hidden="false" id="b04d-1661-996d-5169" targetId="6741-e369-3e15-cc96" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="unset-primary" value="bcab-8d6c-324c-2c1d" field="category"/>
+        <modifier type="set-primary" value="6741-e369-3e15-cc96" field="category"/>
+      </modifiers>
     </entryLink>
   </entryLinks>
   <categoryEntries>
