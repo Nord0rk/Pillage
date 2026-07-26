@@ -926,7 +926,7 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
           <modifiers>
             <modifier type="set" value="1" field="6230-c551-2da8-0b6f">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="12e9-c1e9-1b4b-b9d9" shared="true" childName="Healer"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="12e9-c1e9-1b4b-b9d9" shared="true" childName="Healer"/>
               </conditions>
             </modifier>
             <modifier type="set" value="Scramaseax" field="name">
@@ -1125,9 +1125,9 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
@@ -1287,6 +1287,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
@@ -1336,6 +1341,11 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
@@ -1375,6 +1385,11 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Two Hand Weapons" hidden="true" id="5a39-8c7e-613f-862d" sortIndex="3">
@@ -1392,7 +1407,6 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
                   </conditions>
                 </modifier>
-                <modifier type="set" value="*Magyars have sabres rather than hand weapons. These have a -1 penalty to rolls to hit figure in armour." field="c8e2-d135-1e5f-04c6"/>
                 <modifier type="set" value="5+" field="24af-bc22-9d7a-7846">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
@@ -1441,6 +1455,11 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Pike" hidden="true" id="3bdb-0e11-2cb9-e4fd" sortIndex="8">
@@ -1463,7 +1482,6 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                 <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
                 <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">A pike inflicts a -1 penalty to the enemy’s defence rolls.
 
-
 A pike also inflicts a -1 penalty to its bearer’s defence rolls against both melee and shooting attacks.</characteristic>
               </characteristics>
             </profile>
@@ -1480,6 +1498,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
       </selectionEntries>
@@ -1492,8 +1515,8 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a638-5e21-8172-d006" shared="true" childName="Bők"/>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a638-5e21-8172-d006" shared="true" childName="Bők"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -1502,7 +1525,7 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
               </conditions>
             </conditionGroup>
@@ -1512,8 +1535,8 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon"/>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="8334-ccc2-7566-7812" shared="true" childName="Dane Axe"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="8334-ccc2-7566-7812" shared="true" childName="Dane Axe"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
               </conditions>
             </conditionGroup>
@@ -2180,7 +2203,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
                 <condition type="equalTo" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
@@ -2233,6 +2255,39 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <categoryLinks>
+            <categoryLink name="Pack Master" hidden="false" id="4caa-c89f-99c7-413a" targetId="4967-c713-22c5-2fb3" primary="false"/>
+          </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Hounds" hidden="false" id="a1ed-c6ad-658b-2b8d">
+              <modifiers>
+                <modifier type="increment" value="1" field="0ec4-f8ad-39b5-01f1-min">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="7229-a0c1-30a9-32a8" shared="true" childName="Dog Trainer" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="0ec4-f8ad-39b5-01f1-max">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="7229-a0c1-30a9-32a8" shared="true" childName="Dog Trainer" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile name="Hounds" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="7851-c3e6-9d8b-70de">
+                  <characteristics>
+                    <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
+                    <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
+                    <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
+                    <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842">1</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="min" value="3" field="selections" scope="parent" shared="true" id="0ec4-f8ad-39b5-01f1-min" includeChildSelections="false" automatic="true"/>
+                <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="0ec4-f8ad-39b5-01f1-max" includeChildSelections="false" automatic="true"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Banner" hidden="true" id="0b19-ecf2-aeb7-6a63">
           <constraints>
@@ -2440,9 +2495,10 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <profiles>
             <profile name="Horse" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="bd48-a4f2-3bd6-7d9c">
               <characteristics>
+                <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">14</characteristic>
                 <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
                 <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
-                <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">14</characteristic>
+                <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842"/>
               </characteristics>
               <modifiers>
                 <modifier type="set" value="SA: 5+" field="77f6-a713-5232-623d">
@@ -2462,6 +2518,15 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                   </conditions>
                 </modifier>
                 <modifier type="set" value="FA: 4+" field="77f6-a713-5232-623d">
+                  <conditionGroups>
+                    <conditionGroup type="count" min="1">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="12&quot;" field="b5b3-773d-1e7a-74a0">
                   <conditionGroups>
                     <conditionGroup type="count" min="1">
                       <conditions>
@@ -2573,9 +2638,10 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
   <profileTypes>
     <profileType name="Model" id="3d83-c900-0de7-bd4c" hidden="false" kind="model" sortIndex="1">
       <characteristicTypes>
+        <characteristicType name="Movement" id="b5b3-773d-1e7a-74a0" defaultValue="8" kind="annotation"/>
         <characteristicType name="Armour Class" id="77f6-a713-5232-623d" defaultValue="UA: 6+"/>
         <characteristicType name="HP" id="8568-7376-bcc1-2a56" defaultValue="1"/>
-        <characteristicType name="Movement" id="b5b3-773d-1e7a-74a0" defaultValue="8&quot;"/>
+        <characteristicType name="Attacks" id="0f88-76a8-fe85-d842" defaultValue="1"/>
       </characteristicTypes>
     </profileType>
     <profileType name="Ranged Weapon" id="a82a-8570-e498-e2de" hidden="false" kind="weapon" sortIndex="3">
@@ -2600,9 +2666,10 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
   <sharedProfiles>
     <profile name="New Profile" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="4cd2-c74b-3af2-8d2e">
       <characteristics>
+        <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
         <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
         <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
-        <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
+        <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842">1</characteristic>
       </characteristics>
       <modifierGroups>
         <modifierGroup type="and">
@@ -2627,6 +2694,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="FA" field="77f6-a713-5232-623d">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+              </conditions>
             </modifier>
           </modifiers>
         </modifierGroup>
@@ -2673,6 +2745,96 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="Kataphraktoi" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Berserker" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName="Berserker"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Huscarl" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Wagon" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Healer" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="12e9-c1e9-1b4b-b9d9" shared="true" childName="Healer"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Cataphract" field="name">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Pack Master" field="name">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Bannerman" field="name">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+        <modifierGroup type="and">
+          <comment>Movement</comment>
+          <modifiers>
+            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0" position="">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" value="6&quot;" field="b5b3-773d-1e7a-74a0">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+        <modifierGroup type="and">
+          <comment>Attacks</comment>
+          <modifiers>
+            <modifier type="increment" value="1" field="0f88-76a8-fe85-d842">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="0f88-76a8-fe85-d842">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="append" value="*" field="0f88-76a8-fe85-d842" join="">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
@@ -2689,8 +2851,7 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true" includeChildForces="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
@@ -2705,11 +2866,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="0" field="b9e0-e747-6176-5071">
-          <conditions>
-            <condition type="equalTo" value="2" field="selections" scope="self" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon" includeChildSelections="true" includeChildForces="true"/>
-          </conditions>
         </modifier>
         <modifier type="set" value="1" field="6347-ba0a-c1f8-71a1">
           <conditions>
@@ -3373,18 +3529,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           </costs>
         </selectionEntry>
       </selectionEntries>
-      <modifiers>
-        <modifier type="set" value="false" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="count" min="1" max="1">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS" includeChildSelections="false" includeChildForces="false"/>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
     </selectionEntry>
   </sharedSelectionEntries>
 </gameSystem>
