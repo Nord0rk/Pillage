@@ -3,25 +3,6 @@
   <forceEntries>
     <forceEntry name="Roman Warband" id="5724-90b0-2498-9f63" hidden="false">
       <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="3633-ed50-ff33-5f91" targetId="beac-c21e-5fb5-9ec0">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f79-157d-e32a-ea2f"/>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0912-0de2-ddbd-d1a9"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="8f79-157d-e32a-ea2f">
-              <repeats>
-                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-        </categoryLink>
-        <categoryLink name="Warrior" hidden="false" id="b611-13db-9a94-0f0a" targetId="fbfe-2e24-1e84-8984"/>
-        <categoryLink name="Berserker" hidden="false" id="7dc9-74e3-2670-e929" targetId="8a90-9bee-5758-3283"/>
-        <categoryLink name="Cataphracts" hidden="false" id="ddc6-1d4b-6722-a85b" targetId="9106-4ef0-0942-8c50"/>
-        <categoryLink name="Huscarl" hidden="false" id="af71-190d-eada-bcdf" targetId="a9b5-1198-781f-a9d1"/>
-        <categoryLink name="Healer" hidden="false" id="71ed-6dde-bc26-3e5e" targetId="12e9-c1e9-1b4b-b9d9"/>
-        <categoryLink name="Supply Wagon" hidden="false" id="3366-d0dc-adb3-a546" targetId="5fe9-1d08-5b75-fa8c"/>
         <categoryLink name="Banner" hidden="false" id="720c-075b-5669-0e5a" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25aa-4d73-9808-88b1"/>
@@ -56,6 +37,21 @@
             </modifier>
           </modifiers>
         </categoryLink>
+        <categoryLink name="Chieftain" hidden="false" id="dae3-3c10-1df5-8361" targetId="5790-fb89-56bd-1f27">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f79-157d-e32a-ea2f"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0912-0de2-ddbd-d1a9"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="8f79-157d-e32a-ea2f">
+              <repeats>
+                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </categoryLink>
+        <categoryLink name="Warrior" hidden="false" id="b62a-8f20-621e-5e43" targetId="fc2f-5290-fda1-91c5"/>
+        <categoryLink name="Cataphracts" hidden="false" id="517c-01ef-189a-f949" targetId="b566-3382-a427-f78b"/>
       </categoryLinks>
       <rules>
         <rule name="Missing Pay" id="0965-b1ba-d49c-5b3c" hidden="false">
@@ -83,7 +79,7 @@
   <entryLinks>
     <entryLink import="true" name="Chieftain" hidden="false" id="7877-6c49-b39e-c8ae" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
       <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="aa57-a82e-2b0a-95cb" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
+        <categoryLink name="Chieftain" hidden="false" id="87e7-ce20-87ea-2bc6" targetId="5790-fb89-56bd-1f27" primary="true"/>
       </categoryLinks>
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
@@ -102,13 +98,27 @@
     </entryLink>
     <entryLink import="true" name="Warriors" hidden="false" id="6a6b-a670-e3ef-bd0b" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
       <categoryLinks>
-        <categoryLink name="Warrior" hidden="false" id="6cde-02a4-f05a-f381" targetId="fbfe-2e24-1e84-8984" primary="true"/>
+        <categoryLink name="Warrior" hidden="false" id="eabf-2cae-e5e7-0b04" targetId="fc2f-5290-fda1-91c5" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Cataphracts" hidden="false" id="e58c-92b3-e1b9-6838" type="selectionEntry" targetId="3fae-340a-ff4a-27e4" sortIndex="3">
       <categoryLinks>
-        <categoryLink name="Cataphracts" hidden="false" id="e27b-4c6a-ed7a-ff69" targetId="9106-4ef0-0942-8c50" primary="true"/>
+        <categoryLink name="Cataphracts" hidden="false" id="5df4-c7bc-ae04-ba37" targetId="b566-3382-a427-f78b" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="unset-primary" value="9106-4ef0-0942-8c50" field="category"/>
+      </modifiers>
     </entryLink>
   </entryLinks>
+  <categoryEntries>
+    <categoryEntry name="Chieftain" id="5790-fb89-56bd-1f27" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+    <categoryEntry name="Cataphracts" id="b566-3382-a427-f78b" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+    <categoryEntry name="Warrior" id="fc2f-5290-fda1-91c5" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+  </categoryEntries>
 </catalogue>

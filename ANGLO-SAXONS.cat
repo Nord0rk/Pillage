@@ -27,10 +27,8 @@
           </modifiers>
         </categoryLink>
         <categoryLink name="Warrior" hidden="false" id="53d0-34f2-5ae9-eaef" targetId="fbfe-2e24-1e84-8984"/>
-        <categoryLink name="Berserker" hidden="false" id="3899-d1aa-5882-f35e" targetId="8a90-9bee-5758-3283"/>
         <categoryLink name="Huscarl" hidden="false" id="b885-8c80-1734-d16a" targetId="a9b5-1198-781f-a9d1"/>
         <categoryLink name="Healer" hidden="false" id="8c4a-57fb-be9d-98e8" targetId="12e9-c1e9-1b4b-b9d9"/>
-        <categoryLink name="Supply Wagon" hidden="false" id="7c15-d197-69b3-5b28" targetId="5fe9-1d08-5b75-fa8c"/>
         <categoryLink name="Banner" hidden="false" id="77f2-3757-16a9-64fd" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8501-79be-81fd-0b0a"/>

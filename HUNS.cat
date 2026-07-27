@@ -27,11 +27,7 @@
           </modifiers>
         </categoryLink>
         <categoryLink name="Warrior" hidden="false" id="a77b-b1ed-e6ea-b335" targetId="fbfe-2e24-1e84-8984"/>
-        <categoryLink name="Berserker" hidden="false" id="86cc-068d-1d0b-8d11" targetId="8a90-9bee-5758-3283"/>
-        <categoryLink name="Huscarl" hidden="false" id="ff7c-0de0-f799-e9d1" targetId="a9b5-1198-781f-a9d1"/>
         <categoryLink name="Cataphracts" hidden="false" id="172c-dc00-fa1d-795a" targetId="9106-4ef0-0942-8c50"/>
-        <categoryLink name="Healer" hidden="false" id="d9c9-dc56-60c4-4512" targetId="12e9-c1e9-1b4b-b9d9"/>
-        <categoryLink name="Supply Wagon" hidden="false" id="2e61-7e58-bc3b-3682" targetId="5fe9-1d08-5b75-fa8c"/>
         <categoryLink name="Banner" hidden="false" id="2b89-1243-bc16-087b" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e795-7a53-d300-61ee"/>
@@ -54,7 +50,6 @@
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Cavalry" hidden="false" id="ef43-74b9-c414-de1b" targetId="373d-f121-420b-4837"/>
       </categoryLinks>
       <rules>
         <rule name="Mounted Archers" id="a062-6da0-9b88-d74b" hidden="false">

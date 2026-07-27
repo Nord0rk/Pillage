@@ -41,7 +41,7 @@
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="66e7-23f5-7838-7be4"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Ranged Weapon" hidden="false" id="3f87-a7ea-f445-41a4" targetId="163f-1820-848c-271d">
+        <categoryLink name="Ranged Weapons" hidden="false" id="3f87-a7ea-f445-41a4" targetId="163f-1820-848c-271d">
           <constraints>
             <constraint type="max" value="0" field="selections" scope="force" shared="true" id="6383-e1fb-e872-25e5" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
           </constraints>

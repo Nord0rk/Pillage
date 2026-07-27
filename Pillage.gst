@@ -1016,6 +1016,26 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
               </conditions>
             </modifier>
           </modifiers>
+          <rules>
+            <rule name="Support" id="c2c4-ad88-e3b7-ec3d" hidden="false">
+              <description>To support an ally, the spearman must be in base-to-base contact with it, and can’t be engaged in a melee itself. The spearman figure must therefore be within about 1” of an enemy figure when it supports an ally.
+
+
+When a figure armed with a spear supports an ally, enemies engaged in melee with that ally get a -1 to their to hit rolls.
+
+
+When a spearman supports an ally, they don’t count as being engaged in melee and are therefore free to move. They can be targeted by shooting and chargers, for example.
+
+
+A spearman can only support a single ally each game turn. If a spearman is in position to support several allies at once, the player who owns the spearman gets to choose which figure he will support. Similarly, a figure can only be supported by a single spearman.
+
+
+If the friendly figure that the spearman was supporting is destroyed at the end of a melee, the spearman has to take its place in contact with the opponent. This is not a charge.
+
+
+Therefore, at the end of the combat, move the spearman figure into contact with the enemy. Both figures count as engaged in melee during the next turn of the game, so no charge bonus will apply.</description>
+            </rule>
+          </rules>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="03f9-3c25-1bff-a4ef" sortIndex="3">
           <profiles>
@@ -1187,6 +1207,21 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <infoGroups>
+            <infoGroup name="Dane Axe Rules" id="42f0-9319-cdfb-b3cd" hidden="false">
+              <rules>
+                <rule name="Bulky" id="7519-aa17-6373-12b3" hidden="false">
+                  <description>A figure wielding a Dane axe can’t use their shield AND their weapon in the same round of melee combat. It has to choose which one to use, whether to raise their shield or swing their axe.</description>
+                </rule>
+                <rule name="Sundering" id="0afe-4bf4-d0c4-0288" hidden="false">
+                  <description>In addition, Dane axes are so powerful that they modify the target’s defence with a -1 penalty to its defence rolls against attacks with a Dane axe (see the asterisks in the Melee To Hit table).</description>
+                </rule>
+                <rule name="Unwieldy" id="072f-90ee-e323-5e1f" hidden="false">
+                  <description>The Dane Axe overrules simultaneous melee and instead always strikes last – except in the turn you charge with it. Therefore, a warrior with a Dane axe that is struck down by his enemy can’t retaliate before death claims him – unless it’s in the midst of a glorious charge!</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Bare hands" hidden="false" id="c5dd-c2b5-9c80-90f0" sortIndex="-1">
           <profiles>
@@ -1350,6 +1385,26 @@ The cavalry figure can’t move this turn. If the roll is a failure, the figure
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
           </costs>
+          <rules>
+            <rule name="Kontos" id="4faa-2b86-c6e4-01e8" hidden="false">
+              <description>The kontos is a long cavalry spear wielded in two hands. It can be equipped alongside a hand weapon..
+
+
+When a rider with a kontos charges an enemy, the impact is so powerful that the target takes a -1 penalty to its defence rolls. The rider must always roll an attack against each other enemy (and friendly) figure in contact with them AND/OR the target too, but these additional figures take no penalty to their defence rolls.
+
+
+In addition, the impact of a kontos charge is so powerful that the target can’t attack back this turn – they’re too busy riding out this devastating charge.
+
+
+Resolve the melee immediately after the charge. First resolve the kontos’ effect on the initial target, with the -1 penalty to the target’s defence rolls. Then, resolve its impact on the other figures in the melee who don’t have a penalty to defence.
+
+
+Once engaged, a cataphract can no longer use their kontos and must change weapons.
+
+
+The kontos can be used again during the rider’s next charge.</description>
+            </rule>
+          </rules>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Lasso" hidden="true" id="9c88-7bbe-a35a-5909" sortIndex="7">
           <constraints>
@@ -1986,6 +2041,29 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <infoGroups>
+            <infoGroup name="Bow Rules" id="44e1-f334-da7a-68b7" hidden="false">
+              <rules>
+                <rule name="Volley Fire" id="4de1-1756-d202-13d1" hidden="false">
+                  <description>Volley fire can be used by 4 or more figures with bows in a group. None of the archers in the group can have moved this turn. A group is formed when all the archers are within 2” of at least one other archer in the group.
+
+
+1. During the shooting phase, choose a point on the gaming table within line of sight of at least one archer in the group. This becomes the volley fire’s target point. Place a volley fire marker on that point (you can find them on the Pillage website).
+
+
+2. Measure the distance from the marker to the closest archer:
+• If the distance is further than the bow’s range, the volley fire fails.
+• If the distance is equal to or less than the weapon’s range, all the archers fire their arrows at the marker. You don’t need to make an ordinary roll to hit; all the shots automatically succeed. None of the archers can shoot again this turn.
+
+
+3. Each figure – both enemy and allied – within a 3” radius of the volley fire marker immediately suffers a hit on a roll of a 6. Defence rolls are possible. This 3” radius increases by +1” for each additional shooter in the group after the fourth.
+
+
+4. During the next movement phase, the area within a 6” radius of the volley fire marker counts as difficult terrain. The warriors are too busy ducking their heads as they tiptoe through, afraid that a devastating rain of arrows is about to fall on their heads. Remove the volley fire marker once everyone’s movement phase is over.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Plumbata" hidden="true" id="55e5-2ee4-445e-359a" sortIndex="7">
           <constraints>
@@ -2115,7 +2193,7 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
             </modifier>
             <modifier type="set" value="false" field="hidden">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
@@ -2200,12 +2278,13 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
             <conditionGroup type="or">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName=" Berserker"/>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
                 <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+                <condition type="equalTo" value="1" field="selections" scope="parent" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -2378,6 +2457,21 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <infoGroups>
+            <infoGroup name="Banner Rules" id="909d-8571-83d8-13f9" hidden="false">
+              <rules>
+                <rule name="Courage" id="2ad4-9e57-63fd-116d" hidden="false">
+                  <description>A figure within 6” of a banner (including the banner-bearer) can re-roll 1s when rolling to hit in melee.
+
+
+In addition, all figures within 6” of a banner (including the banner-bearer) automatically succeed on their morale rolls.
+
+
+A banner is a heavy and cumbersome artefact, so a figure carrying a banner has a -1 penalty to its defence rolls.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Warhorn" hidden="true" id="6684-efaf-9504-40c1">
           <constraints>
@@ -2486,6 +2580,18 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <infoGroups>
+            <infoGroup name="Warhorn Rules" id="0715-5cc2-7aa0-9a6c" hidden="false">
+              <rules>
+                <rule name="Motivation" id="9757-9d80-38b4-6b60" hidden="false">
+                  <description>A hornblower figure increases the movement of allied infantry and cavalry figures within 6” of it by +2”. The hornblower figure itself is not affected by the warhorn’s effects.
+
+
+In addition, any friendly figure within 6” of a hornblower automatically passes its morale rolls.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="model" import="true" name="Horse" hidden="true" id="4c37-ffb6-cffc-4e32" subType="mount">
           <constraints>
@@ -2631,6 +2737,110 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
           </costs>
+          <infoGroups>
+            <infoGroup name="Cavalry Rules" id="9b8a-abfa-085c-06b0" hidden="false">
+              <rules>
+                <rule name="Cavalry and Difficult Terrain" id="05b2-780c-406b-30a9" hidden="false">
+                  <description>Difficult terrain has a greater effect on cavalry than on infantry. When a cavalry figure wants to move within an area of difficult terrain, every 1” crossed counts as 4” of movement.
+In addition, cavalry get no charge bonus when fighting inside difficult terrain.</description>
+                </rule>
+                <rule name="Cavalry and Passable Obstacles" id="2fc2-c31b-f8be-fa92" hidden="false">
+                  <description>Cavalry figures can move over passable obstacles in the same way as infantry figures, and take the same -2” penalty to their move. However, they also risk falling as they cross.
+
+
+**Fall Roll**
+When you cross the obstacle, roll 1d6 and compare the result to the following table:
+
+
+• 1 — **Fall**
+Your rider miserably fails to get over the obstacle; their horse rears and throws them. Your rider becomes an infantry figure with all the same equipment, and they suffer an improvised weapon attack with no defence roll allowed.
+
+
+• 2 — **Close One**
+The horse whinnies, paws at the ground, and stops just before the obstacle. Your figure’s movement phase ends in contact with the obstacle.
+
+
+• 3 — **Success**
+Your rider narrowly manages the jump. Their movement ends in contact with the other side of the obstacle.
+
+
+• 4-6 — **Skilled Horseman**
+Your rider succeeds masterfully. If they still have any movement left after crossing the obstacle, they can end their move normally.</description>
+                </rule>
+                <rule name="Cavalry Charge" id="32a7-ea6b-0df7-4e32" hidden="false">
+                  <description>Their charge is so powerful that it modifies the defence of enemy infantry figures in contact, inflicting a -1 penalty to their defence rolls in melee that turn. This penalty doesn’t apply to cavalry figures.</description>
+                </rule>
+                <rule name="Cavalry Lances" id="ae7d-7410-cb83-2837" hidden="false">
+                  <description>When a cavalry figure with a spear charges, melee in the same turn isn’t simultaneous. Instead, the rider strikes first. If its enemy is destroyed, it can’t strike back against the rider.</description>
+                </rule>
+                <rule name="Dane Axes on Horseback" id="0a0e-7075-5f59-6f4c" hidden="false">
+                  <description>When a rider is equipped with a Dane axe, count the axe as a hand weapon during melee. It still can’t be used with a shield.</description>
+                </rule>
+                <rule name="Moving Cavalry" id="bf97-b304-f4c8-7261" hidden="false">
+                  <description>Cavalry figures move in the same way as infantry. They can cross obstacles and are affected by difficult terrain, narrow gaps, and roads as described in the terrain section
+However, cavalry can’t make special moves. That means they can’t jump, climb, or swim.</description>
+                </rule>
+                <rule name="Penalty vs Cavalry" id="6e98-1e10-13a3-b14d" hidden="false">
+                  <description>All enemies armed with any weapon other than a spear suffer a -1 penalty to their rolls to hit cavalry figures.</description>
+                </rule>
+                <rule name="Shooting at Cavalry" id="ca65-e00e-6fd3-3f55" hidden="false">
+                  <description>Figures shooting at cavalry get a +1 bonus to their to hit rolls against both riders and mounts.
+
+
+Target Roll
+
+
+Before resolving the shooting or melee attack, the attacker rolls 1d6.
+
+
+• 1-3 — **The attack targets the mount**
+Make the roll to hit normally. Bear in mind that a mount always has 1 hit point and an armour class of Unarmoured (UA).
+
+
+• 4-6 — **The attack targets the rider**
+Make the roll to hit normally, using the rider’s armour class.If the rider falls to zero hit points, the whole figure – mount included – is removed from the table and counts as a casualty. We assume that the warhorse was seized by panic and fled the battlefield.</description>
+                </rule>
+                <rule name="Shooting From Horseback" id="f2ab-e026-c81f-8488" hidden="false">
+                  <description>Cavalry figures can only shoot with javelins. That means that mounted models can never use slings, bows, or crossbows. They can carry them, but can’t use them until they have dismounted and become infantry figures. 
+
+
+The rules on shooting apply normally to cavalry models.</description>
+                </rule>
+                <rule name="Knock Down" id="4bdd-1ac5-7c32-b184" hidden="false">
+                  <description>In its movement phase, a cavalry figure can try to disengage from an existing melee by getting its horse to push away its enemy or enemies.
+
+
+**Knock Back Roll**
+
+
+Roll 1d6 for your knock back roll:
+• 1 — **Crushing failure**
+The mount bucks and bolts, dropping its rider to the ground and fleeing the battlefield. Your rider loses their mount, falls, and finds themselves on foot.
+To represent the damage from the fall, make an improvised weapon attack against the rider with no defence roll.
+
+
+• 2-4 — **Failure**
+The knock back has no effect and the melee continues normally.
+
+
+• 5-6 — **Success**
+Push all figures in contact with the cavalry figure 1” away from it. The cavalry figure is now free to use its movement phase normally, but can’t charge. Figures that can’t be pushed back because of the terrain around them immediately suffer an improvised weapon attack. They can’t hit back.</description>
+                </rule>
+                <rule name="Dismounting" id="7ab8-77d9-627b-4843" hidden="false">
+                  <description>Riders can dismount and abandon their horses. However, this can only happen at the start of their movement phase. 
+
+
+The player controlling the cavalry figure declares it is dismounting and replaces it with an infantry figure carrying the same equipment and armour.
+
+
+Dismounting uses up a rider’s whole movement. They can’t move again for the rest of the turn.
+
+
+When a rider dismounts, their horse immediately quits the battlefield – we presume it flees the clamour of battle.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -2679,8 +2889,9 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               <conditionGroups>
                 <conditionGroup type="count" min="2" max="2">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="c967-0f8d-1f01-0248" shared="true" childName="Armour" includeChildSelections="true"/>
                     <condition type="equalTo" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2689,8 +2900,9 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               <conditionGroups>
                 <conditionGroup type="count" min="1" max="1">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="c967-0f8d-1f01-0248" shared="true" childName="Armour" includeChildSelections="true"/>
                     <condition type="equalTo" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2800,7 +3012,7 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0" position="">
+            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0">
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
@@ -2888,6 +3100,20 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           </modifiers>
         </modifierGroup>
       </modifierGroups>
+      <rules>
+        <rule name="Raising a Shield" id="4d03-01ca-ab1f-4f66" hidden="false">
+          <description>In melee, infantry figures – not cavalry – can choose not to fight and instead defend themselves behind their shield (if they have one). This lets them stall for time as they await reinforcements.
+
+
+Announce that you are raising your shield before the attacker rolls to hit.
+
+
+This gives you a +1 bonus to your defence roll. A figure that raises its shield isn’t allowed to attack during the same melee phase.
+
+
+A warrior can’t raise their shield if they’re already in a shieldwall formation.</description>
+        </rule>
+      </rules>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Armour" hidden="false" id="2503-f075-b4f3-a83c" sortIndex="-1">
       <constraints>
@@ -3019,6 +3245,11 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           </modifiers>
         </selectionEntry>
       </selectionEntries>
+      <rules>
+        <rule name="Supply" id="6e9a-307e-9efb-7214" hidden="false">
+          <description>While an army contains a supply wagon, figures equipped with javelins/Angons can shoot twice instead of once whenever they are able to shoot.</description>
+        </rule>
+      </rules>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chieftain" hidden="false" id="5b79-2a8a-0ca0-4059" sortIndex="1">
       <entryLinks>
@@ -3073,9 +3304,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Warriors" hidden="false" id="2478-7327-3509-6d5f" sortIndex="3">
-      <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="201e-b8c8-f68c-99e0" targetId="d936-c270-e692-1054" primary="false"/>
-      </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Warrior" hidden="false" id="5c39-fa7e-e707-3800">
           <entryLinks>
@@ -3127,12 +3355,29 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               <comment>COSTS</comment>
             </modifierGroup>
           </modifierGroups>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Armour" hidden="false" id="c967-0f8d-1f01-0248">
+              <constraints>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f22d-a7d4-e040-8da2" includeChildSelections="true"/>
+                <constraint type="max" value="1" field="selections" scope="self" shared="true" id="83b5-8a97-9403-6cdc" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="2" field="f22d-a7d4-e040-8da2">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="force" childId="5b79-2a8a-0ca0-4059" shared="true" roundUp="false" childName="Chieftain" includeChildSelections="true" includeChildForces="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="d366-df7b-b44d-214d" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Berserkers" hidden="false" id="aaaf-c8ef-3840-8e3f" sortIndex="4">
       <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="8569-4b12-e7b0-898d" targetId="d936-c270-e692-1054" primary="false"/>
         <categoryLink name="Berserker" hidden="false" id="a8b7-2d00-7d82-8aea" targetId="8a90-9bee-5758-3283" primary="true"/>
       </categoryLinks>
       <selectionEntries>
@@ -3204,12 +3449,41 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="9003-0336-5d8f-ac4b" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Berserker Rules" id="da56-3344-7cd6-f3ac" hidden="false">
+          <rules>
+            <rule name="Hallucinogenic Mushrooms" id="9530-8b13-dfc8-e575" hidden="false">
+              <description>A berserker figure can choose to ingest hallucinogenic mushrooms. Declare a berserker figure is taking mushrooms at the start of its movement phase. Once ingested, hallucinogenic mushrooms stay in effect until the end of the game, and is now subject to Confusion.
+
+
+While a berserker is under the effects of hallucinogenic mushrooms, it gets 2 attacks instead of 1.</description>
+            </rule>
+            <rule name="Confusion" id="26d0-7098-0b67-728d" hidden="false">
+              <description>Whenever a berserker figure is under the effects of hallucinogenic mushrooms, make a confusion roll for it before each movement phase. Roll 1d6 and compare the result to the table below:
+
+
+• 1 — Confused The berserker is rooted to the spot, stupefied, in the thrall of hallucinations and speaking with imaginary Valkyries. If the berserker is already in melee, it can’t attack and makes its defence rolls with a -1 penalty.
+
+
+• 2-5 — Clear sight Though under a psychotropic spell, the berserker keeps a clear mind and can act normally with its usual additional attack.
+
+
+• 6 — Bloodthirsty rage The berserker is seized by insane rage. It wants blood! If not already in melee, make a charge towards the closest visible figure (enemy or ally). The charge adds 1d6” instead of 1d3” to the charge distance. If there are no visible figures, the berserker remains in place, as though Confused.</description>
+            </rule>
+            <rule name="Ferocious Tenacity" id="4ae0-0427-e92e-7919" hidden="false">
+              <description>A berserker figure has 2 hit points, and when it attacks, it does so with such terrible violence that its opponent’s defence is quite simply cancelled entirely.</description>
+            </rule>
+          </rules>
+        </infoGroup>
+      </infoGroups>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Huscarls" hidden="false" id="493d-4409-9952-8860" sortIndex="5">
       <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="69cd-8fda-0d0b-5f44" targetId="d936-c270-e692-1054" primary="false"/>
         <categoryLink name="Huscarl" hidden="false" id="c4ba-8d9f-8fb6-f755" targetId="a9b5-1198-781f-a9d1" primary="true"/>
       </categoryLinks>
       <selectionEntries>
@@ -3272,12 +3546,35 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="3a03-cc50-334b-da7b" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Huscarl Rules" id="88dd-c9d8-759d-c51f" hidden="false">
+          <rules>
+            <rule name="Forwards!" id="019c-ebcc-ab0f-b421" hidden="false">
+              <description>Once per game, a huscarl can inspire the warriors around him. He barks orders and injunctions to his warriors that redouble their courage. At the end of the movement phase, all friendly warriors within 6” of the huscarl (including him) can make an additional move.
+
+
+A figure can only get one additional move in each game turn. Additional moves can’t be used by figures that already charged this turn, and cannot themselves be used to charge.</description>
+            </rule>
+            <rule name="Choice of Weapons" id="5c8b-d1c1-1813-3de7" hidden="false">
+              <description>In Pillage, Huscarls are among those rare warriors who can carry more than one melee weapon: a two-handed Dane axe and a sword (hand weapon). 
+
+
+The player can choose which weapon to swing at their enemy in each melee.</description>
+            </rule>
+            <rule name="Dane Axe Mastery." id="c93e-3e9d-9395-f111" hidden="false">
+              <description>Huscarls have perfected wielding the Dane axe – they take no penalty to hit when wielding this weapon.</description>
+            </rule>
+          </rules>
+        </infoGroup>
+      </infoGroups>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Healers" hidden="false" id="5abc-f2dd-4427-94a9" sortIndex="8">
       <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="072a-13b5-83ab-7a71" targetId="d936-c270-e692-1054" primary="false"/>
         <categoryLink name="Healer" hidden="false" id="ef1d-9012-d084-15c5" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
       </categoryLinks>
       <selectionEntries>
@@ -3370,8 +3667,19 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="b363-576f-9dc4-b890" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
+      <rules>
+        <rule name="Healing Hands" id="35ab-1cb0-add8-7ad3" hidden="false">
+          <description>A healer can cancel a wound taken by one of your warriors. To do so, the healer must be in base-to-base contact with the figure receiving the wound. At the moment the wound is inflicted, roll 1d6: the wound is cancelled on a 5+.
+
+
+A healer can be used on several figures during the same turn, as long as the healer is in base-to-base contact with all the figures they attempt to heal. On the other hand, a figure can only be healed once per game turn, even if several healers are in base-to-base contact with it.</description>
+        </rule>
+      </rules>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Bők" hidden="false" id="e5a3-64d9-2534-e409" sortIndex="2">
       <entryLinks>
@@ -3417,9 +3725,6 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Kataphraktois" hidden="false" id="99e5-d364-e70b-b37f" sortIndex="7">
-      <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="88e5-e22f-005c-dca7" targetId="d936-c270-e692-1054" primary="false"/>
-      </categoryLinks>
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Kataphraktoi" hidden="false" id="94a6-9ee0-c5fc-7642">
           <entryLinks>
@@ -3468,12 +3773,14 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
               <comment>COSTS</comment>
             </modifierGroup>
           </modifierGroups>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="f557-8b99-d4c8-e8a0" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Cataphracts" hidden="false" id="3fae-340a-ff4a-27e4" sortIndex="6">
       <categoryLinks>
-        <categoryLink name="CHIEFCON" hidden="false" id="2cb5-49c6-1482-3f7a" targetId="d936-c270-e692-1054" primary="false"/>
         <categoryLink name="Cataphracts" hidden="false" id="8373-6a91-7142-d9c3" targetId="9106-4ef0-0942-8c50" primary="true"/>
       </categoryLinks>
       <selectionEntries>
@@ -3527,8 +3834,500 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" hidden="false" id="656e-81a7-9a69-3bcb" targetId="d936-c270-e692-1054" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
   </sharedSelectionEntries>
+  <sharedRules>
+    <rule name="Swimming" id="7997-2afd-3778-0255" hidden="false">
+      <description>An infantry figure is able to swim, for example to cross a deep river or to disembark from a ship along the coastline. The water’s surface counts as difficult terrain when a figure uses its movement range to swim.
+
+
+**Swimming Roll**
+An infantry figure that wants to swim must make a swimming roll before each move in the water.
+
+
+Roll 1d6 and add the armour class modifier below:
+• UA: 0
+• SA: -1
+• FA: -2
+Check the result against the table below:
+
+
+• 1 — Drowned
+Overburdened by their gear, victim of a cramp, or simply unable to swim, your warrior drowns in these troubled waters… whoops.
+• 2-4 — Doggy Paddle
+Your warrior swims, but with difficulty. They struggle against the current and move only 2”.
+• 5-6 — A Fish To Water
+Your warrior is an accomplished athlete. They advance their whole movement range (still counting the water as difficult terrain), taking to it like a fish to water.
+
+
+Every movement phase spent in the water requires a new swimming roll.</description>
+    </rule>
+    <rule name="Ladders" id="89b6-d4a7-d04a-1af9" hidden="false">
+      <alias>Ladder</alias>
+      <alias>Rope</alias>
+      <alias>Ropes</alias>
+      <alias>Staircase</alias>
+      <alias>Bridge</alias>
+      <description>Sometimes, an infantry figure moves using a piece of scenery specifically designed for getting past an obstacle – a ladder, a hawser, a staircase, a rope bridge, etc.
+
+In this case, the figure has to cross the obstacle in a single move: it must start its move next to the obstacle and end it on the other side.</description>
+    </rule>
+    <rule name="Jumping and Climbing" id="2328-3073-33f7-defe" hidden="false">
+      <alias>Jumping</alias>
+      <alias>Jump</alias>
+      <alias>Climbing</alias>
+      <alias>Climb</alias>
+      <description>In some specific situations, you might want to “tempt fate” by throwing one of your figures into an audacious manoeuvre like leaping a chasm or scaling city walls with their bare hands. These follow the rules below:
+
+
+**Jumping**
+A piece of scenery can be crossed by jumping if it is between 1” and 4” wide or high (if you’re jumping upwards).
+
+**Climbing**
+An infantry figure can climb a sheer face between 1” and 4” high.
+A figure that wants to jump or climb must be in base to base contact with the terrain piece in question. It can jump or climb at any point in its movement.
+Jumping and climbing uses up movement equal to the distance being crossed, up to a maximum of 4”. 
+
+
+A jump or a climb has to be made in a single move.
+
+
+Remember that it’s impossible to charge after jumping or climbing.
+
+
+**Agility Roll**
+To jump or climb, you need to make an agility roll.
+When you come to the obstacle, roll 1d6 and add the armour class modifier below:
+• UA: 0
+• SA: -1
+• FA: -2
+
+
+• 1 — **Deadly Fall**
+Your warrior fails horribly and crashes out, breaks a leg, or otherwise horribly injures themselves. Your figure counts as a casualty and is removed from the gaming table.
+• 2-3 — **Close Call**
+Your warrior is seized by a sudden premonition and they stay rooted in place, pinned between fear and wisdom. Your figure’s movement phase ends in contact
+with the obstacle.
+• 4-5 — **Success**
+Your warrior’s attempt narrowly succeeds. They end their movement after the jump or climb, in contact with the obstacle.
+• 6 — **Acrobat**
+Your warrior achieves their goal flawlessly. If the figure has any of its movement range left after the jump or climb, it can end its movement normally.</description>
+    </rule>
+    <rule name="Rivers" id="cef0-e912-8daf-2069" hidden="false">
+      <description>Rivers can’t be crossed easily. The safest way is to send your troops over fords and bridges. Otherwise, you’ll need to use the often dangerous solution of swimming across (detailed later on p.37).</description>
+      <alias>River</alias>
+    </rule>
+    <rule name="Fleeing" id="cc4f-ffb4-d102-d85e" hidden="false">
+      <description>Fleeing lets you escape combat but watch out, because if fleeing fails, the enemy might catch and kill your figure in their stride. A choice to be made cautiously…
+
+
+A figure that has already moved during the turn in which it was charged (if its movement phase was first, for example) can’t flee, no matter whether they used their whole movement range or not.
+
+
+**Fleeing Roll**
+To avoid combat and run away, make a fleeing roll. Roll 1d6:
+
+
+• 1-3 — **The fleeing roll is failed**
+The figure remains in place, paralysed by fear. The attacker makes their charge roll using the normal rules for charging.
+If the attacker’s charge range brings them into base-to base contact with their target, their target is automatically destroyed. It is removed from the gaming table and counts as a casualty.
+
+
+• 4-6 — **The fleeing roll succeeds.**
+The attacker makes their charge roll and charge move in the normal way, as described in the charge sequence.
+Then, even if the attacker has reached base-to-base contact with the target, their target flees their maximum movement range. Penalties to movement from terrain apply, but not bonuses.
+Fleeing is made like a normal move, in any direction, and doesn’t need to be in a straight line.
+
+
+Whether they succeed or not, a figure that has made a fleeing roll can’t move again during this turn. It counts as having already used its movement.</description>
+    </rule>
+    <rule name="Closing Shot" id="36d5-1d98-525c-4bce" hidden="false">
+      <description>If it hasn’t moved yet this turn, a figure equipped with a ranged weapon can shoot at their attacker. Regardless what kind of weapon they’re using, they may only fire once.
+
+
+However, the shot suffers a -1 penalty to hit in addition to any of the usual penalties and bonuses that affect the shot. This is because the shooter is panicking or has to rush their shot.
+
+
+• If the attacker is eliminated by the closing shot, its figure is removed from the gaming table. It counts as a casualty, riddled with arrows before it can reach its target.
+
+
+• If the attacker isn’t eliminated by the closing shot, they continue their charge as described in the charge sequence above.The shot fails to cut them down. In addition, the shooting figure can’t use its hand weapon and/or shield during the melee that follows the charge. They don’t have time to draw them before the enemy is in their face.
+
+
+A figure that makes a closing shot can’t move or shoot again for the rest of the turn.</description>
+    </rule>
+    <rule name="Roads" id="be41-4ce6-eaba-76d5" hidden="false">
+      <description>• Infantry on roads get a +2” bonus to their movement range.
+• Cavalry on roads get a +4” bonus to their movement range.
+
+
+A figure counts as on a road if any of its base is on it. The bonus only applies if the figure starts, ends and spends their whole move on-road, without coming off.</description>
+    </rule>
+    <rule name="Narrow Gaps" id="99e4-a786-c33d-782a" hidden="false">
+      <description>Figures can’t move through gaps that are narrower than the width of their bases.
+
+
+If your figures are on 25mm bases, they can’t go through spaces that are less than 25mm wide.
+
+
+Don’t forget that other figures – allied and enemy – are also impassable obstacles. The gap between two figures can prove impassable if they are too close together.</description>
+    </rule>
+    <rule name="Impassable Ground" id="2d57-076e-7065-6f8e" hidden="false">
+      <description>Some obstacles and terrain are impassable. Figures simply cannot enter them, and can’t cross them either. You should confirm impassable terrain with your opponent before the start of the game.
+
+
+Attention: all figures, whether allied or enemy, are considered to be impassable obstacles and therefore cannot be crossed! 
+
+
+Here’s a list of scenery elements that might count as impassable terrain:
+• Buildings
+• High walls
+• Rocky escarpments
+• Quicksand
+• Chasms
+• Landslides
+• Geysers
+• Etc.</description>
+    </rule>
+    <rule name="Passable Obstacles" id="8d7b-e903-79ab-cb48" hidden="false">
+      <description>Passable obstacles are pieces of scenery that prevent movement, but which figures
+can move over for a flat penalty to their movement range. These include hedges,
+fences, walls, and ditches. 
+Unlike difficult terrain, which covers stretches of the table, passable obstacles are linear elements that can’t be more than 1” high or 1” wide.
+
+
+Crossing one of these obstacles costs a figure 2” of their movement.
+
+
+To cross a passable obstacle, move your figure until it is in base contact with the obstacle. Check that your figure has at least 2” of movement left. If so, remove 2” for crossing the obstacle and make the rest of its move.
+
+
+If a figure has less than 2” of movement left when it reaches the obstacle, the obstacle can’t be crossed,</description>
+    </rule>
+    <rule name="Difficult Terrain" id="db7f-2f9d-ca32-1675" hidden="false">
+      <description>An infantry figure moving inside an area of difficult terrain halves their movement range. Essentially, each 1” they move counts as 2”.
+
+
+Odd distances are always rounded down, as if the last inch of movement wasn’t there.
+
+
+Here is a non-exhaustive list of scenery that might count as difficult terrain:
+• Forests, woods, orchards, crops, thick foliage, dense undergrowth, scrub, and bushes.
+• Areas of ruins, rubble, scree, talus, or craggy terrain.
+• Fords, streams, and shallow water.
+• Swamps, marshes, bogs, and muddy areas.
+• Tilled, flooded, or muddy fields.
+• Dunes and stretches of sand or snow.
+• Steep and dangerous slopes.
+• Stairs, steps, ladders, ropes, or rickety bridges.
+• Etc.</description>
+    </rule>
+    <rule name="Crop" id="f1c5-d6d4-2ce6-59d1" hidden="false">
+      <description>Cultivated crops can limit movement when the plants are tall or the field is muddy – in these cases, they count as difficult terrain. But if the weather permits and the crops are nice and dry, they can also be set alight.</description>
+    </rule>
+    <rule name="Hills" id="08bd-417d-7f5e-6ab7" hidden="false">
+      <description>Hills have several effects. 
+• The first is to give an advantage to combatants who are higher up than their opponents. 
+• The second is to increase how far warriors with thrown or ranged weapons can shoot. These advantages are detailed in the relevant sections of the book.</description>
+      <alias>Hill</alias>
+    </rule>
+    <rule name="Woods" id="5c02-ff77-1f75-d1e8" hidden="false">
+      <description>A warrior in a wood is considered hidden as long as they are further than 2” from the edge of the wood. That means it’s impossible to target them from outside the wood. They are also unable to target figures outside the wood. This makes it very important to clearly delineate the borders of your woodlands. 
+
+
+A figure within 2” of the edge of the woods is therefore visible and can be targeted by shooting and charges. 
+
+
+When a figure at the edge of the woods is targeted by shooting, the shot is resolved as though there were an obstacle in the way – we assume the target is ducking behind a tree trunk or similar. 
+
+
+A figure in the interior of an area of woodland can target other figures within the same area of woodland if they are within 4”.</description>
+      <alias>Wood</alias>
+    </rule>
+    <rule name="Fighting on a Slope" id="07ca-a276-4caa-b1d7" hidden="false">
+      <description>Sometimes fights will take place on a steep slope, on the side of a hill, or other unexpected places. One enemy is below the other, even though they’re in base-to-base contact.
+
+
+Sometimes it’s difficult to tell whether one figure is above another. It is obvious most of the time, but if not then prioritise fair play and give your opponent the benefit of the doubt.
+
+
+When fighting on a slope, the lower figure gets a -1 penalty to hit its enemy.</description>
+    </rule>
+    <rule name="Defending an Obstacle" id="7dc9-1766-3e23-83b6" hidden="false">
+      <description>Figures can use obstacles, barriers, or barricades as defensive positions. Any piece of scenery that represents a passable obstacle less than 1” high is considered a defensive obstacle.
+
+
+Defensive obstacles work against both infantry and cavalry charges. 
+
+
+A figure is considered to be defending an obstacle while it is in base-to-base contact with it, and able to see over it.
+
+
+A figure who wants to charge an enemy that’s defending an obstacle does so by moving to within 1” of the enemy’s base and in base-to-base contact with the obstacle.
+
+
+Figures get no charge bonus when attacking an enemy who is defending an obstacle.</description>
+    </rule>
+    <rule name="Pushing Back" id="0050-9ccc-dad0-5a5b" hidden="false">
+      <alias>Push back</alias>
+      <description>An enemy can be pushed back as soon as two opposing figures are engaged in melee.
+
+
+However, it’s impossible to push back an enemy who just charged. Their momentum is too great to successfully drive them backwards.
+
+
+To push back an enemy figure, you must make a strength roll based on your enemy’s armour class. The better their armour class, the harder it is to push them back.
+
+
+Pushing back an opponent happens instead of fighting them. However, when melee is simultaneous you’ll still need to weather your enemy’s blows even if you manage to shove them away. Your enemy is only pushed away at the end of the melee.
+
+
+**Strength Roll**
+When you resolve the melee in which you want to push your enemy back, roll 1d6 and add the modifier for your opponent’s armour class:
+• UA: 0
+• SA: -1
+• FA: -2
+
+
+Compare the final result with the table below
+
+
+• 1 — **Low Blow**
+In trying to shove your enemy, you take a low blow.
+Resolve an improvised weapon attack against your figure, even if the enemy has already made its attacks for this melee.
+
+
+• 2-3 — **Failure**
+It’s a failure, your kick to push the foe back wasn’t powerful enough to throw them off.
+
+
+• 4-5 — **Success**
+Your warrior manages to push back its opponent, who retreats 1” if they can. Your warrior no longer counts as engaged in combat.
+
+
+• 6 — **Coup double!**
+Your warrior successfully pushes back their enemy, who retreats 1” if they can and also takes an improvised weapon attack.
+
+
+When you successfully push back an enemy, move the enemy figure 1” directly away from yours. If their positions prevent this movement, the retreating figure makes a 1” agility roll to try and achieve a 1” gap between the two enemies. If even this is impossible, the combatants are considered to still be engaged in melee, and pushing the enemy back has no effect.
+
+
+You cannot push back your enemies while engaged by several in a multiple combat. Your figure is trapped by all the warriors surrounding it.</description>
+    </rule>
+    <rule name="Fall" id="1f3a-5b0c-af91-c9a7" hidden="false">
+      <alias>Falling</alias>
+      <description>If the 1” move when an enemy is pushed back takes it into thin air, the figure suffers a fall:
+• If the drop is 4” or less, make an agility roll as though jumping (see p.36).
+• If the drop is more than 4”, the fall is lethal. Remove the figure from the game as a casualty.</description>
+    </rule>
+    <rule name="Lighting a Fire" id="5678-8e6b-1e0d-96e4" hidden="false">
+      <alias>Fire Roll</alias>
+      <description>A figure that wants to set fire to a piece of scenery must always have started its turn in base-to-base contact with the terrain piece they want to set ablaze
+
+
+To set fire to a piece of scenery, roll 1d6:
+
+
+• If the figure doesn’t have a torch:
+On the first try, the fire catches on a 6.
+
+
+• If the figure has a torch:
+On the first try, the fire catches on a 4+.
+
+
+The score needed decreases gradually, and goes down by 1 for each turn the figure spends trying to light the fire, to a minimum of 3+.
+
+
+A figure that’s setting a fire is consumed by its task and can’t take any other actions until the fire catches. After that, it can act as the controlling player wishes. If an action (including shooting or engaging in melee) interrupts their continuing attempts to set the fire, the process has to start again from scratch.</description>
+    </rule>
+    <rule name="Torch" id="759a-f4c0-4e1c-9db3" hidden="false">
+      <description>A figure can carry a flaming torch, or any other equipment containing fire or embers. For simplicity’s sake, these are all called ‘torches’.
+
+
+A figure can start the game with a torch, or grab one from a piece of burning scenery somewhere on the field of battle. 
+Don’t forget to specify at the start of the game which pieces of scenery can provide torches: bread ovens, campfires, hearths, forges, etc.
+
+
+**Picking Up a Torch**
+When a figure comes into base-to-base contact with a piece of scenery that contains flame, it can pick up a torch.
+This can happen at any point in its movement phase.
+Picking up a torch ends the figure’s movement phase.
+You can show the figure has a torch by, for example, adding a little bit of cotton wool.
+
+
+From now on, the figure fights with an improvised weapon instead of its normal armaments, but has a torch and all the abilities it grants.
+
+**Dropping a Torch**
+A figure can get rid of its torch at any point in the game turn to recover its starting equipment. A torch that is discarded this way extinguishes itself and disappears.
+
+
+Torches don’t inflict fire damage on their bearers.
+
+
+You can easily imagine how a warrior in the middle of a village, seized by a sudden fit of pyromania, might grab the embers of a camp fire to turn a charming hamlet into charred and smoking ruins. Watch out for the flashback though!</description>
+      <alias>Torches</alias>
+    </rule>
+    <rule name="Spreading Fire" id="bb05-32b3-15b5-718e" hidden="false">
+      <description>Fire can spread if there is flammable scenery within 2” of a burning piece of scenery. At the start of the fire phase, before lighting any fires, the player with the initiative rolls 1d6 for each flammable piece of scenery within 2” of an existing flame:
+• On a 6, the element catches fire.
+• If the test is failed, the flames have chosen to spare it – or the wind is against them! The test will need to be made again the following turn.</description>
+    </rule>
+    <rule name="Fire Damage" id="f038-2db7-71e5-447e" hidden="false">
+      <alias>Fire Burns</alias>
+      <description>Fire only starts inflicting damage and spreading in the turn after it catches.
+
+
+Figures within 2” of a piece of burning scenery take damage. Fire ignores a warrior’s defences.
+
+
+Roll 1d6 for each figure within 2” of burning scenery.
+On a 5+ the figure catches fire and is consumed with a scream of anguish. It is immediately removed from the table and counts as a casualty.</description>
+    </rule>
+    <rule name="Morale" id="1d7b-19f6-fcbc-4c9d" hidden="false">
+      <description>Morale checks are made at the end of the turn, after the fire phase, whenever:
+• Your army loses its chieftain.
+• Your army has lost 50% or more (rounding up) of its starting strength (chieftains included). You’ll need to test morale when you reach 50% of your starting numbers, and when you reach 50% of those survivors, and so on.
+
+
+Make a morale check for each figure in your army that isn’t engaged in melee and isn’t immune to morale checks. If it is failed, the figure flees the game board and counts as a casualty.
+
+
+Roll 1d6 for each figure:
+• 1 — **Rout**
+The warrior is demoralised and immediately quits the battlefield. They count as a casualty.
+
+
+• 2-6 — **Stoic**
+The warrior remains in place and continues to fight. For now…</description>
+    </rule>
+    <rule name="Looting" id="4963-6680-4bbf-8ba4" hidden="false" noindex="false">
+      <alias>Pillage</alias>
+      <alias>Loot</alias>
+      <alias>Transporting</alias>
+      <description>You should agree what counts as loot before the game begins.
+
+
+Lots of scenery could work as loot markers. Here, a hessian sack makes a great loot marker. But a penny or a printed token works just as well.
+
+
+Here’s a short non-exhaustive list that might help:
+• Abandoned chest of valuables: 3 loot
+• Chest/basket/sack of cloth: 1 loot
+• Chest/basket/sack of food: 1 loot
+• Sacred relic: 3 loot
+• Keg/jar or wine/beer: 2 loot
+
+
+To pick up loot, a figure just needs to be in base-to-base contact with it during its movement phase. The figure then counts as carrying the loot, and its movement ends for the turn.
+
+
+An infantry figure can carry up to 3 loot. Watch out though, because each loot marker inflicts its own movement penalty.
+
+
+A figure loses 1” of movement for each loot transported (living beings impose their own restrictions on p.69).
+
+**Handing Off Loot**
+You can absolutely pass over one or more loot from one figure to another during the movement phase. 
+To do so, a figure carrying loot must be in base-to-base contact with a friendly figure. The transfer takes place the moment their bases touch.
+
+
+This can happen at any point in the figures’ movement, but contact immediately stops both figures involved in the exchange from moving. They can’t move again for the rest of the turn.
+
+
+**Abandoning Loot**
+A figure carrying loot can choose to drop it where they stand, but only at the start of their movement phase. The figure is then free to act and move as desired for the rest of the turn. As for the loot, from then on it’s at the mercy of any figure that comes by, be they friend or foe.
+
+**Loot and Shooting**
+A figure carrying loot can’t shoot. It simply doesn’t have time to drop its loot, draw its weapon, aim, and fire one after another.
+
+
+**Loot and Melee**
+When a figure carrying loot has to fight in melee, it temporarily drops the loot at its side for the duration of the melee. If the figure is eliminated at the end of the melee, its loot is taken by the victor if they want it. Otherwise, the loot is left where it fell.</description>
+    </rule>
+    <rule name="Finding Loot" id="490f-a39a-8bdb-28a9" hidden="false">
+      <alias>Searching</alias>
+      <description>Here’s a non-exhaustive list of scenery pieces that might contain loot:
+• Building
+• Well
+• Haystack
+• Chest/barrel
+• Cave
+• Barn/outbuilding
+• Outside furniture
+
+
+When you want to search an target, your figure must be in base-to-base contact with it, or inside it if it’s a building
+
+
+When you come into contact, or start your movement phase in contact, make a search check with 1d6 and compare the result to the table below:
+• 1 — **Empty!**
+If you get a 1, the action ends.There’s nothing hidden here, you can move on. This place, or this thing, is considered empty for the rest of the game. You can mark a building as empty with a token or a scenic marker – for example, a destroyed or empty chest.
+
+
+• 2-3 — **Nothing.**
+You find nothing for now, but you can search again next turn if you want.
+
+
+• 4-6 — **Found it!**
+Check the successful search table to see what you’ve found.
+
+
+If your search roll succeeded, roll 1d6 and compare the result to the table below:
+• 1-3 — **Slim pickings**
+You find very little. You pick up 1 loot.
+
+
+• 4-5 — **Pretty penny**
+Aha! Finally something interesting. You pick up 2 loot.
+
+
+• 6 — **Exceptional loot**
+The start of your hoard? You collect 3 loot</description>
+    </rule>
+    <rule name="Seize Them!" id="b884-777d-09c2-9a72" hidden="false">
+      <alias>Seize</alias>
+      <alias>Capture</alias>
+      <alias>Animal</alias>
+      <alias>Prisoner</alias>
+      <description>If you want to capture an animal or a human, you have to move into contact with its base. Once in contact, you have captured it and your movement ends.
+
+
+When moving with a prisoner, a figure must use the lower of it and the prisoner’s maximum movement range. A figure can only escort a single prisoner at once.
+
+
+Prisoners can’t cross any obstacles, and you can choose to abandon them on the spot at the start of your figure’s movement phase, just like ordinary loot. Difficult terrain penalties also apply to captured elements.
+
+
+Here’s a non-exhaustive list of elements that could be captured, with their movement range, their armour class (in case you want them killed rather than captured), and their worth in loot markers:
+
+
+Adult 6” - UA - 4 loot
+Child 5” - UA - 3 loot
+Cow/Ox 4” - UA - 3 loot
+Sheep 4” - UA - 2 loot
+Pig 4” - UA - 2 loot
+Horse 9” - UA - 4 loot
+Donkey/mule 6” - UA - 3 loot
+
+
+A figure escorting a prisoner can’t carry any other loot or captives.
+
+
+Smaller living creatures like piglets, geese, ducks, and chickens, all count as normal loot but with specific values. You can therefore carry several, up to a maximum value of 3 loot.
+
+
+• Piglet 2 loot
+• Chicken/goose/duck/quail 1 loot
+
+**Value**
+One loot marker is considered to be worth 5 gold pieces.
+Although this value has no effect on the battle, it does open up opportunities for stories and campaigns based on the game’s currency.</description>
+    </rule>
+  </sharedRules>
 </gameSystem>

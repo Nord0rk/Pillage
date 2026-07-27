@@ -11,7 +11,7 @@
           <modifiers>
             <modifier type="increment" value="1" field="e581-dd38-b9f8-f824">
               <repeats>
-                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+                <repeat value="20" repeats="1" field="selections" scope="force" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true" childId="d936-c270-e692-1054"/>
               </repeats>
             </modifier>
             <modifier type="set" value="0" field="aa2c-5596-32ac-5628">
