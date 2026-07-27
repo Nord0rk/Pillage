@@ -20,7 +20,7 @@
     <categoryEntry name="Bők" id="a638-5e21-8172-d006" hidden="false"/>
   </categoryEntries>
   <costTypes>
-    <costType name="Gold Pieces" id="4163-7d26-88e5-be23" defaultCostLimit="-1"/>
+    <costType name="Gold Pieces" id="4163-7d26-88e5-be23" defaultCostLimit="600"/>
   </costTypes>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Talents" id="6670-296f-4e21-c004" hidden="false" collapsible="true">
@@ -3356,7 +3356,7 @@ A warrior can’t raise their shield if they’re already in a shieldwall format
             </modifierGroup>
           </modifierGroups>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Armour" hidden="false" id="c967-0f8d-1f01-0248">
+            <selectionEntry type="upgrade" import="true" name="Armour" hidden="true" id="c967-0f8d-1f01-0248">
               <constraints>
                 <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f22d-a7d4-e040-8da2" includeChildSelections="true"/>
                 <constraint type="max" value="1" field="selections" scope="self" shared="true" id="83b5-8a97-9403-6cdc" includeChildSelections="false"/>
@@ -3366,6 +3366,16 @@ A warrior can’t raise their shield if they’re already in a shieldwall format
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="force" childId="5b79-2a8a-0ca0-4059" shared="true" roundUp="false" childName="Chieftain" includeChildSelections="true" includeChildForces="true"/>
                   </repeats>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
+                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </selectionEntry>
