@@ -2331,6 +2331,15 @@ A pike also inflicts a -1 penalty to its bearer’s defence rolls against both 
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
+                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
