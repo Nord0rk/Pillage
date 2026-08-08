@@ -20,7 +20,7 @@
     <categoryEntry name="Bők" id="a638-5e21-8172-d006" hidden="false"/>
   </categoryEntries>
   <costTypes>
-    <costType name="Gold Pieces" id="4163-7d26-88e5-be23" defaultCostLimit="600"/>
+    <costType name="GP" id="4163-7d26-88e5-be23" defaultCostLimit="600"/>
   </costTypes>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Talents" id="6670-296f-4e21-c004" hidden="false" collapsible="true">
