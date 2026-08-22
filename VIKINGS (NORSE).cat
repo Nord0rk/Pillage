@@ -25,9 +25,6 @@
       <categoryLinks>
         <categoryLink name="Warrior" hidden="false" id="8732-ab5b-fc8c-59a0" targetId="fbfe-2e24-1e84-8984" primary="true"/>
       </categoryLinks>
-      <modifiers>
-        <modifier type="set" value="10" field="4163-7d26-88e5-be23"/>
-      </modifiers>
       <costs>
         <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
       </costs>
@@ -37,7 +34,6 @@
         <categoryLink name="Berserker" hidden="false" id="de5f-e75a-012c-32f2" targetId="8a90-9bee-5758-3283" primary="true"/>
       </categoryLinks>
       <modifiers>
-        <modifier type="set" value="50" field="4163-7d26-88e5-be23"/>
         <modifier type="set" value="false" field="hidden"/>
       </modifiers>
       <costs>
@@ -49,7 +45,6 @@
         <categoryLink name="Healer" hidden="false" id="e578-be19-2dda-050c" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
       </categoryLinks>
       <modifiers>
-        <modifier type="set" value="30" field="4163-7d26-88e5-be23"/>
         <modifier type="set" value="false" field="hidden"/>
       </modifiers>
       <costs>
