@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-10c0-33dc-a9e8-141f" name="Pillage" battleScribeVersion="2.03" revision="1" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem name="Pillage" id="sys-10c0-33dc-a9e8-141f" battleScribeVersion="2.03" revision="1" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Cavalry" id="373d-f121-420b-4837" hidden="false"/>
     <categoryEntry name="Chieftain" id="beac-c21e-5fb5-9ec0" hidden="false"/>
@@ -22,2838 +22,6 @@
   <costTypes>
     <costType name="GP" id="4163-7d26-88e5-be23" defaultCostLimit="600"/>
   </costTypes>
-  <sharedSelectionEntryGroups>
-    <selectionEntryGroup name="Talents" id="6670-296f-4e21-c004" hidden="false" collapsible="true">
-      <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="War of Fire" hidden="false" id="266a-f39d-5e91-7ed7">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4b7d-90e1-043c-15a1" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="War of Fire" id="7d12-8343-66e4-8ea1" hidden="false">
-              <description>Your figures get a +1 bonus to their fire rolls.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Magic Sword" hidden="true" id="177f-a2d3-387c-8877">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="90d2-c0c7-2f7b-9e2e" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Magic Sword" id="3abc-fce6-471c-f653" hidden="false">
-              <description>A chieftain equipped with a magic sword can re-roll failed defence rolls.</description>
-            </rule>
-          </rules>
-          <comment>Add cost of hand weapon</comment>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dog Trainer" hidden="true" id="7229-a0c1-30a9-32a8">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="9ec1-a592-4404-089a" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
-          </costs>
-          <modifiers>
-            <modifier type="increment" value="10" field="4163-7d26-88e5-be23">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="roster" childId="4967-c713-22c5-2fb3" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true" childName="Pack Master"/>
-              </repeats>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <rules>
-            <rule name="Dog Trainer" id="909b-049f-ad13-8556" hidden="false">
-              <description>Your pack masters each have 4 dogs rather than 3.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Force of Nature" hidden="false" id="f845-186e-c361-9989">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8a5b-d806-85f0-8de1" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Force of Nature" id="f6a3-0030-9bf9-0a95" hidden="false">
-              <description>Your Chieftain gets one additional hit point, and so goes from 3 to 4 hit points.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Grand Marshal of Horses" hidden="false" id="7209-ac6b-105f-c89f">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c274-1955-45c0-0fb9" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Grand Marshal of Horses" id="f30e-c216-e389-494f" hidden="false">
-              <description>Your cavalry figures get no movement penalty for crossing passable obstacles, and get a +1 bonus to their rolls to cross obstacles. 
-
-
-This means that in this specific situation, your cavalry figures can never fall.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Hunter" hidden="false" id="d73b-61d0-330b-3587">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="f31a-43f7-1abe-da6c" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Hunter" id="a6bc-8fac-0a74-cdc4" hidden="false">
-              <description>Difficult terrain becomes normal terrain for infantry, and only reduces cavalry movement by half (instead of three quarters).</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Contubernium! " hidden="true" id="be82-774b-856e-44b8">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c2c9-306f-2897-a8be" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Contubernium!" id="f94d-9eaa-0325-879c" hidden="false">
-              <description>At the start of your movement phase, your chieftain can order a maneuver: up to 3 Roman figures (i.e. not foederati allies) within 6” of the Chieftain can move up to 3”. 
-
-
-This move is free and can’t be used to charge. Figures moved this way can resolve their own Movement Phase normally.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Lewd Provocations" hidden="false" id="8980-e8f9-646c-7ef0">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1c8c-8379-926e-3d18" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-          </costs>
-          <rules>
-            <rule name="Lewd Provocations" id="4474-0c82-0e82-a68e" hidden="false">
-              <description>During the first melee of the game, your opponent gets a -1 penalty to all their rolls to hit.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Marksmanship Training" hidden="false" id="fd53-4e55-0d62-bbdf">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4ccb-9639-e2e9-c9ff" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Marksmanship Training" id="80c7-c2f3-c3ed-03b1" hidden="false">
-              <description>From now on, your ranged weapons increase their ranges by +2”.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Master of Evasion" hidden="true" id="d227-b2c0-38d6-fb85">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d43a-a428-be32-6910" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Master of Evasion" id="3972-3cd3-6f34-8908" hidden="false">
-              <description>All your infantry figures get +1 to their rolls to flee. That means their flee rolls now succeeds on a result of 3, 4, 5, or 6.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Loyal to the Emperor" hidden="true" id="a758-1832-0db1-743c">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="521d-2e96-43d8-dda2" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="25"/>
-          </costs>
-          <rules>
-            <rule name="Loyal to the Emperor" id="8de8-3225-6144-8b41" hidden="false">
-              <description>Rus’ and Varangian warriors were often employed by the emperor in Constantinople. Your army is therefore part of the emperor’s Varangian Guard.
-
-
-You don’t need to make a morale check when your chieftain leaves the battlefield.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Master Stalker" hidden="true" id="de71-c3a5-dd1c-741b">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ed09-d184-95c3-c2bf" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Master Stalker" id="4c00-4d8d-e264-8e8c" hidden="false">
-              <description>Flee rolls by your cavalry figures succeed on a 3+ instead of a 4+.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Mead Merchant" hidden="false" id="fa00-123c-2a78-2f02">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4552-06ab-cc1d-ce4d" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Mead Merchant" id="efd2-e0f9-776f-ed39" hidden="false">
-              <description>All your figures add +1” to their charge movement rolls (normal move +1d3” +1”).</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Molesight" hidden="false" id="130d-92fd-d74d-acff">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d8e9-d50c-9c23-d538" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Molesight" id="d7a7-7fbf-9fe4-6e7e" hidden="false">
-              <description>When your chieftain makes a search roll, it automatically succeeds.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Odin’s Sight" hidden="true" id="238f-fa16-7de8-fedd">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="edf5-6647-c12f-31d7" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <rules>
-            <rule name="Odin’s Sight" id="fc23-742e-1bcf-822a" hidden="false">
-              <description>Your chieftain doesn’t need line of sight to charge an enemy.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Bearer of the Holy Grail" hidden="true" id="a2fe-da1f-7f8e-8e80">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4a5d-0044-f3ce-5709" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Bearer of the Holy Grail" id="b3a8-cd67-2a82-d24c" hidden="false">
-              <description>Once per game, your chieftain can drink from the chalice at the start of the turn (before the Initiative Phase). They can’t take any damage for the rest of the turn. In addition, you get a +1 bonus to your initiative rolls for the rest of the game (while your chieftain still lives).</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Relic Bearer" hidden="true" id="8e80-8370-3ac9-59b9">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="97ad-5737-edf3-9b54" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
-          </costs>
-          <rules>
-            <rule name="Relic Bearer" id="2253-996b-f7e3-e164" hidden="false">
-              <description>Friendly figures within 6” of your chieftain (including your chieftain) can re-roll their failed to hit rolls in melee.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Shield Training" hidden="false" id="7e0d-9d10-859f-65e7">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d8e3-5b16-8d00-7a53" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Shield Training" id="5fef-5fd9-dcbb-97b2" hidden="false">
-              <description>Shieldwalls need one fewer figures to be or to remain formed (so 4 figures instead of 5).</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Slayer of Pagans" hidden="true" id="e2a4-b783-7b1c-5af8">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="7734-b2a1-fda2-7a16" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Slayer of Pagans" id="177a-5901-7c20-e224" hidden="false">
-              <description>Your chieftain gets a +1 bonus to its rolls to hit Vikings (and only Vikings).</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Foederati" hidden="true" id="9ae6-be6d-5d87-35d0">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="25ec-bc13-928d-a934" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
-          </costs>
-          <rules>
-            <rule name="Foederati" id="1cb3-9e60-c6ed-10c0" hidden="false">
-              <description>Choose another faction to become your ally. You can recruit its troops (and their equipment), but your chieftain(s) must still be Romans.
-
-
-All the allied faction’s special rules apply to the allied figures in your army.</description>
-            </rule>
-          </rules>
-          <comment>faction ally</comment>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Thegn" hidden="true" id="8065-b18b-e169-2705">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="afe6-de91-43a9-9ab4" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
-          </costs>
-          <rules>
-            <rule name="Thegn" id="712b-90f1-a114-5489" hidden="false">
-              <description>Choose a figure in your army to become your chieftain’s thegn. 
-They can have any armour class.
-
-
-The first wound your chieftain takes is cancelled if the thegn is within 2” of them.
-
-
-The thegn warns your chieftain of the danger, letting them dodge the blow as it falls.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Warhorses" hidden="true" id="f6d5-3da6-b21f-1827">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="33bf-1f07-b7f7-407d" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Warhorses" id="2e08-1454-ff93-d420" hidden="false">
-              <description>Your warhorses have an armour class of SA, rather than the usual UA.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Steppe Mobility" hidden="true" id="353a-edb6-b78c-fc19">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c634-b0fb-ac12-3466" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Steppe Mobility" id="7333-d43f-102f-c013" hidden="false">
-              <description>All your cavalry figures increase their movement range by +2”, and automatically cross obstacles successfully.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Athletic Training" hidden="false" id="169f-c4e5-f7c6-3551">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8e00-b9dc-af60-73cb" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Athletic Training" id="a625-c191-300f-7a2f" hidden="false">
-              <description>Your infantry figures ignore the movement penalties for passable obstacles, and can charge across them.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Scramaseax" hidden="true" id="f3eb-4b6d-b6f9-c693">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d3c7-c58f-369a-a809" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="80"/>
-          </costs>
-          <rules>
-            <rule name="Scramaseax" id="f149-50ba-e9a7-0778" hidden="false">
-              <description>Each of your warriors has a scramaseax as their improvised weapon. When one of your figures fights with an improvised weapon, it can re-roll its failed rolls to hit.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="The Legion Wall" hidden="true" id="1b84-5ba4-62f6-522e">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="97cd-86b1-fc0a-28f3" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="The Legion Wall" id="32cb-8001-59f3-c6c1" hidden="false">
-              <description>When you form a shieldwall, your defence rolls are increased by +2 instead of the usual +1 bonus.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Cornu" hidden="true" id="6522-fccc-9da7-2906">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ccf9-a079-8c71-3a62" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Cornu" id="f1d3-9250-b766-cf7d" hidden="false">
-              <description>Your warhorns are replaced with cornua, which follow all the rules for warhorns. In addition, figures within 6” of a friendly cornu get a +1 bonus to their Fleeing rolls.
-
-
-Finally, all friendly figures within 6” of a cornu’s bearer move an extra 2” when Fleeing.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Shield Bash" hidden="true" id="4e23-774c-1364-a924">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="baff-4e15-dc8c-8582" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="80"/>
-          </costs>
-          <rules>
-            <rule name="Shield Bash" id="500b-9bac-2b72-f934" hidden="false">
-              <description>While engaged in melee, warriors equipped with a shield can use it make an improvised weapon attack in addition to their usual attacks.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Backhander" hidden="true" id="9cbc-18ff-87d8-56ac">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="317d-8bf2-adbf-76d3" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Backhander" id="24a1-324d-8f04-3c12" hidden="false">
-              <description>Before the battle, after the troops are deployed, the Byzantine player chooses an enemy warrior (not a special character, and without special equipment) and rolls 1d6. 
-
-
-On a 4+ that warrior joins their army, and they can place the figure anywhere in their own deployment zone.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Palatine Guard" hidden="true" id="3155-75e5-9206-39fb">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="24dd-78cf-ddad-fee5" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Palatine Guard" id="fdb7-7d1a-d8a6-9ba4" hidden="false">
-              <description>When a Merovingian chieftain is wounded, he can choose to assign the hit to any other allied figure in base contact with him.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="King of Ambushes" hidden="false" id="02ef-52bb-165a-3543">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1cdd-9966-8867-7989" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="King of Ambushes" id="1426-4e31-d58b-b224" hidden="false">
-              <description>You can hide up to 25% (rounding up) of your figures “in ambush”. Special characters or special equipment cannot be ambushed.
-
-
-Before deployment, note on a piece of paper – away from prying eyes – the spot where all your ambushing troops are hiding. It is impossible to hide troops in the opponent’s deployment zone(s).
-
-
-You can choose to make your troops emerge during a movement phase. Show your enemy the spot in question, and show them the paper confirmation, then place your figures in base-to-base contact with their hiding spot.
-
-
-They can move or charge normally. All your figures must emerge at the same time.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Poison Specialist " hidden="false" id="4db4-027b-99d7-91bc">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="b4a5-8fd9-01de-773a" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Poison Specialist " id="da50-8ca8-5a63-b779" hidden="false">
-              <description>Single use. At the start of the game, roll 1d6. 
-
-
-On a result of 1 or 2, nothing happens. 
-
-
-On a 3 or 4, the enemy chieftain is stunned, and can’t take any actions until the second turn of the game. 
-
-
-On a 5 or 6, the enemy chieftain loses 1 hit point. If the enemy force contains several chieftains, declare your target before rolling.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Scout" hidden="true" id="6d60-e67d-3537-7693">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="3041-fb57-fe0a-b97f" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
-          </costs>
-          <rules>
-            <rule name="Scout" id="5a1e-5a83-8c34-3f3b" hidden="false">
-              <description>After both armies have deployed, choose a figure from among your troops to be your scout. You can deploy it anywhere on the battlefield more than 15” away from an enemy deployment area.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Equites Dumnonii" hidden="true" id="5aeb-2e9e-72f6-eebd">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4ef9-38ae-fe26-8e46" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Equites Dumnonii" id="ce7f-4fb0-2d0c-d9bf" hidden="false">
-              <description>When a Romano-British cavalry figure charges from at least 6” away, it gets a +1 bonus to its roll to hit during the turn in which it charges.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Arian Zealots" hidden="true" id="46fe-b11c-6396-c78c">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="459d-0b88-5f55-62b3" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <rules>
-            <rule name="Arian Zealots" id="3953-4dba-018e-1ab1" hidden="false">
-              <description>When a Visigoth figure charges a non-Visigoth figure, it can choose to re-roll its charge roll if it doesn’t like the result.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="War Cry" hidden="true" id="67bb-cbaa-7624-8a75">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="86ae-8d99-2391-b099" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="War Cry" id="ceb2-84ce-eaeb-a696" hidden="false">
-              <description>Single use – At the start of the melee phase, all Picts gain a +1 bonus to their rolls to hit, but take a -1 penalty to their defence rolls.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Master of the Long Knife" hidden="true" id="028b-cef4-926b-27f2">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8f70-823a-03a6-58e2" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-          </costs>
-          <rules>
-            <rule name="Master of the Long Knife" id="221c-3a92-3348-3e21" hidden="false">
-              <description>When they charge into an enemy, all your infantry warriors can make an additional improvised weapon attack.
-
-
-This attack is in addition to the one(s) made with their main weapon, but without the charge bonus. The enemy can make a defence roll against this attack as normal.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Swift As Lightning" hidden="false" id="5a7f-6d8f-5399-d04a">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="9f93-69d9-1dda-b59a" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Swift As Lightning" id="9d94-478b-0b86-a75d" hidden="false">
-              <description>Your chieftain grants a +1 bonus to your initiative rolls.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Spare Horses" hidden="true" id="f6d1-5a85-7395-f3d0">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="f98f-650a-17ef-a7af" includeChildSelections="true"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <rules>
-            <rule name="Spare Horses" id="4aa0-70d5-2cf3-b504" hidden="false">
-              <description>Any Magyar rider who loses their horse can get a new one. At the start of its movement phase, a Magyar cavalry figure that has become an infantry figure in the previous turn can roll 1d6. 
-
-
-On a 6, it finds a new horse and becomes a cavalry figure once more: replace the figure. 
-
-
-The cavalry figure can’t move this turn. If the roll is a failure, the figure can move as normal but remains an infantry figure for the rest of the game.</description>
-            </rule>
-          </rules>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-      </selectionEntries>
-      <constraints>
-        <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="92bd-c520-6883-8536" includeChildSelections="false"/>
-      </constraints>
-    </selectionEntryGroup>
-    <selectionEntryGroup name="Melee Weapons" id="b636-d073-f157-2912" hidden="false" sortIndex="1" collapsible="true">
-      <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Improvised Weapon" hidden="false" id="2fef-ac13-0216-9c7e" sortIndex="1">
-          <profiles>
-            <profile name="Improvised Weapon" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="d291-2cb9-0448-7db0">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">5+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">6+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">6+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="Re-roll its failed rolls to hit." field="c8e2-d135-1e5f-04c6">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="f3eb-4b6d-b6f9-c693" shared="true" childName="Scramaseax" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="80db-cf82-8f07-f153" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="6230-c551-2da8-0b6f" automatic="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="1" field="6230-c551-2da8-0b6f">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="12e9-c1e9-1b4b-b9d9" shared="true" childName="Healer"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="Scramaseax" field="name">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="roster" childId="f3eb-4b6d-b6f9-c693" shared="true" childName="Scramaseax" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Spear" hidden="false" id="9baa-d681-954c-2534" sortIndex="2">
-          <profiles>
-            <profile name="Spear" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="4b2d-71a8-f94a-bab4">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3be1-c793-33a1-6b49" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="30c9-27ad-0b7c-7acc" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="0" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="30c9-27ad-0b7c-7acc">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <rules>
-            <rule name="Support" id="c2c4-ad88-e3b7-ec3d" hidden="false">
-              <description>To support an ally, the spearman must be in base-to-base contact with it, and can’t be engaged in a melee itself. The spearman figure must therefore be within about 1” of an enemy figure when it supports an ally.
-
-
-When a figure armed with a spear supports an ally, enemies engaged in melee with that ally get a -1 to their to hit rolls.
-
-
-When a spearman supports an ally, they don’t count as being engaged in melee and are therefore free to move. They can be targeted by shooting and chargers, for example.
-
-
-A spearman can only support a single ally each game turn. If a spearman is in position to support several allies at once, the player who owns the spearman gets to choose which figure he will support. Similarly, a figure can only be supported by a single spearman.
-
-
-If the friendly figure that the spearman was supporting is destroyed at the end of a melee, the spearman has to take its place in contact with the opponent. This is not a charge.
-
-
-Therefore, at the end of the combat, move the spearman figure into contact with the enemy. Both figures count as engaged in melee during the next turn of the game, so no charge bonus will apply.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="03f9-3c25-1bff-a4ef" sortIndex="3">
-          <profiles>
-            <profile name="Hand Weapon" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="9eeb-066a-deaf-d706">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="Sabre" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="*Magyars have sabres rather than hand weapons. These have a -1 penalty to rolls to hit figure in armour." field="c8e2-d135-1e5f-04c6">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="5+" field="24af-bc22-9d7a-7846">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="5+" field="b570-92f0-a14a-f39b">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="3128-7728-b63e-207a" includeChildSelections="false" automatic="false"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="61d6-f61d-c8f0-9171" includeChildSelections="false" automatic="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="15" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="Sabre" field="name">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="3128-7728-b63e-207a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="0" field="61d6-f61d-c8f0-9171">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="parent" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dane Axe" hidden="false" id="8334-ccc2-7566-7812" sortIndex="4">
-          <profiles>
-            <profile name="Dane Axe" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="76a9-3202-cd10-6c5d">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">2+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">3+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">3+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">The Dane Axe inflicts a -1 penalty to the target’s defence roll. You strike last with a Dane Axe.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4501-1b1f-9fd2-f1c3" includeChildSelections="false"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <infoGroups>
-            <infoGroup name="Dane Axe Rules" id="42f0-9319-cdfb-b3cd" hidden="false">
-              <rules>
-                <rule name="Bulky" id="7519-aa17-6373-12b3" hidden="false">
-                  <description>A figure wielding a Dane axe can’t use their shield AND their weapon in the same round of melee combat. It has to choose which one to use, whether to raise their shield or swing their axe.</description>
-                </rule>
-                <rule name="Sundering" id="0afe-4bf4-d0c4-0288" hidden="false">
-                  <description>In addition, Dane axes are so powerful that they modify the target’s defence with a -1 penalty to its defence rolls against attacks with a Dane axe (see the asterisks in the Melee To Hit table).</description>
-                </rule>
-                <rule name="Unwieldy" id="072f-90ee-e323-5e1f" hidden="false">
-                  <description>The Dane Axe overrules simultaneous melee and instead always strikes last – except in the turn you charge with it. Therefore, a warrior with a Dane axe that is struck down by his enemy can’t retaliate before death claims him – unless it’s in the midst of a glorious charge!</description>
-                </rule>
-              </rules>
-            </infoGroup>
-          </infoGroups>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Bare hands" hidden="false" id="c5dd-c2b5-9c80-90f0" sortIndex="-1">
-          <profiles>
-            <profile name="Bare hands" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="4a70-6f46-7ed7-b18d">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">8+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">9+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">9+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d70c-3153-60ca-892a" includeChildSelections="false" automatic="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Hasta" hidden="true" id="cf44-a98d-2ce5-a714" sortIndex="5">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="85fa-e7dd-5cfe-ce01" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Hasta" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="b756-117c-9f35-0a59">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Can be used as a Javelin in the shooting phase.</characteristic>
-              </characteristics>
-            </profile>
-            <profile name="Javelin" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="a215-f6a1-bebf-f528">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="8&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <comment>ranged</comment>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="15" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Kontos" hidden="true" id="4585-2b14-c647-6d4d" sortIndex="6">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2857-1a21-329c-c12e" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="a584-5c67-c458-dd9d" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Kontos" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="0fdb-feab-ebbd-d581">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">A cavalryman charging with a kontos inflicts a -1 penalty on their target’s defence roll.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="1" field="a584-5c67-c458-dd9d">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
-          </costs>
-          <rules>
-            <rule name="Kontos" id="4faa-2b86-c6e4-01e8" hidden="false">
-              <description>The kontos is a long cavalry spear wielded in two hands. It can be equipped alongside a hand weapon..
-
-
-When a rider with a kontos charges an enemy, the impact is so powerful that the target takes a -1 penalty to its defence rolls. The rider must always roll an attack against each other enemy (and friendly) figure in contact with them AND/OR the target too, but these additional figures take no penalty to their defence rolls.
-
-
-In addition, the impact of a kontos charge is so powerful that the target can’t attack back this turn – they’re too busy riding out this devastating charge.
-
-
-Resolve the melee immediately after the charge. First resolve the kontos’ effect on the initial target, with the -1 penalty to the target’s defence rolls. Then, resolve its impact on the other figures in the melee who don’t have a penalty to defence.
-
-
-Once engaged, a cataphract can no longer use their kontos and must change weapons.
-
-
-The kontos can be used again during the rider’s next charge.</description>
-            </rule>
-          </rules>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Lasso" hidden="true" id="9c88-7bbe-a35a-5909" sortIndex="7">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e063-56da-74ce-b3e5" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="b61f-aacb-4737-569a" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Lasso" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="8ec9-49ee-a984-bac9">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">6+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">6+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">6+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">If you hit, cancel the enemy attack.
-
-Lassos can only be used by mounted figures. A cavalry figure who starts fighting on foot can no longer use its lasso.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <comment>special</comment>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="1" field="b61f-aacb-4737-569a">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Two Hand Weapons" hidden="true" id="5a39-8c7e-613f-862d" sortIndex="3">
-          <profiles>
-            <profile name="Two Hand Weapons" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="3b6f-d7ef-e015-1a26">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Having two hand weapons gives this model an extra attack.</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="Sabre" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="5+" field="24af-bc22-9d7a-7846">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="5+" field="b570-92f0-a14a-f39b">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="self" shared="true" id="20c8-eeaf-6703-25f8" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
-                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                    <conditionGroup type="count" min="2" max="2">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Pike" hidden="true" id="3bdb-0e11-2cb9-e4fd" sortIndex="8">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7cb8-625d-5800-0500" includeChildSelections="false"/>
-          </constraints>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <profiles>
-            <profile name="Pike" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon" hidden="false" id="661b-7b64-4653-225f">
-              <characteristics>
-                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
-                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
-                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
-                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">A pike inflicts a -1 penalty to the enemy’s defence rolls.
-
-A pike also inflicts a -1 penalty to its bearer’s defence rolls against both melee and shooting attacks.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-      </selectionEntries>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a56c-fc29-afec-b6d6" includeChildSelections="false"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f112-2730-8551-011f" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="-1" field="a56c-fc29-afec-b6d6">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a638-5e21-8172-d006" shared="true" childName="Bők"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse"/>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="03f9-3c25-1bff-a4ef" shared="true" childName="Hand Weapon"/>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="8334-ccc2-7566-7812" shared="true" childName="Dane Axe"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="a56c-fc29-afec-b6d6">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="f112-2730-8551-011f">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-    </selectionEntryGroup>
-    <selectionEntryGroup name="Ranged Weapons" id="1a12-5d72-5bb7-034c" hidden="false" sortIndex="2" collapsible="true">
-      <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Sling" hidden="false" id="7d94-a1f1-3625-a86b" sortIndex="1">
-          <profiles>
-            <profile name="Sling" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="2a9a-97de-0d8b-ad9d">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">15&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">6+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">6+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">6+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="17&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d717-8f8a-6b0a-dcc1" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-          </costs>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="2">
-                  <conditions>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="2" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="10" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="0" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Crossbow" hidden="true" id="300f-ce66-63c2-3be1" sortIndex="4">
-          <profiles>
-            <profile name="Crossbow" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="1af3-0fad-62a7-5702">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">20&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">All</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">3+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">4+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">4+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">A crossbow shot inflicts a -1 penalty to the opponent’s defence roll.</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="22&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="append" value="Crossbows are only available to the Picts, who used it as a weapon of hunting and war." field="705d-1814-ed63-1c1a" join=". "/>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2783-42f8-13d9-8aaa" includeChildSelections="false"/>
-          </constraints>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="35" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="1">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Javelin" hidden="false" id="7548-ff61-69e9-5fd8" sortIndex="2">
-          <profiles>
-            <profile name="Javelin" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="b42c-0961-0984-8f0d">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="8&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a1dd-76a6-41cc-bdaf" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="0" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="5" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="15" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Bow" hidden="false" id="698f-3316-7448-aed2" sortIndex="3">
-          <profiles>
-            <profile name="Bow" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="c274-d138-790f-acf6">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">20&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">Half</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="22&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="30&quot;" field="9775-d55d-f35e-0a05">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="32&quot;" field="9775-d55d-f35e-0a05">
-                  <conditionGroups>
-                    <conditionGroup type="count" min="2" max="2">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="Composite Bow" field="name">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e66a-0090-6104-6551" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
-          </costs>
-          <modifiers>
-            <modifier type="set" value="true" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="Composite Bow" field="name">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="2">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="35" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <infoGroups>
-            <infoGroup name="Bow Rules" id="44e1-f334-da7a-68b7" hidden="false">
-              <rules>
-                <rule name="Volley Fire" id="4de1-1756-d202-13d1" hidden="false">
-                  <description>Volley fire can be used by 4 or more figures with bows in a group. None of the archers in the group can have moved this turn. A group is formed when all the archers are within 2” of at least one other archer in the group.
-
-
-1. During the shooting phase, choose a point on the gaming table within line of sight of at least one archer in the group. This becomes the volley fire’s target point. Place a volley fire marker on that point (you can find them on the Pillage website).
-
-
-2. Measure the distance from the marker to the closest archer:
-• If the distance is further than the bow’s range, the volley fire fails.
-• If the distance is equal to or less than the weapon’s range, all the archers fire their arrows at the marker. You don’t need to make an ordinary roll to hit; all the shots automatically succeed. None of the archers can shoot again this turn.
-
-
-3. Each figure – both enemy and allied – within a 3” radius of the volley fire marker immediately suffers a hit on a roll of a 6. Defence rolls are possible. This 3” radius increases by +1” for each additional shooter in the group after the fourth.
-
-
-4. During the next movement phase, the area within a 6” radius of the volley fire marker counts as difficult terrain. The warriors are too busy ducking their heads as they tiptoe through, afraid that a devastating rain of arrows is about to fall on their heads. Remove the volley fire marker once everyone’s movement phase is over.</description>
-                </rule>
-              </rules>
-            </infoGroup>
-          </infoGroups>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Plumbata" hidden="true" id="55e5-2ee4-445e-359a" sortIndex="7">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5537-1345-37e4-29c2" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Plumbata" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="bd2e-2a3b-7d99-0b0c">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">8&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">5+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">6+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">6+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">Can only be used via Closing shots. it is not affected by the -1 to hit for either penalty associated with closing shots or long range.</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="10&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="10" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="1">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Angon" hidden="true" id="8ecd-c984-33f9-e6d6" sortIndex="5">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="07b4-d74c-b49d-f37e" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Angon" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="e246-8cd9-faac-46ad">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+*</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">4+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">*If the target has a shield, the Angon hits on a 4+.</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="8&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="15" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="5" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="1">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Francisca" hidden="true" id="4c5c-fc8c-d2d7-468b" sortIndex="6">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="44bc-589a-f4c4-8ec0" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Francisca" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon" hidden="false" id="fb42-33f2-0319-a5a4">
-              <characteristics>
-                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
-                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
-                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
-                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
-                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
-                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">Can only be used after declaring a charge.
--1 penalty on the target’s defence roll.</characteristic>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="8&quot;" field="9775-d55d-f35e-0a05">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="fd53-4e55-0d62-bbdf" shared="true" childName="Marksmanship Training" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="add" value="{this} may not be used while on horseback!" field="info">
-              <conditionGroups>
-                <conditionGroup type="count" min="1">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="false"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="de8e-e641-c1ab-ad1a" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName=" Berserker"/>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="ef59-7677-afdd-3f24" shared="true" childName="Warhorn" includeChildSelections="true"/>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                <condition type="equalTo" value="1" field="selections" scope="parent" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-    </selectionEntryGroup>
-    <selectionEntryGroup name="Special Equipment" id="45d7-2019-f71e-4c8f" hidden="false" sortIndex="3" collapsible="true">
-      <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Warhounds" hidden="true" id="aebe-2db7-ada2-bd68">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8452-fcd4-2ebd-8d84" includeChildSelections="false"/>
-          </constraints>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
-          </costs>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <categoryLinks>
-            <categoryLink name="Pack Master" hidden="false" id="4caa-c89f-99c7-413a" targetId="4967-c713-22c5-2fb3" primary="false"/>
-          </categoryLinks>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Hounds" hidden="false" id="a1ed-c6ad-658b-2b8d">
-              <modifiers>
-                <modifier type="increment" value="1" field="0ec4-f8ad-39b5-01f1-min">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="force" childId="7229-a0c1-30a9-32a8" shared="true" childName="Dog Trainer" includeChildSelections="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="increment" value="1" field="0ec4-f8ad-39b5-01f1-max">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="force" childId="7229-a0c1-30a9-32a8" shared="true" childName="Dog Trainer" includeChildSelections="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <profiles>
-                <profile name="Hounds" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="7851-c3e6-9d8b-70de">
-                  <characteristics>
-                    <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
-                    <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
-                    <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
-                    <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842">1</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <constraints>
-                <constraint type="min" value="3" field="selections" scope="parent" shared="true" id="0ec4-f8ad-39b5-01f1-min" includeChildSelections="false" automatic="true"/>
-                <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="0ec4-f8ad-39b5-01f1-max" includeChildSelections="false" automatic="true"/>
-              </constraints>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Banner" hidden="true" id="0b19-ecf2-aeb7-6a63">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5fd3-b60c-8029-dd67" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName="Berserker" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="45" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="60" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <infoGroups>
-            <infoGroup name="Banner Rules" id="909d-8571-83d8-13f9" hidden="false">
-              <rules>
-                <rule name="Courage" id="2ad4-9e57-63fd-116d" hidden="false">
-                  <description>A figure within 6” of a banner (including the banner-bearer) can re-roll 1s when rolling to hit in melee.
-
-
-In addition, all figures within 6” of a banner (including the banner-bearer) automatically succeed on their morale rolls.
-
-
-A banner is a heavy and cumbersome artefact, so a figure carrying a banner has a -1 penalty to its defence rolls.</description>
-                </rule>
-              </rules>
-            </infoGroup>
-          </infoGroups>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Warhorn" hidden="true" id="6684-efaf-9504-40c1">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d68b-c3d9-715c-abcc" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName="Berserker" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="true" field="hidden">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <infoGroups>
-            <infoGroup name="Warhorn Rules" id="0715-5cc2-7aa0-9a6c" hidden="false">
-              <rules>
-                <rule name="Motivation" id="9757-9d80-38b4-6b60" hidden="false">
-                  <description>A hornblower figure increases the movement of allied infantry and cavalry figures within 6” of it by +2”. The hornblower figure itself is not affected by the warhorn’s effects.
-
-
-In addition, any friendly figure within 6” of a hornblower automatically passes its morale rolls.</description>
-                </rule>
-              </rules>
-            </infoGroup>
-          </infoGroups>
-        </selectionEntry>
-        <selectionEntry type="model" import="true" name="Horse" hidden="true" id="4c37-ffb6-cffc-4e32" subType="mount">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2599-5714-0198-9d98" includeChildSelections="false"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="cfec-0cf3-27a5-defe" includeChildSelections="false"/>
-          </constraints>
-          <profiles>
-            <profile name="Horse" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="bd48-a4f2-3bd6-7d9c">
-              <characteristics>
-                <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">14</characteristic>
-                <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
-                <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
-                <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842"/>
-              </characteristics>
-              <modifiers>
-                <modifier type="set" value="SA: 5+" field="77f6-a713-5232-623d">
-                  <conditionGroups>
-                    <conditionGroup type="count" min="1">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="roster" childId="f6d5-3da6-b21f-1827" shared="true" childName="Warhorses" includeChildSelections="true" includeChildForces="true"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="append" value="&quot;" field="b5b3-773d-1e7a-74a0" join=""/>
-                <modifier type="increment" value="2" field="b5b3-773d-1e7a-74a0">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="353a-edb6-b78c-fc19" shared="true" childName="Steppe Mobility" includeChildSelections="true" includeChildForces="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="FA: 4+" field="77f6-a713-5232-623d">
-                  <conditionGroups>
-                    <conditionGroup type="count" min="1">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="12&quot;" field="b5b3-773d-1e7a-74a0">
-                  <conditionGroups>
-                    <conditionGroup type="count" min="1">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </profile>
-          </profiles>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a638-5e21-8172-d006" shared="true" childName="Bők" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi" includeChildSelections="true"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="1" field="cfec-0cf3-27a5-defe">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="count" min="2" max="2">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="20" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="35" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-          </costs>
-          <infoGroups>
-            <infoGroup name="Cavalry Rules" id="9b8a-abfa-085c-06b0" hidden="false">
-              <rules>
-                <rule name="Cavalry and Difficult Terrain" id="05b2-780c-406b-30a9" hidden="false">
-                  <description>Difficult terrain has a greater effect on cavalry than on infantry. When a cavalry figure wants to move within an area of difficult terrain, every 1” crossed counts as 4” of movement.
-In addition, cavalry get no charge bonus when fighting inside difficult terrain.</description>
-                </rule>
-                <rule name="Cavalry and Passable Obstacles" id="2fc2-c31b-f8be-fa92" hidden="false">
-                  <description>Cavalry figures can move over passable obstacles in the same way as infantry figures, and take the same -2” penalty to their move. However, they also risk falling as they cross.
-
-
-**Fall Roll**
-When you cross the obstacle, roll 1d6 and compare the result to the following table:
-
-
-• 1 — **Fall**
-Your rider miserably fails to get over the obstacle; their horse rears and throws them. Your rider becomes an infantry figure with all the same equipment, and they suffer an improvised weapon attack with no defence roll allowed.
-
-
-• 2 — **Close One**
-The horse whinnies, paws at the ground, and stops just before the obstacle. Your figure’s movement phase ends in contact with the obstacle.
-
-
-• 3 — **Success**
-Your rider narrowly manages the jump. Their movement ends in contact with the other side of the obstacle.
-
-
-• 4-6 — **Skilled Horseman**
-Your rider succeeds masterfully. If they still have any movement left after crossing the obstacle, they can end their move normally.</description>
-                </rule>
-                <rule name="Cavalry Charge" id="32a7-ea6b-0df7-4e32" hidden="false">
-                  <description>Their charge is so powerful that it modifies the defence of enemy infantry figures in contact, inflicting a -1 penalty to their defence rolls in melee that turn. This penalty doesn’t apply to cavalry figures.</description>
-                </rule>
-                <rule name="Cavalry Lances" id="ae7d-7410-cb83-2837" hidden="false">
-                  <description>When a cavalry figure with a spear charges, melee in the same turn isn’t simultaneous. Instead, the rider strikes first. If its enemy is destroyed, it can’t strike back against the rider.</description>
-                </rule>
-                <rule name="Dane Axes on Horseback" id="0a0e-7075-5f59-6f4c" hidden="false">
-                  <description>When a rider is equipped with a Dane axe, count the axe as a hand weapon during melee. It still can’t be used with a shield.</description>
-                </rule>
-                <rule name="Moving Cavalry" id="bf97-b304-f4c8-7261" hidden="false">
-                  <description>Cavalry figures move in the same way as infantry. They can cross obstacles and are affected by difficult terrain, narrow gaps, and roads as described in the terrain section
-However, cavalry can’t make special moves. That means they can’t jump, climb, or swim.</description>
-                </rule>
-                <rule name="Penalty vs Cavalry" id="6e98-1e10-13a3-b14d" hidden="false">
-                  <description>All enemies armed with any weapon other than a spear suffer a -1 penalty to their rolls to hit cavalry figures.</description>
-                </rule>
-                <rule name="Shooting at Cavalry" id="ca65-e00e-6fd3-3f55" hidden="false">
-                  <description>Figures shooting at cavalry get a +1 bonus to their to hit rolls against both riders and mounts.
-
-
-Target Roll
-
-
-Before resolving the shooting or melee attack, the attacker rolls 1d6.
-
-
-• 1-3 — **The attack targets the mount**
-Make the roll to hit normally. Bear in mind that a mount always has 1 hit point and an armour class of Unarmoured (UA).
-
-
-• 4-6 — **The attack targets the rider**
-Make the roll to hit normally, using the rider’s armour class.If the rider falls to zero hit points, the whole figure – mount included – is removed from the table and counts as a casualty. We assume that the warhorse was seized by panic and fled the battlefield.</description>
-                </rule>
-                <rule name="Shooting From Horseback" id="f2ab-e026-c81f-8488" hidden="false">
-                  <description>Cavalry figures can only shoot with javelins. That means that mounted models can never use slings, bows, or crossbows. They can carry them, but can’t use them until they have dismounted and become infantry figures. 
-
-
-The rules on shooting apply normally to cavalry models.</description>
-                </rule>
-                <rule name="Knock Down" id="4bdd-1ac5-7c32-b184" hidden="false">
-                  <description>In its movement phase, a cavalry figure can try to disengage from an existing melee by getting its horse to push away its enemy or enemies.
-
-
-**Knock Back Roll**
-
-
-Roll 1d6 for your knock back roll:
-• 1 — **Crushing failure**
-The mount bucks and bolts, dropping its rider to the ground and fleeing the battlefield. Your rider loses their mount, falls, and finds themselves on foot.
-To represent the damage from the fall, make an improvised weapon attack against the rider with no defence roll.
-
-
-• 2-4 — **Failure**
-The knock back has no effect and the melee continues normally.
-
-
-• 5-6 — **Success**
-Push all figures in contact with the cavalry figure 1” away from it. The cavalry figure is now free to use its movement phase normally, but can’t charge. Figures that can’t be pushed back because of the terrain around them immediately suffer an improvised weapon attack. They can’t hit back.</description>
-                </rule>
-                <rule name="Dismounting" id="7ab8-77d9-627b-4843" hidden="false">
-                  <description>Riders can dismount and abandon their horses. However, this can only happen at the start of their movement phase. 
-
-
-The player controlling the cavalry figure declares it is dismounting and replaces it with an infantry figure carrying the same equipment and armour.
-
-
-Dismounting uses up a rider’s whole movement. They can’t move again for the rest of the turn.
-
-
-When a rider dismounts, their horse immediately quits the battlefield – we presume it flees the clamour of battle.</description>
-                </rule>
-              </rules>
-            </infoGroup>
-          </infoGroups>
-        </selectionEntry>
-      </selectionEntries>
-    </selectionEntryGroup>
-  </sharedSelectionEntryGroups>
   <profileTypes>
     <profileType name="Model" id="3d83-c900-0de7-bd4c" hidden="false" kind="model" sortIndex="1">
       <characteristicTypes>
@@ -2883,7 +51,7 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
     </profileType>
   </profileTypes>
   <sharedProfiles>
-    <profile name="New Profile" typeId="3d83-c900-0de7-bd4c" typeName="Model" hidden="false" id="4cd2-c74b-3af2-8d2e">
+    <profile name="New Profile" id="4cd2-c74b-3af2-8d2e" hidden="false" typeId="3d83-c900-0de7-bd4c" typeName="Model">
       <characteristics>
         <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
         <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
@@ -2894,31 +62,31 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
         <modifierGroup type="and">
           <comment>Armour</comment>
           <modifiers>
-            <modifier type="set" value="FA: 4+" field="77f6-a713-5232-623d">
+            <modifier field="77f6-a713-5232-623d" type="set" value="FA: 4+">
               <conditionGroups>
-                <conditionGroup type="count" min="2" max="2">
+                <conditionGroup max="2" min="2" type="count">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="c967-0f8d-1f01-0248" shared="true" childName="Armour" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="SA: 5+" field="77f6-a713-5232-623d">
+            <modifier field="77f6-a713-5232-623d" type="set" value="SA: 5+">
               <conditionGroups>
-                <conditionGroup type="count" min="1" max="1">
+                <conditionGroup max="1" min="1" type="count">
                   <conditions>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="c967-0f8d-1f01-0248" shared="true" childName="Armour" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
-                    <condition type="equalTo" value="1" field="selections" scope="parent" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
+                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="FA" field="77f6-a713-5232-623d">
+            <modifier field="77f6-a713-5232-623d" type="set" value="FA">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+                <condition childId="5fe9-1d08-5b75-fa8c" childName="Supply Wagon" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -2926,22 +94,22 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
         <modifierGroup type="and">
           <comment>HP</comment>
           <modifiers>
-            <modifier type="set" value="2" field="8568-7376-bcc1-2a56">
+            <modifier field="8568-7376-bcc1-2a56" type="set" value="2">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName=" Berserker"/>
+                <condition childId="8a90-9bee-5758-3283" childName=" Berserker" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="3" field="8568-7376-bcc1-2a56">
+            <modifier field="8568-7376-bcc1-2a56" type="set" value="3">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
+                <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="4" field="8568-7376-bcc1-2a56">
+            <modifier field="8568-7376-bcc1-2a56" type="set" value="4">
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f845-186e-c361-9989" shared="true" childName="Force of Nature" includeChildSelections="true" includeChildForces="true"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="f845-186e-c361-9989" childName="Force of Nature" field="selections" includeChildForces="true" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2951,59 +119,59 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
         <modifierGroup type="and">
           <comment>Name</comment>
           <modifiers>
-            <modifier type="set" value="Chieftain" field="name">
+            <modifier field="name" type="set" value="Chieftain">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain"/>
+                <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Bők" field="name">
+            <modifier field="name" type="set" value="Bők">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a638-5e21-8172-d006" shared="true" childName="Bők"/>
+                <condition childId="a638-5e21-8172-d006" childName="Bők" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Warrior" field="name">
+            <modifier field="name" type="set" value="Warrior">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior"/>
+                <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Kataphraktoi" field="name">
+            <modifier field="name" type="set" value="Kataphraktoi">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Berserker" field="name">
+            <modifier field="name" type="set" value="Berserker">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="8a90-9bee-5758-3283" shared="true" childName="Berserker"/>
+                <condition childId="8a90-9bee-5758-3283" childName="Berserker" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Huscarl" field="name">
+            <modifier field="name" type="set" value="Huscarl">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9b5-1198-781f-a9d1" shared="true" childName="Huscarl"/>
+                <condition childId="a9b5-1198-781f-a9d1" childName="Huscarl" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Wagon" field="name">
+            <modifier field="name" type="set" value="Wagon">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+                <condition childId="5fe9-1d08-5b75-fa8c" childName="Supply Wagon" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Healer" field="name">
+            <modifier field="name" type="set" value="Healer">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="12e9-c1e9-1b4b-b9d9" shared="true" childName="Healer"/>
+                <condition childId="12e9-c1e9-1b4b-b9d9" childName="Healer" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Cataphract" field="name">
+            <modifier field="name" type="set" value="Cataphract">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Pack Master" field="name">
+            <modifier field="name" type="set" value="Pack Master">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="set" value="Bannerman" field="name">
+            <modifier field="name" type="set" value="Bannerman">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="0b19-ecf2-aeb7-6a63" shared="true" childName="Banner" includeChildSelections="true"/>
+                <condition childId="0b19-ecf2-aeb7-6a63" childName="Banner" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -3011,29 +179,29 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
         <modifierGroup type="and">
           <comment>Movement</comment>
           <modifiers>
-            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0">
+            <modifier field="b5b3-773d-1e7a-74a0" type="decrement" value="1">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="decrement" value="1" field="b5b3-773d-1e7a-74a0">
+            <modifier field="b5b3-773d-1e7a-74a0" type="decrement" value="1">
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2503-f075-b4f3-a83c" shared="true" childName="Armour" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" value="6&quot;" field="b5b3-773d-1e7a-74a0">
+            <modifier field="b5b3-773d-1e7a-74a0" type="set" value="6&quot;">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5fe9-1d08-5b75-fa8c" shared="true" childName="Supply Wagon"/>
+                <condition childId="5fe9-1d08-5b75-fa8c" childName="Supply Wagon" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -3041,19 +209,19 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
         <modifierGroup type="and">
           <comment>Attacks</comment>
           <modifiers>
-            <modifier type="increment" value="1" field="0f88-76a8-fe85-d842">
+            <modifier field="0f88-76a8-fe85-d842" type="increment" value="1">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
+                <condition childId="5a39-8c7e-613f-862d" childName="Two Hand Weapons" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="increment" value="1" field="0f88-76a8-fe85-d842">
+            <modifier field="0f88-76a8-fe85-d842" type="increment" value="1">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="beac-c21e-5fb5-9ec0" shared="true" childName="Chieftain" includeChildSelections="true"/>
+                <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
               </conditions>
             </modifier>
-            <modifier type="append" value="*" field="0f88-76a8-fe85-d842" join="">
+            <modifier field="0f88-76a8-fe85-d842" join="" type="append" value="*">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="self" childId="5a39-8c7e-613f-862d" shared="true" childName="Two Hand Weapons" includeChildSelections="true"/>
+                <condition childId="5a39-8c7e-613f-862d" childName="Two Hand Weapons" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -3061,805 +229,6 @@ When a rider dismounts, their horse immediately quits the battlefield – we pre
       </modifierGroups>
     </profile>
   </sharedProfiles>
-  <sharedSelectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Shield" hidden="false" id="823a-1dfd-e85b-a645" sortIndex="-1">
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b9e0-e747-6176-5071" includeChildSelections="false"/>
-        <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="6347-ba0a-c1f8-71a1" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="add" value="Cannot use a Shield and Dane Axe in Melee, only one or the other. " field="info">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="parent" childId="823a-1dfd-e85b-a645" shared="true" childName="Shield" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="parent" childId="8334-ccc2-7566-7812" shared="true" childName="Dane Axe" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="1" field="6347-ba0a-c1f8-71a1">
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-      </costs>
-      <modifierGroups>
-        <modifierGroup type="and">
-          <comment>COSTS</comment>
-          <modifiers>
-            <modifier type="set" value="10" field="4163-7d26-88e5-be23">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </modifierGroup>
-      </modifierGroups>
-      <rules>
-        <rule name="Raising a Shield" id="4d03-01ca-ab1f-4f66" hidden="false">
-          <description>In melee, infantry figures – not cavalry – can choose not to fight and instead defend themselves behind their shield (if they have one). This lets them stall for time as they await reinforcements.
-
-
-Announce that you are raising your shield before the attacker rolls to hit.
-
-
-This gives you a +1 bonus to your defence roll. A figure that raises its shield isn’t allowed to attack during the same melee phase.
-
-
-A warrior can’t raise their shield if they’re already in a shieldwall formation.</description>
-        </rule>
-      </rules>
-    </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Armour" hidden="false" id="2503-f075-b4f3-a83c" sortIndex="-1">
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="286a-be3b-d4c3-3591" includeChildSelections="false"/>
-        <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="1740-e997-c399-c929" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="count" min="2">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fbfe-2e24-1e84-8984" shared="true" childName="Warrior" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="1" field="1740-e997-c399-c929">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="bcab-8d6c-324c-2c1d" shared="true" childName="Kataphraktoi"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="9106-4ef0-0942-8c50" shared="true" childName="Cataphracts"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="count" min="1">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                <condition type="atLeast" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-      </costs>
-      <modifierGroups>
-        <modifierGroup type="and">
-          <comment>COSTS</comment>
-          <modifiers>
-            <modifier type="set" value="10" field="4163-7d26-88e5-be23">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2663-865d-3ec5-cfde" shared="true" childName="MAGYARS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" value="15" field="4163-7d26-88e5-be23">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1643-b8f8-d7ff-fd24" shared="true" childName="HUNS"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </modifierGroup>
-      </modifierGroups>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Wagons" hidden="false" id="a5e8-b14b-1d77-5bf5" sortIndex="9">
-      <categoryLinks>
-        <categoryLink name="Supply Wagon" hidden="false" id="f07f-1b53-6359-fdab" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Wagon" hidden="false" id="9853-687f-b6a9-faf4">
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="60" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="50" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56c4-377c-431b-ea69" shared="true" childName="MEROVINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <modifiers>
-            <modifier type="set" value="1" field="defaultAmount"/>
-          </modifiers>
-        </selectionEntry>
-      </selectionEntries>
-      <rules>
-        <rule name="Supply" id="6e9a-307e-9efb-7214" hidden="false">
-          <description>While an army contains a supply wagon, figures equipped with javelins/Angons can shoot twice instead of once whenever they are able to shoot.</description>
-        </rule>
-      </rules>
-    </selectionEntry>
-    <selectionEntry type="model" import="true" name="Chieftain" hidden="false" id="5b79-2a8a-0ca0-4059" sortIndex="1">
-      <entryLinks>
-        <entryLink import="true" name="Melee Weapons" hidden="false" id="9c9f-8801-70e8-f863" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-        <entryLink import="true" name="Ranged Weapons" hidden="false" id="8f70-6aaa-d146-422d" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-        <entryLink import="true" name="Special Equipment" hidden="false" id="93d3-302e-8296-0382" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-        <entryLink import="true" name="Talents" hidden="false" id="fefa-4721-9bf3-a5a3" type="selectionEntryGroup" targetId="6670-296f-4e21-c004"/>
-        <entryLink import="true" name="Armour" hidden="false" id="2e94-c018-4b0b-8743" type="selectionEntry" targetId="2503-f075-b4f3-a83c">
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
-          </costs>
-        </entryLink>
-        <entryLink import="true" name="Shield" hidden="false" id="4fb7-09ca-4c67-ff4a" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-      </entryLinks>
-      <modifiers>
-        <modifier type="add" value="373d-f121-420b-4837" field="category">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-        <modifier type="add" value="163f-1820-848c-271d" field="category">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-              <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" value="1" field="defaultAmount">
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-      <infoLinks>
-        <infoLink name="New Profile" id="0391-43d5-a387-c085" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-      </infoLinks>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Warriors" hidden="false" id="2478-7327-3509-6d5f" sortIndex="3">
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Warrior" hidden="false" id="5c39-fa7e-e707-3800">
-          <entryLinks>
-            <entryLink import="true" name="Shield" hidden="false" id="0c5d-0975-315c-7702" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-            <entryLink import="true" name="Armour" hidden="false" id="0eea-0008-8bd8-de7d" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-            <entryLink import="true" name="Melee Weapons" hidden="false" id="94dd-8122-4358-ad1e" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-            <entryLink import="true" name="Ranged Weapons" hidden="false" id="67ca-618e-40cc-05e0" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-            <entryLink import="true" name="Special Equipment" hidden="false" id="6e8d-f332-17fd-d5fc" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="236f-a8df-204a-9ac0" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
-          </costs>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Armour" hidden="true" id="c967-0f8d-1f01-0248">
-              <constraints>
-                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f22d-a7d4-e040-8da2" includeChildSelections="true"/>
-                <constraint type="max" value="1" field="selections" scope="self" shared="true" id="83b5-8a97-9403-6cdc" includeChildSelections="false"/>
-              </constraints>
-              <modifiers>
-                <modifier type="increment" value="2" field="f22d-a7d4-e040-8da2">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="force" childId="5b79-2a8a-0ca0-4059" shared="true" roundUp="false" childName="Chieftain" includeChildSelections="true" includeChildForces="true"/>
-                  </repeats>
-                </modifier>
-                <modifier type="set" value="false" field="hidden">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="aebe-2db7-ada2-bd68" shared="true" childName="Warhounds" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="d366-df7b-b44d-214d" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Berserkers" hidden="false" id="aaaf-c8ef-3840-8e3f" sortIndex="4">
-      <categoryLinks>
-        <categoryLink name="Berserker" hidden="false" id="a8b7-2d00-7d82-8aea" targetId="8a90-9bee-5758-3283" primary="true"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Berserker" hidden="false" id="0579-10d1-5d15-4eab">
-          <entryLinks>
-            <entryLink import="true" name="Armour" hidden="false" id="9155-0d8f-c56c-44a0" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-            <entryLink import="true" name="Shield" hidden="false" id="5633-606a-d827-567b" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-            <entryLink import="true" name="Melee Weapons" hidden="false" id="a158-3576-b9e4-eebe" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-            <entryLink import="true" name="Ranged Weapons" hidden="false" id="c53f-2e84-7301-ea89" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-            <entryLink import="true" name="Special Equipment" hidden="false" id="15d8-f0fc-63d3-d403" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="1f67-1da9-0986-08b9" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="50" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="80" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="ab83-8e50-505f-83ed" shared="true" childName="RUS’ AND VARANGIANS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="9003-0336-5d8f-ac4b" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-      <infoGroups>
-        <infoGroup name="Berserker Rules" id="da56-3344-7cd6-f3ac" hidden="false">
-          <rules>
-            <rule name="Hallucinogenic Mushrooms" id="9530-8b13-dfc8-e575" hidden="false">
-              <description>A berserker figure can choose to ingest hallucinogenic mushrooms. Declare a berserker figure is taking mushrooms at the start of its movement phase. Once ingested, hallucinogenic mushrooms stay in effect until the end of the game, and is now subject to Confusion.
-
-
-While a berserker is under the effects of hallucinogenic mushrooms, it gets 2 attacks instead of 1.</description>
-            </rule>
-            <rule name="Confusion" id="26d0-7098-0b67-728d" hidden="false">
-              <description>Whenever a berserker figure is under the effects of hallucinogenic mushrooms, make a confusion roll for it before each movement phase. Roll 1d6 and compare the result to the table below:
-
-
-• 1 — Confused The berserker is rooted to the spot, stupefied, in the thrall of hallucinations and speaking with imaginary Valkyries. If the berserker is already in melee, it can’t attack and makes its defence rolls with a -1 penalty.
-
-
-• 2-5 — Clear sight Though under a psychotropic spell, the berserker keeps a clear mind and can act normally with its usual additional attack.
-
-
-• 6 — Bloodthirsty rage The berserker is seized by insane rage. It wants blood! If not already in melee, make a charge towards the closest visible figure (enemy or ally). The charge adds 1d6” instead of 1d3” to the charge distance. If there are no visible figures, the berserker remains in place, as though Confused.</description>
-            </rule>
-            <rule name="Ferocious Tenacity" id="4ae0-0427-e92e-7919" hidden="false">
-              <description>A berserker figure has 2 hit points, and when it attacks, it does so with such terrible violence that its opponent’s defence is quite simply cancelled entirely.</description>
-            </rule>
-          </rules>
-        </infoGroup>
-      </infoGroups>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Huscarls" hidden="false" id="493d-4409-9952-8860" sortIndex="5">
-      <categoryLinks>
-        <categoryLink name="Huscarl" hidden="false" id="c4ba-8d9f-8fb6-f755" targetId="a9b5-1198-781f-a9d1" primary="true"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Huscarl" hidden="false" id="49d6-e070-57f5-e692">
-          <entryLinks>
-            <entryLink import="true" name="Armour" hidden="false" id="8732-e4a0-60fa-21fb" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-            <entryLink import="true" name="Shield" hidden="false" id="019a-920e-314d-dd09" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-            <entryLink import="true" name="Melee Weapons" hidden="false" id="ddb6-9b0c-2832-02a4" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-            <entryLink import="true" name="Ranged Weapons" hidden="false" id="2347-658c-ae8b-7fe1" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-            <entryLink import="true" name="Special Equipment" hidden="false" id="ed1e-aef1-1dbb-8834" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="f412-bf5a-d16a-8985" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="3a03-cc50-334b-da7b" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-      <infoGroups>
-        <infoGroup name="Huscarl Rules" id="88dd-c9d8-759d-c51f" hidden="false">
-          <rules>
-            <rule name="Forwards!" id="019c-ebcc-ab0f-b421" hidden="false">
-              <description>Once per game, a huscarl can inspire the warriors around him. He barks orders and injunctions to his warriors that redouble their courage. At the end of the movement phase, all friendly warriors within 6” of the huscarl (including him) can make an additional move.
-
-
-A figure can only get one additional move in each game turn. Additional moves can’t be used by figures that already charged this turn, and cannot themselves be used to charge.</description>
-            </rule>
-            <rule name="Choice of Weapons" id="5c8b-d1c1-1813-3de7" hidden="false">
-              <description>In Pillage, Huscarls are among those rare warriors who can carry more than one melee weapon: a two-handed Dane axe and a sword (hand weapon). 
-
-
-The player can choose which weapon to swing at their enemy in each melee.</description>
-            </rule>
-            <rule name="Dane Axe Mastery." id="c93e-3e9d-9395-f111" hidden="false">
-              <description>Huscarls have perfected wielding the Dane axe – they take no penalty to hit when wielding this weapon.</description>
-            </rule>
-          </rules>
-        </infoGroup>
-      </infoGroups>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Healers" hidden="false" id="5abc-f2dd-4427-94a9" sortIndex="8">
-      <categoryLinks>
-        <categoryLink name="Healer" hidden="false" id="ef1d-9012-d084-15c5" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Healer" hidden="false" id="bf8f-d34a-9e6e-5ae5">
-          <entryLinks>
-            <entryLink import="true" name="Improvised Weapon" hidden="false" id="d3e4-5d34-5e27-4ac2" type="selectionEntry" targetId="2fef-ac13-0216-9c7e"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="3d3c-5200-01a0-7ecb" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-              <modifiers>
-                <modifier type="set" value="10" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="18a2-ccba-60ed-3332" shared="true" childName="VISIGOTHS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="fe4a-6852-b9e2-f300" shared="true" childName="SAXONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d43c-1887-72d3-f957" shared="true" childName="ROMANO-BRITISH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="30" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a1bd-1997-69e7-0bdf" shared="true" childName="GENERIC"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="10c5-139d-8f93-83fe" shared="true" childName="VIKINGS (NORSE)"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="134c-ea18-3a64-39b6" shared="true" childName="CAROLINGIAN FRANKS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1059-60d7-841a-8c03" shared="true" childName="BRETONS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="459c-c87d-e25f-2e45" shared="true" childName="WELSH"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="set" value="40" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f221-00fb-187b-5ab9" shared="true" childName="ANGLO-SAXONS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="35" field="4163-7d26-88e5-be23">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="71f5-5253-f27e-8876" shared="true" childName="NORMANS"/>
-                  </conditions>
-                </modifier>
-                <modifier type="set" value="25" field="4163-7d26-88e5-be23">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2159-64d0-353d-3870" shared="true" childName="PICTS"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="cc4f-5e18-b7f5-77af" shared="true" childName="IRISH, SCOTS, AND PICTS"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="b363-576f-9dc4-b890" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-      <rules>
-        <rule name="Healing Hands" id="35ab-1cb0-add8-7ad3" hidden="false">
-          <description>A healer can cancel a wound taken by one of your warriors. To do so, the healer must be in base-to-base contact with the figure receiving the wound. At the moment the wound is inflicted, roll 1d6: the wound is cancelled on a 5+.
-
-
-A healer can be used on several figures during the same turn, as long as the healer is in base-to-base contact with all the figures they attempt to heal. On the other hand, a figure can only be healed once per game turn, even if several healers are in base-to-base contact with it.</description>
-        </rule>
-      </rules>
-    </selectionEntry>
-    <selectionEntry type="model" import="true" name="Bők" hidden="false" id="e5a3-64d9-2534-e409" sortIndex="2">
-      <entryLinks>
-        <entryLink import="true" name="Armour" hidden="false" id="c4ab-74c3-be34-6d9c" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-        <entryLink import="true" name="Shield" hidden="false" id="09a5-02bc-bec2-5ba3" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-        <entryLink import="true" name="Melee Weapons" hidden="false" id="40ec-6ead-5c4d-7d02" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-        <entryLink import="true" name="Ranged Weapons" hidden="false" id="4b73-5aa1-c141-cc1e" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-        <entryLink import="true" name="Special Equipment" hidden="false" id="614f-68fb-932e-e1ad" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-        <entryLink import="true" name="Talents" hidden="false" id="f3b0-d2d4-10fa-64b9" type="selectionEntryGroup" targetId="6670-296f-4e21-c004"/>
-      </entryLinks>
-      <modifiers>
-        <modifier type="add" value="373d-f121-420b-4837" field="category">
-          <conditions>
-            <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-        <modifier type="add" value="163f-1820-848c-271d" field="category">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-              <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-      <infoLinks>
-        <infoLink name="New Profile" id="7cdc-3d28-3754-ff84" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-      </infoLinks>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Kataphraktois" hidden="false" id="99e5-d364-e70b-b37f" sortIndex="7">
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Kataphraktoi" hidden="false" id="94a6-9ee0-c5fc-7642">
-          <entryLinks>
-            <entryLink import="true" name="Armour" hidden="false" id="b5ea-8fb0-f19b-d19d" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-            <entryLink import="true" name="Shield" hidden="false" id="a1cc-c656-9c70-dee7" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-            <entryLink import="true" name="Melee Weapons" hidden="false" id="3788-cc60-ad55-77c3" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-            <entryLink import="true" name="Ranged Weapons" hidden="false" id="5d00-c231-d5ce-594e" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-            <entryLink import="true" name="Special Equipment" hidden="false" id="ab21-7b9a-dc3d-4c80" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="e677-4dc6-9d7b-9b87" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="f557-8b99-d4c8-e8a0" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-    </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Cataphracts" hidden="false" id="3fae-340a-ff4a-27e4" sortIndex="6">
-      <categoryLinks>
-        <categoryLink name="Cataphracts" hidden="false" id="8373-6a91-7142-d9c3" targetId="9106-4ef0-0942-8c50" primary="true"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Cataphract" hidden="false" id="4c07-8146-72b6-4368">
-          <entryLinks>
-            <entryLink import="true" name="Armour" hidden="false" id="0cdd-fb73-4e6a-4d99" type="selectionEntry" targetId="2503-f075-b4f3-a83c"/>
-            <entryLink import="true" name="Shield" hidden="false" id="c4e7-a720-a259-eec7" type="selectionEntry" targetId="823a-1dfd-e85b-a645"/>
-            <entryLink import="true" name="Melee Weapons" hidden="false" id="b812-055c-9275-3aeb" type="selectionEntryGroup" targetId="b636-d073-f157-2912"/>
-            <entryLink import="true" name="Ranged Weapons" hidden="false" id="5e38-e6fe-8870-de06" type="selectionEntryGroup" targetId="1a12-5d72-5bb7-034c"/>
-            <entryLink import="true" name="Special Equipment" hidden="false" id="23ec-00b9-bbdc-5ee4" type="selectionEntryGroup" targetId="45d7-2019-f71e-4c8f"/>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="New Profile" id="2fdd-4cb8-e812-e9dc" hidden="false" type="profile" targetId="4cd2-c74b-3af2-8d2e"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="add" value="373d-f121-420b-4837" field="category">
-              <conditions>
-                <condition type="equalTo" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="1" field="defaultAmount"/>
-            <modifier type="add" value="163f-1820-848c-271d" field="category">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7548-ff61-69e9-5fd8" shared="true" childName="Javelin" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="7d94-a1f1-3625-a86b" shared="true" childName="Sling" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="698f-3316-7448-aed2" shared="true" childName="Bow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="300f-ce66-63c2-3be1" shared="true" childName="Crossbow" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="8ecd-c984-33f9-e6d6" shared="true" childName="Angon" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="4c5c-fc8c-d2d7-468b" shared="true" childName="Francisca" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="55e5-2ee4-445e-359a" shared="true" childName="Plumbata" includeChildSelections="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="cf44-a98d-2ce5-a714" shared="true" childName="Hasta" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="self" childId="4c37-ffb6-cffc-4e32" shared="true" childName="Horse" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup type="and">
-              <comment>COSTS</comment>
-            </modifierGroup>
-          </modifierGroups>
-          <costs>
-            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
-          </costs>
-          <categoryLinks>
-            <categoryLink name="CHIEFCON" hidden="false" id="656e-81a7-9a69-3bcb" targetId="d936-c270-e692-1054" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-    </selectionEntry>
-  </sharedSelectionEntries>
   <sharedRules>
     <rule name="Swimming" id="7997-2afd-3778-0255" hidden="false">
       <description>An infantry figure is able to swim, for example to cross a deep river or to disembark from a ship along the coastline. The water’s surface counts as difficult terrain when a figure uses its movement range to swim.
@@ -3887,20 +256,16 @@ Your warrior is an accomplished athlete. They advance their whole movement rang
 Every movement phase spent in the water requires a new swimming roll.</description>
     </rule>
     <rule name="Ladders" id="89b6-d4a7-d04a-1af9" hidden="false">
+      <description>Sometimes, an infantry figure moves using a piece of scenery specifically designed for getting past an obstacle – a ladder, a hawser, a staircase, a rope bridge, etc.
+
+In this case, the figure has to cross the obstacle in a single move: it must start its move next to the obstacle and end it on the other side.</description>
       <alias>Ladder</alias>
       <alias>Rope</alias>
       <alias>Ropes</alias>
       <alias>Staircase</alias>
       <alias>Bridge</alias>
-      <description>Sometimes, an infantry figure moves using a piece of scenery specifically designed for getting past an obstacle – a ladder, a hawser, a staircase, a rope bridge, etc.
-
-In this case, the figure has to cross the obstacle in a single move: it must start its move next to the obstacle and end it on the other side.</description>
     </rule>
     <rule name="Jumping and Climbing" id="2328-3073-33f7-defe" hidden="false">
-      <alias>Jumping</alias>
-      <alias>Jump</alias>
-      <alias>Climbing</alias>
-      <alias>Climb</alias>
       <description>In some specific situations, you might want to “tempt fate” by throwing one of your figures into an audacious manoeuvre like leaping a chasm or scaling city walls with their bare hands. These follow the rules below:
 
 
@@ -3936,6 +301,10 @@ with the obstacle.
 Your warrior’s attempt narrowly succeeds. They end their movement after the jump or climb, in contact with the obstacle.
 • 6 — **Acrobat**
 Your warrior achieves their goal flawlessly. If the figure has any of its movement range left after the jump or climb, it can end its movement normally.</description>
+      <alias>Jumping</alias>
+      <alias>Jump</alias>
+      <alias>Climbing</alias>
+      <alias>Climb</alias>
     </rule>
     <rule name="Rivers" id="cef0-e912-8daf-2069" hidden="false">
       <description>Rivers can’t be crossed easily. The safest way is to send your troops over fords and bridges. Otherwise, you’ll need to use the often dangerous solution of swimming across (detailed later on p.37).</description>
@@ -4093,7 +462,6 @@ A figure who wants to charge an enemy that’s defending an obstacle does so by 
 Figures get no charge bonus when attacking an enemy who is defending an obstacle.</description>
     </rule>
     <rule name="Pushing Back" id="0050-9ccc-dad0-5a5b" hidden="false">
-      <alias>Push back</alias>
       <description>An enemy can be pushed back as soon as two opposing figures are engaged in melee.
 
 
@@ -4137,15 +505,15 @@ When you successfully push back an enemy, move the enemy figure 1” directly aw
 
 
 You cannot push back your enemies while engaged by several in a multiple combat. Your figure is trapped by all the warriors surrounding it.</description>
+      <alias>Push back</alias>
     </rule>
     <rule name="Fall" id="1f3a-5b0c-af91-c9a7" hidden="false">
-      <alias>Falling</alias>
       <description>If the 1” move when an enemy is pushed back takes it into thin air, the figure suffers a fall:
 • If the drop is 4” or less, make an agility roll as though jumping (see p.36).
 • If the drop is more than 4”, the fall is lethal. Remove the figure from the game as a casualty.</description>
+      <alias>Falling</alias>
     </rule>
     <rule name="Lighting a Fire" id="5678-8e6b-1e0d-96e4" hidden="false">
-      <alias>Fire Roll</alias>
       <description>A figure that wants to set fire to a piece of scenery must always have started its turn in base-to-base contact with the terrain piece they want to set ablaze
 
 
@@ -4164,6 +532,7 @@ The score needed decreases gradually, and goes down by 1 for each turn the figu
 
 
 A figure that’s setting a fire is consumed by its task and can’t take any other actions until the fire catches. After that, it can act as the controlling player wishes. If an action (including shooting or engaging in melee) interrupts their continuing attempts to set the fire, the process has to start again from scratch.</description>
+      <alias>Fire Roll</alias>
     </rule>
     <rule name="Torch" id="759a-f4c0-4e1c-9db3" hidden="false">
       <description>A figure can carry a flaming torch, or any other equipment containing fire or embers. For simplicity’s sake, these are all called ‘torches’.
@@ -4198,7 +567,6 @@ You can easily imagine how a warrior in the middle of a village, seized by a su
 • If the test is failed, the flames have chosen to spare it – or the wind is against them! The test will need to be made again the following turn.</description>
     </rule>
     <rule name="Fire Damage" id="f038-2db7-71e5-447e" hidden="false">
-      <alias>Fire Burns</alias>
       <description>Fire only starts inflicting damage and spreading in the turn after it catches.
 
 
@@ -4207,6 +575,7 @@ Figures within 2” of a piece of burning scenery take damage. Fire ignores a w
 
 Roll 1d6 for each figure within 2” of burning scenery.
 On a 5+ the figure catches fire and is consumed with a scream of anguish. It is immediately removed from the table and counts as a casualty.</description>
+      <alias>Fire Burns</alias>
     </rule>
     <rule name="Morale" id="1d7b-19f6-fcbc-4c9d" hidden="false">
       <description>Morale checks are made at the end of the turn, after the fire phase, whenever:
@@ -4226,9 +595,6 @@ The warrior is demoralised and immediately quits the battlefield. They count as
 The warrior remains in place and continues to fight. For now…</description>
     </rule>
     <rule name="Looting" id="4963-6680-4bbf-8ba4" hidden="false" noindex="false">
-      <alias>Pillage</alias>
-      <alias>Loot</alias>
-      <alias>Transporting</alias>
       <description>You should agree what counts as loot before the game begins.
 
 
@@ -4268,9 +634,11 @@ A figure carrying loot can’t shoot. It simply doesn’t have time to drop its 
 
 **Loot and Melee**
 When a figure carrying loot has to fight in melee, it temporarily drops the loot at its side for the duration of the melee. If the figure is eliminated at the end of the melee, its loot is taken by the victor if they want it. Otherwise, the loot is left where it fell.</description>
+      <alias>Pillage</alias>
+      <alias>Loot</alias>
+      <alias>Transporting</alias>
     </rule>
     <rule name="Finding Loot" id="490f-a39a-8bdb-28a9" hidden="false">
-      <alias>Searching</alias>
       <description>Here’s a non-exhaustive list of scenery pieces that might contain loot:
 • Building
 • Well
@@ -4308,12 +676,9 @@ Aha! Finally something interesting. You pick up 2 loot.
 
 • 6 — **Exceptional loot**
 The start of your hoard? You collect 3 loot</description>
+      <alias>Searching</alias>
     </rule>
     <rule name="Seize Them!" id="b884-777d-09c2-9a72" hidden="false">
-      <alias>Seize</alias>
-      <alias>Capture</alias>
-      <alias>Animal</alias>
-      <alias>Prisoner</alias>
       <description>If you want to capture an animal or a human, you have to move into contact with its base. Once in contact, you have captured it and your movement ends.
 
 
@@ -4347,6 +712,3641 @@ Smaller living creatures like piglets, geese, ducks, and chickens, all count as 
 **Value**
 One loot marker is considered to be worth 5 gold pieces.
 Although this value has no effect on the battle, it does open up opportunities for stories and campaigns based on the game’s currency.</description>
+      <alias>Seize</alias>
+      <alias>Capture</alias>
+      <alias>Animal</alias>
+      <alias>Prisoner</alias>
     </rule>
   </sharedRules>
+  <sharedSelectionEntries>
+    <selectionEntry name="Shield" id="823a-1dfd-e85b-a645" hidden="false" import="true" sortIndex="-1" type="upgrade">
+      <constraints>
+        <constraint id="b9e0-e747-6176-5071" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+        <constraint id="6347-ba0a-c1f8-71a1" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+      </constraints>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+      </costs>
+      <modifierGroups>
+        <modifierGroup type="and">
+          <comment>COSTS</comment>
+          <modifiers>
+            <modifier field="4163-7d26-88e5-be23" type="set" value="10">
+              <conditions>
+                <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="info" type="add" value="Cannot use a Shield and Dane Axe in Melee, only one or the other. ">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
+                <condition childId="8334-ccc2-7566-7812" childName="Dane Axe" field="selections" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="6347-ba0a-c1f8-71a1" type="set" value="1">
+          <conditions>
+            <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <rules>
+        <rule name="Raising a Shield" id="4d03-01ca-ab1f-4f66" hidden="false">
+          <description>In melee, infantry figures – not cavalry – can choose not to fight and instead defend themselves behind their shield (if they have one). This lets them stall for time as they await reinforcements.
+
+
+Announce that you are raising your shield before the attacker rolls to hit.
+
+
+This gives you a +1 bonus to your defence roll. A figure that raises its shield isn’t allowed to attack during the same melee phase.
+
+
+A warrior can’t raise their shield if they’re already in a shieldwall formation.</description>
+        </rule>
+      </rules>
+    </selectionEntry>
+    <selectionEntry name="Armour" id="2503-f075-b4f3-a83c" hidden="false" import="true" sortIndex="-1" type="upgrade">
+      <constraints>
+        <constraint id="286a-be3b-d4c3-3591" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+        <constraint id="1740-e997-c399-c929" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+      </constraints>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+      </costs>
+      <modifierGroups>
+        <modifierGroup type="and">
+          <comment>COSTS</comment>
+          <modifiers>
+            <modifier field="4163-7d26-88e5-be23" type="set" value="10">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="4163-7d26-88e5-be23" type="set" value="15">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup min="2" type="count">
+              <conditions>
+                <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="1740-e997-c399-c929" type="set" value="1">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup min="1" type="count">
+              <conditions>
+                <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
+    <selectionEntry name="Wagons" id="a5e8-b14b-1d77-5bf5" hidden="false" import="true" sortIndex="9" type="unit">
+      <categoryLinks>
+        <categoryLink name="Supply Wagon" id="f07f-1b53-6359-fdab" hidden="false" primary="true" targetId="5fe9-1d08-5b75-fa8c"/>
+      </categoryLinks>
+      <rules>
+        <rule name="Supply" id="6e9a-307e-9efb-7214" hidden="false">
+          <description>While an army contains a supply wagon, figures equipped with javelins/Angons can shoot twice instead of once whenever they are able to shoot.</description>
+        </rule>
+      </rules>
+      <selectionEntries>
+        <selectionEntry name="Wagon" id="9853-687f-b6a9-faf4" hidden="false" import="true" type="model">
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="60">
+                  <conditions>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="50">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditions>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="defaultAmount" type="set" value="1"/>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Chieftain" id="5b79-2a8a-0ca0-4059" hidden="false" import="true" sortIndex="1" type="model">
+      <entryLinks>
+        <entryLink name="Melee Weapons" id="9c9f-8801-70e8-f863" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+        <entryLink name="Ranged Weapons" id="8f70-6aaa-d146-422d" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+        <entryLink name="Special Equipment" id="93d3-302e-8296-0382" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+        <entryLink name="Talents" id="fefa-4721-9bf3-a5a3" hidden="false" import="true" targetId="6670-296f-4e21-c004" type="selectionEntryGroup"/>
+        <entryLink name="Armour" id="2e94-c018-4b0b-8743" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry">
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+          </costs>
+        </entryLink>
+        <entryLink name="Shield" id="4fb7-09ca-4c67-ff4a" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="New Profile" id="0391-43d5-a387-c085" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+      </infoLinks>
+      <modifiers>
+        <modifier field="category" type="add" value="373d-f121-420b-4837">
+          <conditions>
+            <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+          </conditions>
+        </modifier>
+        <modifier field="category" type="add" value="163f-1820-848c-271d">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="defaultAmount" type="set" value="1">
+          <conditions>
+            <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
+    <selectionEntry name="Warriors" id="2478-7327-3509-6d5f" hidden="false" import="true" sortIndex="3" type="unit">
+      <selectionEntries>
+        <selectionEntry name="Warrior" id="5c39-fa7e-e707-3800" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="d366-df7b-b44d-214d" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <entryLinks>
+            <entryLink name="Shield" id="0c5d-0975-315c-7702" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+            <entryLink name="Armour" id="0eea-0008-8bd8-de7d" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+            <entryLink name="Melee Weapons" id="94dd-8122-4358-ad1e" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+            <entryLink name="Ranged Weapons" id="67ca-618e-40cc-05e0" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+            <entryLink name="Special Equipment" id="6e8d-f332-17fd-d5fc" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="236f-a8df-204a-9ac0" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry name="Armour" id="c967-0f8d-1f01-0248" hidden="true" import="true" type="upgrade">
+              <constraints>
+                <constraint id="f22d-a7d4-e040-8da2" field="selections" includeChildSelections="true" scope="force" shared="true" type="max" value="0"/>
+                <constraint id="83b5-8a97-9403-6cdc" field="selections" includeChildSelections="false" scope="self" shared="true" type="max" value="1"/>
+              </constraints>
+              <modifiers>
+                <modifier field="f22d-a7d4-e040-8da2" type="increment" value="2">
+                  <repeats>
+                    <repeat childId="5b79-2a8a-0ca0-4059" childName="Chieftain" field="selections" includeChildForces="true" includeChildSelections="true" repeats="1" roundUp="false" scope="force" shared="true" value="1"/>
+                  </repeats>
+                </modifier>
+                <modifier field="hidden" type="set" value="false">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="lessThan" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Berserkers" id="aaaf-c8ef-3840-8e3f" hidden="false" import="true" sortIndex="4" type="unit">
+      <categoryLinks>
+        <categoryLink name="Berserker" id="a8b7-2d00-7d82-8aea" hidden="false" primary="true" targetId="8a90-9bee-5758-3283"/>
+      </categoryLinks>
+      <infoGroups>
+        <infoGroup name="Berserker Rules" id="da56-3344-7cd6-f3ac" hidden="false">
+          <rules>
+            <rule name="Hallucinogenic Mushrooms" id="9530-8b13-dfc8-e575" hidden="false">
+              <description>A berserker figure can choose to ingest hallucinogenic mushrooms. Declare a berserker figure is taking mushrooms at the start of its movement phase. Once ingested, hallucinogenic mushrooms stay in effect until the end of the game, and is now subject to Confusion.
+
+
+While a berserker is under the effects of hallucinogenic mushrooms, it gets 2 attacks instead of 1.</description>
+            </rule>
+            <rule name="Confusion" id="26d0-7098-0b67-728d" hidden="false">
+              <description>Whenever a berserker figure is under the effects of hallucinogenic mushrooms, make a confusion roll for it before each movement phase. Roll 1d6 and compare the result to the table below:
+
+
+• 1 — Confused The berserker is rooted to the spot, stupefied, in the thrall of hallucinations and speaking with imaginary Valkyries. If the berserker is already in melee, it can’t attack and makes its defence rolls with a -1 penalty.
+
+
+• 2-5 — Clear sight Though under a psychotropic spell, the berserker keeps a clear mind and can act normally with its usual additional attack.
+
+
+• 6 — Bloodthirsty rage The berserker is seized by insane rage. It wants blood! If not already in melee, make a charge towards the closest visible figure (enemy or ally). The charge adds 1d6” instead of 1d3” to the charge distance. If there are no visible figures, the berserker remains in place, as though Confused.</description>
+            </rule>
+            <rule name="Ferocious Tenacity" id="4ae0-0427-e92e-7919" hidden="false">
+              <description>A berserker figure has 2 hit points, and when it attacks, it does so with such terrible violence that its opponent’s defence is quite simply cancelled entirely.</description>
+            </rule>
+          </rules>
+        </infoGroup>
+      </infoGroups>
+      <selectionEntries>
+        <selectionEntry name="Berserker" id="0579-10d1-5d15-4eab" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="9003-0336-5d8f-ac4b" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <entryLinks>
+            <entryLink name="Armour" id="9155-0d8f-c56c-44a0" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+            <entryLink name="Shield" id="5633-606a-d827-567b" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+            <entryLink name="Melee Weapons" id="a158-3576-b9e4-eebe" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+            <entryLink name="Ranged Weapons" id="c53f-2e84-7301-ea89" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+            <entryLink name="Special Equipment" id="15d8-f0fc-63d3-d403" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="1f67-1da9-0986-08b9" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="50">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="80">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Huscarls" id="493d-4409-9952-8860" hidden="false" import="true" sortIndex="5" type="unit">
+      <categoryLinks>
+        <categoryLink name="Huscarl" id="c4ba-8d9f-8fb6-f755" hidden="false" primary="true" targetId="a9b5-1198-781f-a9d1"/>
+      </categoryLinks>
+      <infoGroups>
+        <infoGroup name="Huscarl Rules" id="88dd-c9d8-759d-c51f" hidden="false">
+          <rules>
+            <rule name="Forwards!" id="019c-ebcc-ab0f-b421" hidden="false">
+              <description>Once per game, a huscarl can inspire the warriors around him. He barks orders and injunctions to his warriors that redouble their courage. At the end of the movement phase, all friendly warriors within 6” of the huscarl (including him) can make an additional move.
+
+
+A figure can only get one additional move in each game turn. Additional moves can’t be used by figures that already charged this turn, and cannot themselves be used to charge.</description>
+            </rule>
+            <rule name="Choice of Weapons" id="5c8b-d1c1-1813-3de7" hidden="false">
+              <description>In Pillage, Huscarls are among those rare warriors who can carry more than one melee weapon: a two-handed Dane axe and a sword (hand weapon). 
+
+
+The player can choose which weapon to swing at their enemy in each melee.</description>
+            </rule>
+            <rule name="Dane Axe Mastery." id="c93e-3e9d-9395-f111" hidden="false">
+              <description>Huscarls have perfected wielding the Dane axe – they take no penalty to hit when wielding this weapon.</description>
+            </rule>
+          </rules>
+        </infoGroup>
+      </infoGroups>
+      <selectionEntries>
+        <selectionEntry name="Huscarl" id="49d6-e070-57f5-e692" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="3a03-cc50-334b-da7b" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <entryLinks>
+            <entryLink name="Armour" id="8732-e4a0-60fa-21fb" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+            <entryLink name="Shield" id="019a-920e-314d-dd09" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+            <entryLink name="Melee Weapons" id="ddb6-9b0c-2832-02a4" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+            <entryLink name="Ranged Weapons" id="2347-658c-ae8b-7fe1" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+            <entryLink name="Special Equipment" id="ed1e-aef1-1dbb-8834" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="f412-bf5a-d16a-8985" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Healers" id="5abc-f2dd-4427-94a9" hidden="false" import="true" sortIndex="8" type="unit">
+      <categoryLinks>
+        <categoryLink name="Healer" id="ef1d-9012-d084-15c5" hidden="false" primary="true" targetId="12e9-c1e9-1b4b-b9d9"/>
+      </categoryLinks>
+      <rules>
+        <rule name="Healing Hands" id="35ab-1cb0-add8-7ad3" hidden="false">
+          <description>A healer can cancel a wound taken by one of your warriors. To do so, the healer must be in base-to-base contact with the figure receiving the wound. At the moment the wound is inflicted, roll 1d6: the wound is cancelled on a 5+.
+
+
+A healer can be used on several figures during the same turn, as long as the healer is in base-to-base contact with all the figures they attempt to heal. On the other hand, a figure can only be healed once per game turn, even if several healers are in base-to-base contact with it.</description>
+        </rule>
+      </rules>
+      <selectionEntries>
+        <selectionEntry name="Healer" id="bf8f-d34a-9e6e-5ae5" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="b363-576f-9dc4-b890" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <entryLinks>
+            <entryLink name="Improvised Weapon" id="d3e4-5d34-5e27-4ac2" hidden="false" import="true" targetId="2fef-ac13-0216-9c7e" type="selectionEntry"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="3d3c-5200-01a0-7ecb" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="10">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditions>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="35">
+                  <conditions>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Bők" id="e5a3-64d9-2534-e409" hidden="false" import="true" sortIndex="2" type="model">
+      <entryLinks>
+        <entryLink name="Armour" id="c4ab-74c3-be34-6d9c" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+        <entryLink name="Shield" id="09a5-02bc-bec2-5ba3" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+        <entryLink name="Melee Weapons" id="40ec-6ead-5c4d-7d02" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+        <entryLink name="Ranged Weapons" id="4b73-5aa1-c141-cc1e" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+        <entryLink name="Special Equipment" id="614f-68fb-932e-e1ad" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+        <entryLink name="Talents" id="f3b0-d2d4-10fa-64b9" hidden="false" import="true" targetId="6670-296f-4e21-c004" type="selectionEntryGroup"/>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="New Profile" id="7cdc-3d28-3754-ff84" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+      </infoLinks>
+      <modifiers>
+        <modifier field="category" type="add" value="373d-f121-420b-4837">
+          <conditions>
+            <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+          </conditions>
+        </modifier>
+        <modifier field="category" type="add" value="163f-1820-848c-271d">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                    <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
+    <selectionEntry name="Kataphraktois" id="99e5-d364-e70b-b37f" hidden="false" import="true" sortIndex="7" type="unit">
+      <selectionEntries>
+        <selectionEntry name="Kataphraktoi" id="94a6-9ee0-c5fc-7642" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="f557-8b99-d4c8-e8a0" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <entryLinks>
+            <entryLink name="Armour" id="b5ea-8fb0-f19b-d19d" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+            <entryLink name="Shield" id="a1cc-c656-9c70-dee7" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+            <entryLink name="Melee Weapons" id="3788-cc60-ad55-77c3" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+            <entryLink name="Ranged Weapons" id="5d00-c231-d5ce-594e" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+            <entryLink name="Special Equipment" id="ab21-7b9a-dc3d-4c80" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="e677-4dc6-9d7b-9b87" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Cataphracts" id="3fae-340a-ff4a-27e4" hidden="false" import="true" sortIndex="6" type="unit">
+      <categoryLinks>
+        <categoryLink name="Cataphracts" id="8373-6a91-7142-d9c3" hidden="false" primary="true" targetId="9106-4ef0-0942-8c50"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry name="Cataphract" id="4c07-8146-72b6-4368" hidden="false" import="true" type="model">
+          <categoryLinks>
+            <categoryLink name="CHIEFCON" id="656e-81a7-9a69-3bcb" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+          </categoryLinks>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
+          </costs>
+          <entryLinks>
+            <entryLink name="Armour" id="0cdd-fb73-4e6a-4d99" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
+            <entryLink name="Shield" id="c4e7-a720-a259-eec7" hidden="false" import="true" targetId="823a-1dfd-e85b-a645" type="selectionEntry"/>
+            <entryLink name="Melee Weapons" id="b812-055c-9275-3aeb" hidden="false" import="true" targetId="b636-d073-f157-2912" type="selectionEntryGroup"/>
+            <entryLink name="Ranged Weapons" id="5e38-e6fe-8870-de06" hidden="false" import="true" targetId="1a12-5d72-5bb7-034c" type="selectionEntryGroup"/>
+            <entryLink name="Special Equipment" id="23ec-00b9-bbdc-5ee4" hidden="false" import="true" targetId="45d7-2019-f71e-4c8f" type="selectionEntryGroup"/>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="New Profile" id="2fdd-4cb8-e812-e9dc" hidden="false" targetId="4cd2-c74b-3af2-8d2e" type="profile"/>
+          </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="category" type="add" value="373d-f121-420b-4837">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+            <modifier field="category" type="add" value="163f-1820-848c-271d">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="300f-ce66-63c2-3be1" childName="Crossbow" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="8ecd-c984-33f9-e6d6" childName="Angon" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="4c5c-fc8c-d2d7-468b" childName="Francisca" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="55e5-2ee4-445e-359a" childName="Plumbata" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                        <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="true" scope="self" shared="true" type="lessThan" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+  </sharedSelectionEntries>
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup name="Talents" id="6670-296f-4e21-c004" collapsible="true" hidden="false">
+      <constraints>
+        <constraint id="92bd-c520-6883-8536" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="2"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry name="War of Fire" id="266a-f39d-5e91-7ed7" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="4b7d-90e1-043c-15a1" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <rules>
+            <rule name="War of Fire" id="7d12-8343-66e4-8ea1" hidden="false">
+              <description>Your figures get a +1 bonus to their fire rolls.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Magic Sword" id="177f-a2d3-387c-8877" hidden="true" import="true" type="upgrade">
+          <comment>Add cost of hand weapon</comment>
+          <constraints>
+            <constraint id="90d2-c0c7-2f7b-9e2e" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Magic Sword" id="3abc-fce6-471c-f653" hidden="false">
+              <description>A chieftain equipped with a magic sword can re-roll failed defence rolls.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Dog Trainer" id="7229-a0c1-30a9-32a8" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="9ec1-a592-4404-089a" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier field="4163-7d26-88e5-be23" type="increment" value="10">
+              <repeats>
+                <repeat childId="4967-c713-22c5-2fb3" childName="Pack Master" field="selections" includeChildForces="true" includeChildSelections="true" repeats="1" roundUp="false" scope="roster" shared="true" value="1"/>
+              </repeats>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditions>
+                <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Dog Trainer" id="909b-049f-ad13-8556" hidden="false">
+              <description>Your pack masters each have 4 dogs rather than 3.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Force of Nature" id="f845-186e-c361-9989" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="8a5b-d806-85f0-8de1" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <rules>
+            <rule name="Force of Nature" id="f6a3-0030-9bf9-0a95" hidden="false">
+              <description>Your Chieftain gets one additional hit point, and so goes from 3 to 4 hit points.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Grand Marshal of Horses" id="7209-ac6b-105f-c89f" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="c274-1955-45c0-0fb9" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <rules>
+            <rule name="Grand Marshal of Horses" id="f30e-c216-e389-494f" hidden="false">
+              <description>Your cavalry figures get no movement penalty for crossing passable obstacles, and get a +1 bonus to their rolls to cross obstacles. 
+
+
+This means that in this specific situation, your cavalry figures can never fall.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Hunter" id="d73b-61d0-330b-3587" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="f31a-43f7-1abe-da6c" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <rules>
+            <rule name="Hunter" id="a6bc-8fac-0a74-cdc4" hidden="false">
+              <description>Difficult terrain becomes normal terrain for infantry, and only reduces cavalry movement by half (instead of three quarters).</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Contubernium! " id="be82-774b-856e-44b8" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="c2c9-306f-2897-a8be" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Contubernium!" id="f94d-9eaa-0325-879c" hidden="false">
+              <description>At the start of your movement phase, your chieftain can order a maneuver: up to 3 Roman figures (i.e. not foederati allies) within 6” of the Chieftain can move up to 3”. 
+
+
+This move is free and can’t be used to charge. Figures moved this way can resolve their own Movement Phase normally.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Lewd Provocations" id="8980-e8f9-646c-7ef0" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="1c8c-8379-926e-3d18" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Lewd Provocations" id="4474-0c82-0e82-a68e" hidden="false">
+              <description>During the first melee of the game, your opponent gets a -1 penalty to all their rolls to hit.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Marksmanship Training" id="fd53-4e55-0d62-bbdf" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="4ccb-9639-e2e9-c9ff" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <rules>
+            <rule name="Marksmanship Training" id="80c7-c2f3-c3ed-03b1" hidden="false">
+              <description>From now on, your ranged weapons increase their ranges by +2”.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Master of Evasion" id="d227-b2c0-38d6-fb85" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="d43a-a428-be32-6910" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Master of Evasion" id="3972-3cd3-6f34-8908" hidden="false">
+              <description>All your infantry figures get +1 to their rolls to flee. That means their flee rolls now succeeds on a result of 3, 4, 5, or 6.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Loyal to the Emperor" id="a758-1832-0db1-743c" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="521d-2e96-43d8-dda2" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="25"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Loyal to the Emperor" id="8de8-3225-6144-8b41" hidden="false">
+              <description>Rus’ and Varangian warriors were often employed by the emperor in Constantinople. Your army is therefore part of the emperor’s Varangian Guard.
+
+
+You don’t need to make a morale check when your chieftain leaves the battlefield.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Master Stalker" id="de71-c3a5-dd1c-741b" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="ed09-d184-95c3-c2bf" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Master Stalker" id="4c00-4d8d-e264-8e8c" hidden="false">
+              <description>Flee rolls by your cavalry figures succeed on a 3+ instead of a 4+.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Mead Merchant" id="fa00-123c-2a78-2f02" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="4552-06ab-cc1d-ce4d" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <rules>
+            <rule name="Mead Merchant" id="efd2-e0f9-776f-ed39" hidden="false">
+              <description>All your figures add +1” to their charge movement rolls (normal move +1d3” +1”).</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Molesight" id="130d-92fd-d74d-acff" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="d8e9-d50c-9c23-d538" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <rules>
+            <rule name="Molesight" id="d7a7-7fbf-9fe4-6e7e" hidden="false">
+              <description>When your chieftain makes a search roll, it automatically succeeds.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Odin’s Sight" id="238f-fa16-7de8-fedd" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="edf5-6647-c12f-31d7" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Odin’s Sight" id="fc23-742e-1bcf-822a" hidden="false">
+              <description>Your chieftain doesn’t need line of sight to charge an enemy.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Bearer of the Holy Grail" id="a2fe-da1f-7f8e-8e80" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="4a5d-0044-f3ce-5709" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Bearer of the Holy Grail" id="b3a8-cd67-2a82-d24c" hidden="false">
+              <description>Once per game, your chieftain can drink from the chalice at the start of the turn (before the Initiative Phase). They can’t take any damage for the rest of the turn. In addition, you get a +1 bonus to your initiative rolls for the rest of the game (while your chieftain still lives).</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Relic Bearer" id="8e80-8370-3ac9-59b9" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="97ad-5737-edf3-9b54" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Relic Bearer" id="2253-996b-f7e3-e164" hidden="false">
+              <description>Friendly figures within 6” of your chieftain (including your chieftain) can re-roll their failed to hit rolls in melee.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Shield Training" id="7e0d-9d10-859f-65e7" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="d8e3-5b16-8d00-7a53" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <rules>
+            <rule name="Shield Training" id="5fef-5fd9-dcbb-97b2" hidden="false">
+              <description>Shieldwalls need one fewer figures to be or to remain formed (so 4 figures instead of 5).</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Slayer of Pagans" id="e2a4-b783-7b1c-5af8" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="7734-b2a1-fda2-7a16" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Slayer of Pagans" id="177a-5901-7c20-e224" hidden="false">
+              <description>Your chieftain gets a +1 bonus to its rolls to hit Vikings (and only Vikings).</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Foederati" id="9ae6-be6d-5d87-35d0" hidden="true" import="true" type="upgrade">
+          <comment>faction ally</comment>
+          <constraints>
+            <constraint id="25ec-bc13-928d-a934" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Foederati" id="1cb3-9e60-c6ed-10c0" hidden="false">
+              <description>Choose another faction to become your ally. You can recruit its troops (and their equipment), but your chieftain(s) must still be Romans.
+
+
+All the allied faction’s special rules apply to the allied figures in your army.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Thegn" id="8065-b18b-e169-2705" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="afe6-de91-43a9-9ab4" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Thegn" id="712b-90f1-a114-5489" hidden="false">
+              <description>Choose a figure in your army to become your chieftain’s thegn. 
+They can have any armour class.
+
+
+The first wound your chieftain takes is cancelled if the thegn is within 2” of them.
+
+
+The thegn warns your chieftain of the danger, letting them dodge the blow as it falls.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Warhorses" id="f6d5-3da6-b21f-1827" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="33bf-1f07-b7f7-407d" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Warhorses" id="2e08-1454-ff93-d420" hidden="false">
+              <description>Your warhorses have an armour class of SA, rather than the usual UA.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Steppe Mobility" id="353a-edb6-b78c-fc19" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="c634-b0fb-ac12-3466" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Steppe Mobility" id="7333-d43f-102f-c013" hidden="false">
+              <description>All your cavalry figures increase their movement range by +2”, and automatically cross obstacles successfully.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Athletic Training" id="169f-c4e5-f7c6-3551" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="8e00-b9dc-af60-73cb" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <rules>
+            <rule name="Athletic Training" id="a625-c191-300f-7a2f" hidden="false">
+              <description>Your infantry figures ignore the movement penalties for passable obstacles, and can charge across them.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Scramaseax" id="f3eb-4b6d-b6f9-c693" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="d3c7-c58f-369a-a809" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="80"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Scramaseax" id="f149-50ba-e9a7-0778" hidden="false">
+              <description>Each of your warriors has a scramaseax as their improvised weapon. When one of your figures fights with an improvised weapon, it can re-roll its failed rolls to hit.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="The Legion Wall" id="1b84-5ba4-62f6-522e" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="97cd-86b1-fc0a-28f3" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="The Legion Wall" id="32cb-8001-59f3-c6c1" hidden="false">
+              <description>When you form a shieldwall, your defence rolls are increased by +2 instead of the usual +1 bonus.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Cornu" id="6522-fccc-9da7-2906" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="ccf9-a079-8c71-3a62" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Cornu" id="f1d3-9250-b766-cf7d" hidden="false">
+              <description>Your warhorns are replaced with cornua, which follow all the rules for warhorns. In addition, figures within 6” of a friendly cornu get a +1 bonus to their Fleeing rolls.
+
+
+Finally, all friendly figures within 6” of a cornu’s bearer move an extra 2” when Fleeing.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Shield Bash" id="4e23-774c-1364-a924" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="baff-4e15-dc8c-8582" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="80"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Shield Bash" id="500b-9bac-2b72-f934" hidden="false">
+              <description>While engaged in melee, warriors equipped with a shield can use it make an improvised weapon attack in addition to their usual attacks.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Backhander" id="9cbc-18ff-87d8-56ac" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="317d-8bf2-adbf-76d3" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Backhander" id="24a1-324d-8f04-3c12" hidden="false">
+              <description>Before the battle, after the troops are deployed, the Byzantine player chooses an enemy warrior (not a special character, and without special equipment) and rolls 1d6. 
+
+
+On a 4+ that warrior joins their army, and they can place the figure anywhere in their own deployment zone.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Palatine Guard" id="3155-75e5-9206-39fb" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="24dd-78cf-ddad-fee5" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Palatine Guard" id="fdb7-7d1a-d8a6-9ba4" hidden="false">
+              <description>When a Merovingian chieftain is wounded, he can choose to assign the hit to any other allied figure in base contact with him.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="King of Ambushes" id="02ef-52bb-165a-3543" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="1cdd-9966-8867-7989" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <rules>
+            <rule name="King of Ambushes" id="1426-4e31-d58b-b224" hidden="false">
+              <description>You can hide up to 25% (rounding up) of your figures “in ambush”. Special characters or special equipment cannot be ambushed.
+
+
+Before deployment, note on a piece of paper – away from prying eyes – the spot where all your ambushing troops are hiding. It is impossible to hide troops in the opponent’s deployment zone(s).
+
+
+You can choose to make your troops emerge during a movement phase. Show your enemy the spot in question, and show them the paper confirmation, then place your figures in base-to-base contact with their hiding spot.
+
+
+They can move or charge normally. All your figures must emerge at the same time.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Poison Specialist " id="4db4-027b-99d7-91bc" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="b4a5-8fd9-01de-773a" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <rules>
+            <rule name="Poison Specialist " id="da50-8ca8-5a63-b779" hidden="false">
+              <description>Single use. At the start of the game, roll 1d6. 
+
+
+On a result of 1 or 2, nothing happens. 
+
+
+On a 3 or 4, the enemy chieftain is stunned, and can’t take any actions until the second turn of the game. 
+
+
+On a 5 or 6, the enemy chieftain loses 1 hit point. If the enemy force contains several chieftains, declare your target before rolling.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Scout" id="6d60-e67d-3537-7693" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="3041-fb57-fe0a-b97f" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Scout" id="5a1e-5a83-8c34-3f3b" hidden="false">
+              <description>After both armies have deployed, choose a figure from among your troops to be your scout. You can deploy it anywhere on the battlefield more than 15” away from an enemy deployment area.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Equites Dumnonii" id="5aeb-2e9e-72f6-eebd" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="4ef9-38ae-fe26-8e46" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Equites Dumnonii" id="ce7f-4fb0-2d0c-d9bf" hidden="false">
+              <description>When a Romano-British cavalry figure charges from at least 6” away, it gets a +1 bonus to its roll to hit during the turn in which it charges.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Arian Zealots" id="46fe-b11c-6396-c78c" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="459d-0b88-5f55-62b3" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Arian Zealots" id="3953-4dba-018e-1ab1" hidden="false">
+              <description>When a Visigoth figure charges a non-Visigoth figure, it can choose to re-roll its charge roll if it doesn’t like the result.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="War Cry" id="67bb-cbaa-7624-8a75" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="86ae-8d99-2391-b099" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="War Cry" id="ceb2-84ce-eaeb-a696" hidden="false">
+              <description>Single use – At the start of the melee phase, all Picts gain a +1 bonus to their rolls to hit, but take a -1 penalty to their defence rolls.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Master of the Long Knife" id="028b-cef4-926b-27f2" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="8f70-823a-03a6-58e2" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Master of the Long Knife" id="221c-3a92-3348-3e21" hidden="false">
+              <description>When they charge into an enemy, all your infantry warriors can make an additional improvised weapon attack.
+
+
+This attack is in addition to the one(s) made with their main weapon, but without the charge bonus. The enemy can make a defence roll against this attack as normal.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Swift As Lightning" id="5a7f-6d8f-5399-d04a" hidden="false" import="true" type="upgrade">
+          <constraints>
+            <constraint id="9f93-69d9-1dda-b59a" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <rules>
+            <rule name="Swift As Lightning" id="9d94-478b-0b86-a75d" hidden="false">
+              <description>Your chieftain grants a +1 bonus to your initiative rolls.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Spare Horses" id="f6d1-5a85-7395-f3d0" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="f98f-650a-17ef-a7af" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <rules>
+            <rule name="Spare Horses" id="4aa0-70d5-2cf3-b504" hidden="false">
+              <description>Any Magyar rider who loses their horse can get a new one. At the start of its movement phase, a Magyar cavalry figure that has become an infantry figure in the previous turn can roll 1d6. 
+
+
+On a 6, it finds a new horse and becomes a cavalry figure once more: replace the figure. 
+
+
+The cavalry figure can’t move this turn. If the roll is a failure, the figure can move as normal but remains an infantry figure for the rest of the game.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Melee Weapons" id="b636-d073-f157-2912" collapsible="true" hidden="false" sortIndex="1">
+      <constraints>
+        <constraint id="a56c-fc29-afec-b6d6" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+        <constraint id="f112-2730-8551-011f" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="1"/>
+      </constraints>
+      <modifiers>
+        <modifier field="a56c-fc29-afec-b6d6" type="set" value="-1">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="a638-5e21-8172-d006" childName="Bők" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="a56c-fc29-afec-b6d6" type="set" value="2">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="a56c-fc29-afec-b6d6" type="set" value="2">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition childId="03f9-3c25-1bff-a4ef" childName="Hand Weapon" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="8334-ccc2-7566-7812" childName="Dane Axe" field="selections" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="a9b5-1198-781f-a9d1" childName="Huscarl" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="a56c-fc29-afec-b6d6" type="set" value="2">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier field="f112-2730-8551-011f" type="set" value="2">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry name="Improvised Weapon" id="2fef-ac13-0216-9c7e" hidden="false" import="true" sortIndex="1" type="upgrade">
+          <constraints>
+            <constraint id="80db-cf82-8f07-f153" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="6230-c551-2da8-0b6f" automatic="true" field="selections" scope="parent" shared="true" type="min" value="0"/>
+          </constraints>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="6230-c551-2da8-0b6f" type="set" value="1">
+              <conditions>
+                <condition childId="12e9-c1e9-1b4b-b9d9" childName="Healer" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="name" type="set" value="Scramaseax">
+              <conditions>
+                <condition childId="f3eb-4b6d-b6f9-c693" childName="Scramaseax" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="defaultAmount" type="set" value="1"/>
+          </modifiers>
+          <profiles>
+            <profile name="Improvised Weapon" id="d291-2cb9-0448-7db0" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">5+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">6+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">6+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="c8e2-d135-1e5f-04c6" type="set" value="Re-roll its failed rolls to hit.">
+                  <conditions>
+                    <condition childId="f3eb-4b6d-b6f9-c693" childName="Scramaseax" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Spear" id="9baa-d681-954c-2534" hidden="false" import="true" sortIndex="2" type="upgrade">
+          <constraints>
+            <constraint id="3be1-c793-33a1-6b49" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="30c9-27ad-0b7c-7acc" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="0">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="30c9-27ad-0b7c-7acc" type="set" value="1">
+              <conditions>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Spear" id="4b2d-71a8-f94a-bab4" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules>
+            <rule name="Support" id="c2c4-ad88-e3b7-ec3d" hidden="false">
+              <description>To support an ally, the spearman must be in base-to-base contact with it, and can’t be engaged in a melee itself. The spearman figure must therefore be within about 1” of an enemy figure when it supports an ally.
+
+
+When a figure armed with a spear supports an ally, enemies engaged in melee with that ally get a -1 to their to hit rolls.
+
+
+When a spearman supports an ally, they don’t count as being engaged in melee and are therefore free to move. They can be targeted by shooting and chargers, for example.
+
+
+A spearman can only support a single ally each game turn. If a spearman is in position to support several allies at once, the player who owns the spearman gets to choose which figure he will support. Similarly, a figure can only be supported by a single spearman.
+
+
+If the friendly figure that the spearman was supporting is destroyed at the end of a melee, the spearman has to take its place in contact with the opponent. This is not a charge.
+
+
+Therefore, at the end of the combat, move the spearman figure into contact with the enemy. Both figures count as engaged in melee during the next turn of the game, so no charge bonus will apply.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Hand Weapon" id="03f9-3c25-1bff-a4ef" hidden="false" import="true" sortIndex="3" type="upgrade">
+          <constraints>
+            <constraint id="3128-7728-b63e-207a" automatic="false" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+            <constraint id="61d6-f61d-c8f0-9171" automatic="false" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="15">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="name" type="set" value="Sabre">
+              <conditions>
+                <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="3128-7728-b63e-207a" type="set" value="1">
+              <conditions>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="61d6-f61d-c8f0-9171" type="set" value="0">
+              <conditions>
+                <condition childId="5a39-8c7e-613f-862d" childName="Two Hand Weapons" field="selections" includeChildSelections="true" scope="parent" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Hand Weapon" id="9eeb-066a-deaf-d706" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="name" type="set" value="Sabre">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="c8e2-d135-1e5f-04c6" type="set" value="*Magyars have sabres rather than hand weapons. These have a -1 penalty to rolls to hit figure in armour.">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="24af-bc22-9d7a-7846" type="set" value="5+">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="b570-92f0-a14a-f39b" type="set" value="5+">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Dane Axe" id="8334-ccc2-7566-7812" hidden="false" import="true" sortIndex="4" type="upgrade">
+          <constraints>
+            <constraint id="4501-1b1f-9fd2-f1c3" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
+          </costs>
+          <infoGroups>
+            <infoGroup name="Dane Axe Rules" id="42f0-9319-cdfb-b3cd" hidden="false">
+              <rules>
+                <rule name="Bulky" id="7519-aa17-6373-12b3" hidden="false">
+                  <description>A figure wielding a Dane axe can’t use their shield AND their weapon in the same round of melee combat. It has to choose which one to use, whether to raise their shield or swing their axe.</description>
+                </rule>
+                <rule name="Sundering" id="0afe-4bf4-d0c4-0288" hidden="false">
+                  <description>In addition, Dane axes are so powerful that they modify the target’s defence with a -1 penalty to its defence rolls against attacks with a Dane axe (see the asterisks in the Melee To Hit table).</description>
+                </rule>
+                <rule name="Unwieldy" id="072f-90ee-e323-5e1f" hidden="false">
+                  <description>The Dane Axe overrules simultaneous melee and instead always strikes last – except in the turn you charge with it. Therefore, a warrior with a Dane axe that is struck down by his enemy can’t retaliate before death claims him – unless it’s in the midst of a glorious charge!</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditions>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="0b19-ecf2-aeb7-6a63" childName="Banner" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="ef59-7677-afdd-3f24" childName="Warhorn" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Dane Axe" id="76a9-3202-cd10-6c5d" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">2+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">3+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">3+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">The Dane Axe inflicts a -1 penalty to the target’s defence roll. You strike last with a Dane Axe.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Bare hands" id="c5dd-c2b5-9c80-90f0" hidden="false" import="true" sortIndex="-1" type="upgrade">
+          <constraints>
+            <constraint id="d70c-3153-60ca-892a" automatic="true" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Bare hands" id="4a70-6f46-7ed7-b18d" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">8+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">9+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">9+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Hasta" id="cf44-a98d-2ce5-a714" hidden="true" import="true" sortIndex="5" type="upgrade">
+          <comment>ranged</comment>
+          <constraints>
+            <constraint id="85fa-e7dd-5cfe-ce01" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="15">
+                  <conditions>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Hasta" id="b756-117c-9f35-0a59" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Can be used as a Javelin in the shooting phase.</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Javelin" id="a215-f6a1-bebf-f528" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="8&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Kontos" id="4585-2b14-c647-6d4d" hidden="true" import="true" sortIndex="6" type="upgrade">
+          <constraints>
+            <constraint id="2857-1a21-329c-c12e" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="a584-5c67-c458-dd9d" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="15"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="a584-5c67-c458-dd9d" type="set" value="1">
+              <conditions>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Kontos" id="0fdb-feab-ebbd-d581" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">A cavalryman charging with a kontos inflicts a -1 penalty on their target’s defence roll.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules>
+            <rule name="Kontos" id="4faa-2b86-c6e4-01e8" hidden="false">
+              <description>The kontos is a long cavalry spear wielded in two hands. It can be equipped alongside a hand weapon..
+
+
+When a rider with a kontos charges an enemy, the impact is so powerful that the target takes a -1 penalty to its defence rolls. The rider must always roll an attack against each other enemy (and friendly) figure in contact with them AND/OR the target too, but these additional figures take no penalty to their defence rolls.
+
+
+In addition, the impact of a kontos charge is so powerful that the target can’t attack back this turn – they’re too busy riding out this devastating charge.
+
+
+Resolve the melee immediately after the charge. First resolve the kontos’ effect on the initial target, with the -1 penalty to the target’s defence rolls. Then, resolve its impact on the other figures in the melee who don’t have a penalty to defence.
+
+
+Once engaged, a cataphract can no longer use their kontos and must change weapons.
+
+
+The kontos can be used again during the rider’s next charge.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+        <selectionEntry name="Lasso" id="9c88-7bbe-a35a-5909" hidden="true" import="true" sortIndex="7" type="upgrade">
+          <comment>special</comment>
+          <constraints>
+            <constraint id="e063-56da-74ce-b3e5" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="b61f-aacb-4737-569a" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+          </constraints>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="b61f-aacb-4737-569a" type="set" value="1">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" scope="self" shared="true" type="equalTo" value="1"/>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Lasso" id="8ec9-49ee-a984-bac9" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">6+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">6+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">6+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">If you hit, cancel the enemy attack.
+
+Lassos can only be used by mounted figures. A cavalry figure who starts fighting on foot can no longer use its lasso.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Two Hand Weapons" id="5a39-8c7e-613f-862d" hidden="true" import="true" sortIndex="3" type="upgrade">
+          <constraints>
+            <constraint id="20c8-eeaf-6703-25f8" field="selections" includeChildSelections="false" scope="self" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="lessThan" value="1"/>
+                        <condition childId="7d94-a1f1-3625-a86b" childName="Sling" field="selections" includeChildSelections="true" scope="parent" shared="true" type="lessThan" value="1"/>
+                        <condition childId="698f-3316-7448-aed2" childName="Bow" field="selections" includeChildSelections="true" scope="parent" shared="true" type="lessThan" value="1"/>
+                        <condition childId="7548-ff61-69e9-5fd8" childName="Javelin" field="selections" includeChildSelections="true" scope="parent" shared="true" type="lessThan" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup max="2" min="2" type="count">
+                      <conditions>
+                        <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Two Hand Weapons" id="3b6f-d7ef-e015-1a26" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">3+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">4+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">4+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">Having two hand weapons gives this model an extra attack.</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="name" type="set" value="Sabre">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="24af-bc22-9d7a-7846" type="set" value="5+">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="b570-92f0-a14a-f39b" type="set" value="5+">
+                  <conditions>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Pike" id="3bdb-0e11-2cb9-e4fd" hidden="true" import="true" sortIndex="8" type="upgrade">
+          <constraints>
+            <constraint id="7cb8-625d-5800-0500" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Pike" id="661b-7b64-4653-225f" hidden="false" typeId="8b28-1caf-8b57-014c" typeName="Melee Weapon">
+              <characteristics>
+                <characteristic name="UA" typeId="984d-e6d1-a3dd-d52e">4+</characteristic>
+                <characteristic name="SA" typeId="24af-bc22-9d7a-7846">5+</characteristic>
+                <characteristic name="FA" typeId="b570-92f0-a14a-f39b">5+</characteristic>
+                <characteristic name="Special" typeId="c8e2-d135-1e5f-04c6">A pike inflicts a -1 penalty to the enemy’s defence rolls.
+
+A pike also inflicts a -1 penalty to its bearer’s defence rolls against both melee and shooting attacks.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Ranged Weapons" id="1a12-5d72-5bb7-034c" collapsible="true" hidden="false" sortIndex="2">
+      <constraints>
+        <constraint id="de8e-e641-c1ab-ad1a" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+      </constraints>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="8a90-9bee-5758-3283" childName=" Berserker" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="0b19-ecf2-aeb7-6a63" childName="Banner" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="6684-efaf-9504-40c1" childName="Warhorn" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                <condition childId="a9b5-1198-781f-a9d1" childName="Huscarl" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                <condition childId="cf44-a98d-2ce5-a714" childName="Hasta" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry name="Sling" id="7d94-a1f1-3625-a86b" hidden="false" import="true" sortIndex="1" type="upgrade">
+          <constraints>
+            <constraint id="d717-8f8a-6b0a-dcc1" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="2">
+                  <conditions>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="10">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="0">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup min="2" type="count">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="2" type="count">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Sling" id="2a9a-97de-0d8b-ad9d" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">15&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">6+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">6+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">6+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="17&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Crossbow" id="300f-ce66-63c2-3be1" hidden="true" import="true" sortIndex="4" type="upgrade">
+          <constraints>
+            <constraint id="2783-42f8-13d9-8aaa" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="35">
+                  <conditions>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditions>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditions>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="1" type="count">
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Crossbow" id="1af3-0fad-62a7-5702" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">20&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">All</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">3+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">4+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">4+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">A crossbow shot inflicts a -1 penalty to the opponent’s defence roll.</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="22&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="705d-1814-ed63-1c1a" join=". " type="append" value="Crossbows are only available to the Picts, who used it as a weapon of hunting and war."/>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Javelin" id="7548-ff61-69e9-5fd8" hidden="false" import="true" sortIndex="2" type="upgrade">
+          <constraints>
+            <constraint id="a1dd-76a6-41cc-bdaf" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="0">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="5">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="15">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Javelin" id="b42c-0961-0984-8f0d" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="8&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Bow" id="698f-3316-7448-aed2" hidden="false" import="true" sortIndex="3" type="upgrade">
+          <constraints>
+            <constraint id="e66a-0090-6104-6551" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
+          </costs>
+          <infoGroups>
+            <infoGroup name="Bow Rules" id="44e1-f334-da7a-68b7" hidden="false">
+              <rules>
+                <rule name="Volley Fire" id="4de1-1756-d202-13d1" hidden="false">
+                  <description>Volley fire can be used by 4 or more figures with bows in a group. None of the archers in the group can have moved this turn. A group is formed when all the archers are within 2” of at least one other archer in the group.
+
+
+1. During the shooting phase, choose a point on the gaming table within line of sight of at least one archer in the group. This becomes the volley fire’s target point. Place a volley fire marker on that point (you can find them on the Pillage website).
+
+
+2. Measure the distance from the marker to the closest archer:
+• If the distance is further than the bow’s range, the volley fire fails.
+• If the distance is equal to or less than the weapon’s range, all the archers fire their arrows at the marker. You don’t need to make an ordinary roll to hit; all the shots automatically succeed. None of the archers can shoot again this turn.
+
+
+3. Each figure – both enemy and allied – within a 3” radius of the volley fire marker immediately suffers a hit on a roll of a 6. Defence rolls are possible. This 3” radius increases by +1” for each additional shooter in the group after the fourth.
+
+
+4. During the next movement phase, the area within a 6” radius of the volley fire marker counts as difficult terrain. The warriors are too busy ducking their heads as they tiptoe through, afraid that a devastating rain of arrows is about to fall on their heads. Remove the volley fire marker once everyone’s movement phase is over.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="35">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditions>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="true">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="name" type="set" value="Composite Bow">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="2" type="count">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+                        <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="notInstanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Bow" id="c274-d138-790f-acf6" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">20&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">Half</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">-</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="22&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="30&quot;">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="32&quot;">
+                  <conditionGroups>
+                    <conditionGroup max="2" min="2" type="count">
+                      <conditions>
+                        <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="name" type="set" value="Composite Bow">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Plumbata" id="55e5-2ee4-445e-359a" hidden="true" import="true" sortIndex="7" type="upgrade">
+          <constraints>
+            <constraint id="5537-1345-37e4-29c2" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="5"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="10">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="1" type="count">
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Plumbata" id="bd2e-2a3b-7d99-0b0c" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">8&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">5+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">6+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">6+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">Can only be used via Closing shots. it is not affected by the -1 to hit for either penalty associated with closing shots or long range.</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="10&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Angon" id="8ecd-c984-33f9-e6d6" hidden="true" import="true" sortIndex="5" type="upgrade">
+          <constraints>
+            <constraint id="07b4-d74c-b49d-f37e" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="15">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="5">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="1" type="count">
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Angon" id="e246-8cd9-faac-46ad" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+*</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">4+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">*If the target has a shield, the Angon hits on a 4+.</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="8&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry name="Francisca" id="4c5c-fc8c-d2d7-468b" hidden="true" import="true" sortIndex="6" type="upgrade">
+          <constraints>
+            <constraint id="44bc-589a-f4c4-8ec0" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="info" type="add" value="{this} may not be used while on horseback!">
+              <conditionGroups>
+                <conditionGroup min="1" type="count">
+                  <conditions>
+                    <condition childId="4c37-ffb6-cffc-4e32" childName="Horse" field="selections" includeChildSelections="false" scope="parent" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Francisca" id="fb42-33f2-0319-a5a4" hidden="false" typeId="a82a-8570-e498-e2de" typeName="Ranged Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="9775-d55d-f35e-0a05">6&quot;</characteristic>
+                <characteristic name="Movement Penalty" typeId="7a1b-b6a8-befc-1710">None</characteristic>
+                <characteristic name="UA" typeId="a80d-86be-21e3-b0d3">4+</characteristic>
+                <characteristic name="SA" typeId="e00a-0744-8ff9-bf35">5+</characteristic>
+                <characteristic name="FA" typeId="48bc-033e-f508-5a9b">5+</characteristic>
+                <characteristic name="Special" typeId="705d-1814-ed63-1c1a">Can only be used after declaring a charge.
+-1 penalty on the target’s defence roll.</characteristic>
+              </characteristics>
+              <modifiers>
+                <modifier field="9775-d55d-f35e-0a05" type="set" value="8&quot;">
+                  <conditions>
+                    <condition childId="fd53-4e55-0d62-bbdf" childName="Marksmanship Training" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Special Equipment" id="45d7-2019-f71e-4c8f" collapsible="true" hidden="false" sortIndex="3">
+      <selectionEntries>
+        <selectionEntry name="Warhounds" id="aebe-2db7-ada2-bd68" hidden="true" import="true" type="upgrade">
+          <categoryLinks>
+            <categoryLink name="Pack Master" id="4caa-c89f-99c7-413a" hidden="false" primary="false" targetId="4967-c713-22c5-2fb3"/>
+          </categoryLinks>
+          <constraints>
+            <constraint id="8452-fcd4-2ebd-8d84" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="60"/>
+          </costs>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry name="Hounds" id="a1ed-c6ad-658b-2b8d" hidden="false" import="true" type="upgrade">
+              <constraints>
+                <constraint id="0ec4-f8ad-39b5-01f1-min" automatic="true" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="3"/>
+                <constraint id="0ec4-f8ad-39b5-01f1-max" automatic="true" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="3"/>
+              </constraints>
+              <modifiers>
+                <modifier field="0ec4-f8ad-39b5-01f1-min" type="increment" value="1">
+                  <conditions>
+                    <condition childId="7229-a0c1-30a9-32a8" childName="Dog Trainer" field="selections" includeChildSelections="true" scope="force" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="0ec4-f8ad-39b5-01f1-max" type="increment" value="1">
+                  <conditions>
+                    <condition childId="7229-a0c1-30a9-32a8" childName="Dog Trainer" field="selections" includeChildSelections="true" scope="force" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile name="Hounds" id="7851-c3e6-9d8b-70de" hidden="false" typeId="3d83-c900-0de7-bd4c" typeName="Model">
+                  <characteristics>
+                    <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">8&quot;</characteristic>
+                    <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
+                    <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
+                    <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842">1</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry name="Banner" id="0b19-ecf2-aeb7-6a63" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="5fd3-b60c-8029-dd67" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="50"/>
+          </costs>
+          <infoGroups>
+            <infoGroup name="Banner Rules" id="909d-8571-83d8-13f9" hidden="false">
+              <rules>
+                <rule name="Courage" id="2ad4-9e57-63fd-116d" hidden="false">
+                  <description>A figure within 6” of a banner (including the banner-bearer) can re-roll 1s when rolling to hit in melee.
+
+
+In addition, all figures within 6” of a banner (including the banner-bearer) automatically succeed on their morale rolls.
+
+
+A banner is a heavy and cumbersome artefact, so a figure carrying a banner has a -1 penalty to its defence rolls.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="45">
+                  <conditions>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditions>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="60">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditions>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="8a90-9bee-5758-3283" childName="Berserker" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fe4a-6852-b9e2-f300" childName="SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry name="Warhorn" id="6684-efaf-9504-40c1" hidden="true" import="true" type="upgrade">
+          <constraints>
+            <constraint id="d68b-c3d9-715c-abcc" field="selections" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
+          </costs>
+          <infoGroups>
+            <infoGroup name="Warhorn Rules" id="0715-5cc2-7aa0-9a6c" hidden="false">
+              <rules>
+                <rule name="Motivation" id="9757-9d80-38b4-6b60" hidden="false">
+                  <description>A hornblower figure increases the movement of allied infantry and cavalry figures within 6” of it by +2”. The hornblower figure itself is not affected by the warhorn’s effects.
+
+
+In addition, any friendly figure within 6” of a hornblower automatically passes its morale rolls.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditions>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="30">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="cc4f-5e18-b7f5-77af" childName="IRISH, SCOTS, AND PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="8a90-9bee-5758-3283" childName="Berserker" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="10c5-139d-8f93-83fe" childName="VIKINGS (NORSE)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2159-64d0-353d-3870" childName="PICTS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="hidden" type="set" value="true">
+              <conditions>
+                <condition childId="aebe-2db7-ada2-bd68" childName="Warhounds" field="selections" includeChildSelections="true" scope="self" shared="true" type="atLeast" value="1"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry name="Horse" id="4c37-ffb6-cffc-4e32" hidden="true" import="true" subType="mount" type="model">
+          <constraints>
+            <constraint id="2599-5714-0198-9d98" field="selections" includeChildSelections="false" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="cfec-0cf3-27a5-defe" field="selections" includeChildSelections="false" scope="parent" shared="true" type="min" value="0"/>
+          </constraints>
+          <costs>
+            <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+          </costs>
+          <infoGroups>
+            <infoGroup name="Cavalry Rules" id="9b8a-abfa-085c-06b0" hidden="false">
+              <rules>
+                <rule name="Cavalry and Difficult Terrain" id="05b2-780c-406b-30a9" hidden="false">
+                  <description>Difficult terrain has a greater effect on cavalry than on infantry. When a cavalry figure wants to move within an area of difficult terrain, every 1” crossed counts as 4” of movement.
+In addition, cavalry get no charge bonus when fighting inside difficult terrain.</description>
+                </rule>
+                <rule name="Cavalry and Passable Obstacles" id="2fc2-c31b-f8be-fa92" hidden="false">
+                  <description>Cavalry figures can move over passable obstacles in the same way as infantry figures, and take the same -2” penalty to their move. However, they also risk falling as they cross.
+
+
+**Fall Roll**
+When you cross the obstacle, roll 1d6 and compare the result to the following table:
+
+
+• 1 — **Fall**
+Your rider miserably fails to get over the obstacle; their horse rears and throws them. Your rider becomes an infantry figure with all the same equipment, and they suffer an improvised weapon attack with no defence roll allowed.
+
+
+• 2 — **Close One**
+The horse whinnies, paws at the ground, and stops just before the obstacle. Your figure’s movement phase ends in contact with the obstacle.
+
+
+• 3 — **Success**
+Your rider narrowly manages the jump. Their movement ends in contact with the other side of the obstacle.
+
+
+• 4-6 — **Skilled Horseman**
+Your rider succeeds masterfully. If they still have any movement left after crossing the obstacle, they can end their move normally.</description>
+                </rule>
+                <rule name="Cavalry Charge" id="32a7-ea6b-0df7-4e32" hidden="false">
+                  <description>Their charge is so powerful that it modifies the defence of enemy infantry figures in contact, inflicting a -1 penalty to their defence rolls in melee that turn. This penalty doesn’t apply to cavalry figures.</description>
+                </rule>
+                <rule name="Cavalry Lances" id="ae7d-7410-cb83-2837" hidden="false">
+                  <description>When a cavalry figure with a spear charges, melee in the same turn isn’t simultaneous. Instead, the rider strikes first. If its enemy is destroyed, it can’t strike back against the rider.</description>
+                </rule>
+                <rule name="Dane Axes on Horseback" id="0a0e-7075-5f59-6f4c" hidden="false">
+                  <description>When a rider is equipped with a Dane axe, count the axe as a hand weapon during melee. It still can’t be used with a shield.</description>
+                </rule>
+                <rule name="Moving Cavalry" id="bf97-b304-f4c8-7261" hidden="false">
+                  <description>Cavalry figures move in the same way as infantry. They can cross obstacles and are affected by difficult terrain, narrow gaps, and roads as described in the terrain section
+However, cavalry can’t make special moves. That means they can’t jump, climb, or swim.</description>
+                </rule>
+                <rule name="Penalty vs Cavalry" id="6e98-1e10-13a3-b14d" hidden="false">
+                  <description>All enemies armed with any weapon other than a spear suffer a -1 penalty to their rolls to hit cavalry figures.</description>
+                </rule>
+                <rule name="Shooting at Cavalry" id="ca65-e00e-6fd3-3f55" hidden="false">
+                  <description>Figures shooting at cavalry get a +1 bonus to their to hit rolls against both riders and mounts.
+
+
+Target Roll
+
+
+Before resolving the shooting or melee attack, the attacker rolls 1d6.
+
+
+• 1-3 — **The attack targets the mount**
+Make the roll to hit normally. Bear in mind that a mount always has 1 hit point and an armour class of Unarmoured (UA).
+
+
+• 4-6 — **The attack targets the rider**
+Make the roll to hit normally, using the rider’s armour class.If the rider falls to zero hit points, the whole figure – mount included – is removed from the table and counts as a casualty. We assume that the warhorse was seized by panic and fled the battlefield.</description>
+                </rule>
+                <rule name="Shooting From Horseback" id="f2ab-e026-c81f-8488" hidden="false">
+                  <description>Cavalry figures can only shoot with javelins. That means that mounted models can never use slings, bows, or crossbows. They can carry them, but can’t use them until they have dismounted and become infantry figures. 
+
+
+The rules on shooting apply normally to cavalry models.</description>
+                </rule>
+                <rule name="Knock Down" id="4bdd-1ac5-7c32-b184" hidden="false">
+                  <description>In its movement phase, a cavalry figure can try to disengage from an existing melee by getting its horse to push away its enemy or enemies.
+
+
+**Knock Back Roll**
+
+
+Roll 1d6 for your knock back roll:
+• 1 — **Crushing failure**
+The mount bucks and bolts, dropping its rider to the ground and fleeing the battlefield. Your rider loses their mount, falls, and finds themselves on foot.
+To represent the damage from the fall, make an improvised weapon attack against the rider with no defence roll.
+
+
+• 2-4 — **Failure**
+The knock back has no effect and the melee continues normally.
+
+
+• 5-6 — **Success**
+Push all figures in contact with the cavalry figure 1” away from it. The cavalry figure is now free to use its movement phase normally, but can’t charge. Figures that can’t be pushed back because of the terrain around them immediately suffer an improvised weapon attack. They can’t hit back.</description>
+                </rule>
+                <rule name="Dismounting" id="7ab8-77d9-627b-4843" hidden="false">
+                  <description>Riders can dismount and abandon their horses. However, this can only happen at the start of their movement phase. 
+
+
+The player controlling the cavalry figure declares it is dismounting and replaces it with an infantry figure carrying the same equipment and armour.
+
+
+Dismounting uses up a rider’s whole movement. They can’t move again for the rest of the turn.
+
+
+When a rider dismounts, their horse immediately quits the battlefield – we presume it flees the clamour of battle.</description>
+                </rule>
+              </rules>
+            </infoGroup>
+          </infoGroups>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <comment>COSTS</comment>
+              <modifiers>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="40">
+                  <conditionGroups>
+                    <conditionGroup max="2" min="2" type="count">
+                      <conditions>
+                        <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="25">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="20">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="4163-7d26-88e5-be23" type="set" value="35">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <modifiers>
+            <modifier field="hidden" type="set" value="false">
+              <conditionGroups>
+                <conditionGroup max="2" min="2" type="count">
+                  <conditions>
+                    <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a9b5-1198-781f-a9d1" childName="Huscarl" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="134c-ea18-3a64-39b6" childName="CAROLINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="f221-00fb-187b-5ab9" childName="ANGLO-SAXONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1059-60d7-841a-8c03" childName="BRETONS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a1bd-1997-69e7-0bdf" childName="GENERIC" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="459c-c87d-e25f-2e45" childName="WELSH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="56c4-377c-431b-ea69" childName="MEROVINGIAN FRANKS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="2663-865d-3ec5-cfde" childName="MAGYARS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="18a2-ccba-60ed-3332" childName="VISIGOTHS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="71f5-5253-f27e-8876" childName="NORMANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="d43c-1887-72d3-f957" childName="ROMANO-BRITISH" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="1643-b8f8-d7ff-fd24" childName="HUNS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="a638-5e21-8172-d006" childName="Bők" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier field="cfec-0cf3-27a5-defe" type="set" value="1">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Horse" id="bd48-a4f2-3bd6-7d9c" hidden="false" typeId="3d83-c900-0de7-bd4c" typeName="Model">
+              <characteristics>
+                <characteristic name="Movement" typeId="b5b3-773d-1e7a-74a0">14</characteristic>
+                <characteristic name="Armour Class" typeId="77f6-a713-5232-623d">UA: 6+</characteristic>
+                <characteristic name="HP" typeId="8568-7376-bcc1-2a56">1</characteristic>
+                <characteristic name="Attacks" typeId="0f88-76a8-fe85-d842"/>
+              </characteristics>
+              <modifiers>
+                <modifier field="77f6-a713-5232-623d" type="set" value="SA: 5+">
+                  <conditionGroups>
+                    <conditionGroup min="1" type="count">
+                      <conditions>
+                        <condition childId="f6d5-3da6-b21f-1827" childName="Warhorses" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                        <condition childId="9106-4ef0-0942-8c50" childName="Cataphracts" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="b5b3-773d-1e7a-74a0" join="" type="append" value="&quot;"/>
+                <modifier field="b5b3-773d-1e7a-74a0" type="increment" value="2">
+                  <conditions>
+                    <condition childId="353a-edb6-b78c-fc19" childName="Steppe Mobility" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="atLeast" value="1"/>
+                  </conditions>
+                </modifier>
+                <modifier field="77f6-a713-5232-623d" type="set" value="FA: 4+">
+                  <conditionGroups>
+                    <conditionGroup min="1" type="count">
+                      <conditions>
+                        <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier field="b5b3-773d-1e7a-74a0" type="set" value="12&quot;">
+                  <conditionGroups>
+                    <conditionGroup min="1" type="count">
+                      <conditions>
+                        <condition childId="bcab-8d6c-324c-2c1d" childName="Kataphraktoi" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+  </sharedSelectionEntryGroups>
 </gameSystem>
