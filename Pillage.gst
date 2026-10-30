@@ -18,9 +18,12 @@
       <comment>for chieftain limit</comment>
     </categoryEntry>
     <categoryEntry name="Bők" id="a638-5e21-8172-d006" hidden="false"/>
+    <categoryEntry name="warrior count (hidden)" id="c2f4-e97c-391c-4318" hidden="true"/>
+    <categoryEntry name="Morale" id="2787-4749-a5bf-b2d7" hidden="false"/>
   </categoryEntries>
   <costTypes>
     <costType name="GP" id="4163-7d26-88e5-be23" defaultCostLimit="600"/>
+    <costType name="Breakpoint" id="7834-2835-a2d7-740a" defaultCostLimit="-1" hidden="false"/>
   </costTypes>
   <profileTypes>
     <profileType name="Model" id="3d83-c900-0de7-bd4c" hidden="false" kind="model" sortIndex="1">
@@ -66,9 +69,9 @@
               <conditionGroups>
                 <conditionGroup max="2" min="2" type="count">
                   <conditions>
-                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
-                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
-                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -77,9 +80,9 @@
               <conditionGroups>
                 <conditionGroup max="1" min="1" type="count">
                   <conditions>
-                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
-                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
-                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="parent" shared="true" type="equalTo" value="1"/>
+                    <condition childId="c967-0f8d-1f01-0248" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+                    <condition childId="823a-1dfd-e85b-a645" childName="Shield" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
+                    <condition childId="2503-f075-b4f3-a83c" childName="Armour" field="selections" includeChildSelections="true" scope="self" shared="true" type="equalTo" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -866,6 +869,9 @@ A warrior can’t raise their shield if they’re already in a shieldwall format
       <categoryLinks>
         <categoryLink name="Supply Wagon" id="f07f-1b53-6359-fdab" hidden="false" primary="true" targetId="5fe9-1d08-5b75-fa8c"/>
       </categoryLinks>
+      <constraints>
+        <constraint id="76b0-1f4f-706c-c0c6" field="selections" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+      </constraints>
       <rules>
         <rule name="Supply" id="6e9a-307e-9efb-7214" hidden="false">
           <description>While an army contains a supply wagon, figures equipped with javelins/Angons can shoot twice instead of once whenever they are able to shoot.</description>
@@ -873,6 +879,10 @@ A warrior can’t raise their shield if they’re already in a shieldwall format
       </rules>
       <selectionEntries>
         <selectionEntry name="Wagon" id="9853-687f-b6a9-faf4" hidden="false" import="true" type="model">
+          <constraints>
+            <constraint id="75b1-c26d-9f39-df00-min" automatic="true" field="selections" scope="parent" shared="true" type="min" value="1"/>
+            <constraint id="75b1-c26d-9f39-df00-max" automatic="true" field="selections" scope="parent" shared="true" type="max" value="1"/>
+          </constraints>
           <modifierGroups>
             <modifierGroup type="and">
               <comment>COSTS</comment>
@@ -974,6 +984,7 @@ A warrior can’t raise their shield if they’re already in a shieldwall format
         <selectionEntry name="Warrior" id="5c39-fa7e-e707-3800" hidden="false" import="true" type="model">
           <categoryLinks>
             <categoryLink name="CHIEFCON" id="d366-df7b-b44d-214d" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+            <categoryLink name="warrior count" id="ba3c-9391-ad09-434a" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
           </categoryLinks>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="10"/>
@@ -1187,6 +1198,7 @@ The player can choose which weapon to swing at their enemy in each melee.</descr
         <selectionEntry name="Huscarl" id="49d6-e070-57f5-e692" hidden="false" import="true" type="model">
           <categoryLinks>
             <categoryLink name="CHIEFCON" id="3a03-cc50-334b-da7b" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+            <categoryLink name="warrior count (hidden)" id="bb4e-8286-bbae-105d" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
           </categoryLinks>
           <entryLinks>
             <entryLink name="Armour" id="8732-e4a0-60fa-21fb" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
@@ -1265,6 +1277,7 @@ A healer can be used on several figures during the same turn, as long as the he
         <selectionEntry name="Healer" id="bf8f-d34a-9e6e-5ae5" hidden="false" import="true" type="model">
           <categoryLinks>
             <categoryLink name="CHIEFCON" id="b363-576f-9dc4-b890" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+            <categoryLink name="warrior count" id="6b74-dc15-4c94-fc05" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
           </categoryLinks>
           <entryLinks>
             <entryLink name="Improvised Weapon" id="d3e4-5d34-5e27-4ac2" hidden="false" import="true" targetId="2fef-ac13-0216-9c7e" type="selectionEntry"/>
@@ -1405,6 +1418,7 @@ A healer can be used on several figures during the same turn, as long as the he
         <selectionEntry name="Kataphraktoi" id="94a6-9ee0-c5fc-7642" hidden="false" import="true" type="model">
           <categoryLinks>
             <categoryLink name="CHIEFCON" id="f557-8b99-d4c8-e8a0" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+            <categoryLink name="warrior count (hidden)" id="c5de-2ac6-3a96-67c8" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
           </categoryLinks>
           <entryLinks>
             <entryLink name="Armour" id="b5ea-8fb0-f19b-d19d" hidden="false" import="true" targetId="2503-f075-b4f3-a83c" type="selectionEntry"/>
@@ -1463,6 +1477,7 @@ A healer can be used on several figures during the same turn, as long as the he
         <selectionEntry name="Cataphract" id="4c07-8146-72b6-4368" hidden="false" import="true" type="model">
           <categoryLinks>
             <categoryLink name="CHIEFCON" id="656e-81a7-9a69-3bcb" hidden="false" primary="false" targetId="d936-c270-e692-1054"/>
+            <categoryLink name="warrior count (hidden)" id="eec4-26bf-3a8d-4f46" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
           </categoryLinks>
           <costs>
             <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="20"/>
@@ -1515,6 +1530,26 @@ A healer can be used on several figures during the same turn, as long as the he
           </modifiers>
         </selectionEntry>
       </selectionEntries>
+    </selectionEntry>
+    <selectionEntry name="Morale Breakpoint" id="304c-eac6-25fc-c2cb" exportable="false" hidden="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink name="Breakpoint" id="809d-dbed-9f15-f60a" hidden="false" primary="true" targetId="2787-4749-a5bf-b2d7"/>
+      </categoryLinks>
+      <constraints>
+        <constraint id="b3e7-e3ab-7143-d25e" automatic="true" field="selections" scope="parent" shared="true" type="max" value="1"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Morale" id="f2c4-a923-fa30-8acf" hidden="false" targetId="1d7b-19f6-fcbc-4c9d" type="rule"/>
+      </infoLinks>
+      <modifiers>
+        <modifier field="defaultAmount" type="set" value="1"/>
+        <modifier field="7834-2835-a2d7-740a" type="increment" value="1">
+          <repeats>
+            <repeat childId="c2f4-e97c-391c-4318" childName="warrior count" field="selections" includeChildForces="false" includeChildSelections="true" percentValue="false" repeats="1" roundUp="true" scope="force" shared="true" value="2"/>
+          </repeats>
+        </modifier>
+        <modifier field="info" type="add" value="Delete me if you want to remove breakpoints from your Exports."/>
+      </modifiers>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -3028,6 +3063,7 @@ Lassos can only be used by mounted figures. A cavalry figure who starts fighting
                       <conditions>
                         <condition childId="beac-c21e-5fb5-9ec0" childName="Chieftain" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
                         <condition childId="ab83-8e50-505f-83ed" childName="RUS’ AND VARANGIANS" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                        <condition childId="8a90-9bee-5758-3283" childName="Berserker" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
                         <condition childId="fbfe-2e24-1e84-8984" childName="Warrior" field="selections" includeChildSelections="true" scope="ancestor" shared="true" type="instanceOf" value="1"/>
                       </conditions>
                     </conditionGroup>

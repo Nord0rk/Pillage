@@ -1,58 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="feb9-5636-4b61-e263" name="ROMANS (WESTERN AND EASTERN)" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Romans (Western &amp; Eastern)" id="feb9-5636-4b61-e263" battleScribeVersion="2.03" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <categoryEntries>
+    <categoryEntry name="Chieftain" id="5790-fb89-56bd-1f27" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+    <categoryEntry name="Cataphracts" id="b566-3382-a427-f78b" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+    <categoryEntry name="Warrior" id="fc2f-5290-fda1-91c5" hidden="false">
+      <comment>(Roman)</comment>
+    </categoryEntry>
+  </categoryEntries>
+  <entryLinks>
+    <entryLink name="Chieftain" id="7877-6c49-b39e-c8ae" hidden="false" import="true" sortIndex="1" targetId="5b79-2a8a-0ca0-4059" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Chieftain" id="87e7-ce20-87ea-2bc6" hidden="false" primary="true" targetId="5790-fb89-56bd-1f27"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
+      </costs>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink name="Warriors" id="6a6b-a670-e3ef-bd0b" hidden="false" import="true" sortIndex="2" targetId="2478-7327-3509-6d5f" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Warrior" id="eabf-2cae-e5e7-0b04" hidden="false" primary="true" targetId="fc2f-5290-fda1-91c5"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink name="Cataphracts" id="e58c-92b3-e1b9-6838" hidden="false" import="true" sortIndex="3" targetId="3fae-340a-ff4a-27e4" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Cataphracts" id="5df4-c7bc-ae04-ba37" hidden="false" primary="true" targetId="b566-3382-a427-f78b"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier field="category" type="unset-primary" value="9106-4ef0-0942-8c50"/>
+      </modifiers>
+    </entryLink>
+    <entryLink name="Morale Breakpoint" id="9e61-82c1-c5bd-7da0" hidden="false" import="true" targetId="304c-eac6-25fc-c2cb" type="selectionEntry"/>
+  </entryLinks>
   <forceEntries>
     <forceEntry name="Roman Warband" id="5724-90b0-2498-9f63" hidden="false">
       <categoryLinks>
-        <categoryLink name="Banner" hidden="false" id="720c-075b-5669-0e5a" targetId="0d90-fe5f-a1e1-8fc5">
+        <categoryLink name="Banner" id="720c-075b-5669-0e5a" hidden="false" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25aa-4d73-9808-88b1"/>
+            <constraint id="25aa-4d73-9808-88b1" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Warhorn" hidden="false" id="e485-43a5-92e9-286d" targetId="ef59-7677-afdd-3f24">
+        <categoryLink name="Warhorn" id="e485-43a5-92e9-286d" hidden="false" targetId="ef59-7677-afdd-3f24">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c508-3e12-6628-1a52"/>
+            <constraint id="c508-3e12-6628-1a52" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Ranged Weapon" hidden="false" id="89ad-1ed5-27ee-9513" targetId="163f-1820-848c-271d">
+        <categoryLink name="Ranged Weapon" id="89ad-1ed5-27ee-9513" hidden="false" targetId="163f-1820-848c-271d">
           <constraints>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5d06-2dcb-1991-5371" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+            <constraint id="5d06-2dcb-1991-5371" automatic="false" field="selections" includeChildForces="true" includeChildSelections="true" negative="false" percentValue="false" scope="force" shared="true" type="max" value="0"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="5d06-2dcb-1991-5371">
+            <modifier field="5d06-2dcb-1991-5371" type="increment" value="1">
               <repeats>
-                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+                <repeat childId="model" childName="model" field="selections" includeChildForces="false" includeChildSelections="true" percentValue="false" repeats="1" roundUp="true" scope="force" shared="true" value="4"/>
               </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Cavalry" hidden="false" id="f6c3-e423-2326-947c" targetId="373d-f121-420b-4837">
+        <categoryLink name="Cavalry" id="f6c3-e423-2326-947c" hidden="false" targetId="373d-f121-420b-4837">
           <constraints>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="793e-7f01-718a-2e38" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+            <constraint id="793e-7f01-718a-2e38" automatic="false" field="selections" includeChildForces="true" includeChildSelections="false" negative="false" percentValue="false" scope="force" shared="true" type="max" value="0"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="793e-7f01-718a-2e38">
+            <modifier field="793e-7f01-718a-2e38" type="increment" value="1">
               <repeats>
-                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+                <repeat childId="model" childName="model" field="selections" includeChildForces="true" includeChildSelections="true" percentValue="false" repeats="1" roundUp="true" scope="force" shared="true" value="4"/>
               </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Chieftain" hidden="false" id="dae3-3c10-1df5-8361" targetId="5790-fb89-56bd-1f27">
+        <categoryLink name="Chieftain" id="dae3-3c10-1df5-8361" hidden="false" targetId="5790-fb89-56bd-1f27">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f79-157d-e32a-ea2f"/>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0912-0de2-ddbd-d1a9"/>
+            <constraint id="8f79-157d-e32a-ea2f" field="selections" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="0912-0de2-ddbd-d1a9" field="selections" scope="parent" shared="true" type="min" value="1"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="8f79-157d-e32a-ea2f">
+            <modifier field="8f79-157d-e32a-ea2f" type="increment" value="1">
               <repeats>
-                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+                <repeat childId="d936-c270-e692-1054" childName="CHIEFCON" field="selections" includeChildForces="true" includeChildSelections="true" repeats="1" roundUp="false" scope="roster" shared="true" value="20"/>
               </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Warrior" hidden="false" id="b62a-8f20-621e-5e43" targetId="fc2f-5290-fda1-91c5"/>
-        <categoryLink name="Cataphracts" hidden="false" id="517c-01ef-189a-f949" targetId="b566-3382-a427-f78b"/>
+        <categoryLink name="Warrior" id="b62a-8f20-621e-5e43" hidden="false" targetId="fc2f-5290-fda1-91c5"/>
+        <categoryLink name="Cataphracts" id="517c-01ef-189a-f949" hidden="false" targetId="b566-3382-a427-f78b"/>
+        <categoryLink name="Morale" id="1050-d758-fc3e-6e25" hidden="false" targetId="2787-4749-a5bf-b2d7"/>
       </categoryLinks>
+      <constraints>
+        <constraint id="28f2-4faf-7eb4-1142" field="forces" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="min" value="1"/>
+        <constraint id="09a2-6c6a-32c3-88dc" field="forces" includeChildForces="true" includeChildSelections="true" scope="roster" shared="true" type="max" value="1"/>
+      </constraints>
       <rules>
         <rule name="Missing Pay" id="0965-b1ba-d49c-5b3c" hidden="false">
           <description>If one of your chieftains dies, your warriors suffer a -1 penalty to the ensuing morale check. That means that your warriors will flee the battlefield on a result of 1 or 2.</description>
@@ -70,55 +121,6 @@
           <description>If you field this faction against this faction (i.e. either Western or Eastern Romans), you can re-roll all your rolls to hit the enemy chieftain or chieftains.</description>
         </rule>
       </rules>
-      <constraints>
-        <constraint type="min" value="1" field="forces" scope="roster" shared="true" id="28f2-4faf-7eb4-1142" includeChildSelections="true" includeChildForces="true"/>
-        <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="09a2-6c6a-32c3-88dc" includeChildSelections="true" includeChildForces="true"/>
-      </constraints>
     </forceEntry>
   </forceEntries>
-  <entryLinks>
-    <entryLink import="true" name="Chieftain" hidden="false" id="7877-6c49-b39e-c8ae" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
-      <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="87e7-ce20-87ea-2bc6" targetId="5790-fb89-56bd-1f27" primary="true"/>
-      </categoryLinks>
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="40"/>
-      </costs>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Warriors" hidden="false" id="6a6b-a670-e3ef-bd0b" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
-      <categoryLinks>
-        <categoryLink name="Warrior" hidden="false" id="eabf-2cae-e5e7-0b04" targetId="fc2f-5290-fda1-91c5" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Cataphracts" hidden="false" id="e58c-92b3-e1b9-6838" type="selectionEntry" targetId="3fae-340a-ff4a-27e4" sortIndex="3">
-      <categoryLinks>
-        <categoryLink name="Cataphracts" hidden="false" id="5df4-c7bc-ae04-ba37" targetId="b566-3382-a427-f78b" primary="true"/>
-      </categoryLinks>
-      <modifiers>
-        <modifier type="unset-primary" value="9106-4ef0-0942-8c50" field="category"/>
-      </modifiers>
-    </entryLink>
-  </entryLinks>
-  <categoryEntries>
-    <categoryEntry name="Chieftain" id="5790-fb89-56bd-1f27" hidden="false">
-      <comment>(Roman)</comment>
-    </categoryEntry>
-    <categoryEntry name="Cataphracts" id="b566-3382-a427-f78b" hidden="false">
-      <comment>(Roman)</comment>
-    </categoryEntry>
-    <categoryEntry name="Warrior" id="fc2f-5290-fda1-91c5" hidden="false">
-      <comment>(Roman)</comment>
-    </categoryEntry>
-  </categoryEntries>
 </catalogue>

@@ -1,68 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="18a2-ccba-60ed-3332" name="VISIGOTHS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Visigoths" id="18a2-ccba-60ed-3332" battleScribeVersion="2.03" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <entryLinks>
+    <entryLink name="Chieftain" id="3b96-964b-3ef3-4d30" hidden="false" import="true" sortIndex="1" targetId="5b79-2a8a-0ca0-4059" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Chieftain" id="fbbc-c7b2-9669-acc8" hidden="false" primary="true" targetId="beac-c21e-5fb5-9ec0"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink name="Warriors" id="8ac6-8607-6766-b0cf" hidden="false" import="true" sortIndex="2" targetId="2478-7327-3509-6d5f" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Warrior" id="22c6-c29d-ec00-8e57" hidden="false" primary="true" targetId="fbfe-2e24-1e84-8984"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink name="Healers" id="7336-856b-e713-d3b5" hidden="false" import="true" sortIndex="3" targetId="5abc-f2dd-4427-94a9" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Healer" id="c75f-cc88-03f1-e13f" hidden="false" primary="true" targetId="12e9-c1e9-1b4b-b9d9"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink name="Wagons" id="526a-2881-a503-e7b6" hidden="false" import="true" sortIndex="4" targetId="a5e8-b14b-1d77-5bf5" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Supply Wagon" id="8fdd-5795-b1fc-66a2" hidden="false" primary="true" targetId="5fe9-1d08-5b75-fa8c"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink name="Morale Breakpoint" id="10a1-15d6-0e5b-0f6e" hidden="false" import="true" targetId="304c-eac6-25fc-c2cb" type="selectionEntry"/>
+  </entryLinks>
   <forceEntries>
     <forceEntry name="Visigoth Warband" id="0272-e4d6-c3ac-0688" hidden="false">
       <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="ae0a-b8ac-e8bc-9f12" targetId="beac-c21e-5fb5-9ec0">
+        <categoryLink name="Chieftain" id="ae0a-b8ac-e8bc-9f12" hidden="false" targetId="beac-c21e-5fb5-9ec0">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e709-c255-dc31-f95f"/>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d009-0dd1-48a8-3391"/>
+            <constraint id="e709-c255-dc31-f95f" field="selections" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="d009-0dd1-48a8-3391" field="selections" scope="parent" shared="true" type="min" value="1"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="e709-c255-dc31-f95f">
+            <modifier field="e709-c255-dc31-f95f" type="increment" value="1">
               <repeats>
-                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+                <repeat childId="d936-c270-e692-1054" childName="CHIEFCON" field="selections" includeChildForces="true" includeChildSelections="true" repeats="1" roundUp="false" scope="roster" shared="true" value="20"/>
               </repeats>
             </modifier>
-            <modifier type="set" value="0" field="d009-0dd1-48a8-3391">
+            <modifier field="d009-0dd1-48a8-3391" type="set" value="0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Warrior" hidden="false" id="26d9-04c0-16bf-8989" targetId="fbfe-2e24-1e84-8984"/>
-        <categoryLink name="Healer" hidden="false" id="69d1-5f4f-84ce-45ab" targetId="12e9-c1e9-1b4b-b9d9"/>
-        <categoryLink name="Supply Wagon" hidden="false" id="56cb-9dbc-5623-c634" targetId="5fe9-1d08-5b75-fa8c"/>
-        <categoryLink name="Banner" hidden="false" id="2e62-4fcd-a3bb-ada9" targetId="0d90-fe5f-a1e1-8fc5">
+        <categoryLink name="Warrior" id="26d9-04c0-16bf-8989" hidden="false" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Healer" id="69d1-5f4f-84ce-45ab" hidden="false" targetId="12e9-c1e9-1b4b-b9d9"/>
+        <categoryLink name="Supply Wagon" id="56cb-9dbc-5623-c634" hidden="false" targetId="5fe9-1d08-5b75-fa8c"/>
+        <categoryLink name="Banner" id="2e62-4fcd-a3bb-ada9" hidden="false" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6be7-46f9-09a9-ae3e"/>
+            <constraint id="6be7-46f9-09a9-ae3e" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Warhorn" hidden="false" id="ad9a-5b15-9877-f6e6" targetId="ef59-7677-afdd-3f24">
+        <categoryLink name="Warhorn" id="ad9a-5b15-9877-f6e6" hidden="false" targetId="ef59-7677-afdd-3f24">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8ec-afbf-2e99-ba31"/>
+            <constraint id="d8ec-afbf-2e99-ba31" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Ranged Weapon" hidden="false" id="d6aa-f1a1-874f-3b6d" targetId="163f-1820-848c-271d">
+        <categoryLink name="Ranged Weapon" id="d6aa-f1a1-874f-3b6d" hidden="false" targetId="163f-1820-848c-271d">
           <constraints>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="3562-dfed-4bb9-3f5f" includeChildForces="true" includeChildSelections="true" percentValue="false" negative="false" automatic="false"/>
+            <constraint id="3562-dfed-4bb9-3f5f" automatic="false" field="selections" includeChildForces="true" includeChildSelections="true" negative="false" percentValue="false" scope="force" shared="true" type="max" value="0"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="3562-dfed-4bb9-3f5f">
+            <modifier field="3562-dfed-4bb9-3f5f" type="increment" value="1">
               <repeats>
-                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="false"/>
+                <repeat childId="model" childName="model" field="selections" includeChildForces="false" includeChildSelections="true" percentValue="false" repeats="1" roundUp="true" scope="force" shared="true" value="4"/>
               </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Cavalry" hidden="false" id="10df-1f24-044e-8cf6" targetId="373d-f121-420b-4837">
+        <categoryLink name="Cavalry" id="10df-1f24-044e-8cf6" hidden="false" targetId="373d-f121-420b-4837">
           <constraints>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f94c-e073-6989-40e1" includeChildForces="true" includeChildSelections="false" percentValue="false" negative="false" automatic="false"/>
+            <constraint id="f94c-e073-6989-40e1" automatic="false" field="selections" includeChildForces="true" includeChildSelections="false" negative="false" percentValue="false" scope="force" shared="true" type="max" value="0"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="f94c-e073-6989-40e1">
+            <modifier field="f94c-e073-6989-40e1" type="increment" value="1">
               <repeats>
-                <repeat value="4" repeats="1" field="selections" scope="force" childId="model" shared="true" roundUp="true" childName="model" includeChildSelections="true" percentValue="false" includeChildForces="true"/>
+                <repeat childId="model" childName="model" field="selections" includeChildForces="true" includeChildSelections="true" percentValue="false" repeats="1" roundUp="true" scope="force" shared="true" value="4"/>
               </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
+        <categoryLink name="Morale" id="4f94-37a3-f014-58fe" hidden="false" targetId="2787-4749-a5bf-b2d7"/>
       </categoryLinks>
       <rules>
         <rule name="Weather" id="48e1-2afc-f3ad-b6ca" hidden="false">
@@ -80,41 +119,4 @@ However, they let you re-roll all failed to hit rolls, not just results of 1.</d
       </rules>
     </forceEntry>
   </forceEntries>
-  <entryLinks>
-    <entryLink import="true" name="Chieftain" hidden="false" id="3b96-964b-3ef3-4d30" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
-      <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="fbbc-c7b2-9669-acc8" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
-      </categoryLinks>
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-      </costs>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Warriors" hidden="false" id="8ac6-8607-6766-b0cf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
-      <categoryLinks>
-        <categoryLink name="Warrior" hidden="false" id="22c6-c29d-ec00-8e57" targetId="fbfe-2e24-1e84-8984" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Healers" hidden="false" id="7336-856b-e713-d3b5" type="selectionEntry" targetId="5abc-f2dd-4427-94a9" sortIndex="3">
-      <categoryLinks>
-        <categoryLink name="Healer" hidden="false" id="c75f-cc88-03f1-e13f" targetId="12e9-c1e9-1b4b-b9d9" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Wagons" hidden="false" id="526a-2881-a503-e7b6" type="selectionEntry" targetId="a5e8-b14b-1d77-5bf5" sortIndex="4">
-      <categoryLinks>
-        <categoryLink name="Supply Wagon" hidden="false" id="8fdd-5795-b1fc-66a2" targetId="5fe9-1d08-5b75-fa8c" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-  </entryLinks>
 </catalogue>

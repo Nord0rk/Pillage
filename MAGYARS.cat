@@ -1,43 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="2663-865d-3ec5-cfde" name="MAGYARS" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" revision="1" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue name="Magyars" id="2663-865d-3ec5-cfde" battleScribeVersion="2.03" gameSystemId="sys-10c0-33dc-a9e8-141f" gameSystemRevision="1" library="false" revision="1" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <entryLinks>
+    <entryLink name="Chieftain" id="390a-c4ad-ea9e-da33" hidden="false" import="true" sortIndex="1" targetId="5b79-2a8a-0ca0-4059" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Chieftain" id="d218-8879-65f4-71b0" hidden="false" primary="true" targetId="beac-c21e-5fb5-9ec0"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
+      </costs>
+      <modifiers>
+        <modifier field="hidden" type="set" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink name="Warriors" id="de5d-edf8-755d-0ddf" hidden="false" import="true" sortIndex="2" targetId="2478-7327-3509-6d5f" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Warrior" id="d2d1-228d-90ae-9e94" hidden="false" primary="true" targetId="fbfe-2e24-1e84-8984"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink name="Bők" id="f0a4-68e9-2f10-9960" hidden="false" import="true" sortIndex="3" targetId="e5a3-64d9-2534-e409" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink name="Bők" id="f707-648a-a4d3-79f8" hidden="false" primary="true" targetId="a638-5e21-8172-d006"/>
+        <categoryLink name="warrior count (hidden)" id="99cd-9ef3-d32b-86c1" hidden="false" primary="false" targetId="c2f4-e97c-391c-4318"/>
+      </categoryLinks>
+      <costs>
+        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="25"/>
+      </costs>
+    </entryLink>
+    <entryLink name="Morale Breakpoint" id="94ba-15e8-0eda-1da8" hidden="false" import="true" targetId="304c-eac6-25fc-c2cb" type="selectionEntry"/>
+  </entryLinks>
   <forceEntries>
     <forceEntry name="Magyar Warband" id="dc98-4659-f195-9ed7" hidden="false">
       <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="3087-d9db-6bf6-673d" targetId="beac-c21e-5fb5-9ec0">
+        <categoryLink name="Chieftain" id="3087-d9db-6bf6-673d" hidden="false" targetId="beac-c21e-5fb5-9ec0">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3f93-f12c-c2ab-0b34"/>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8365-af29-401c-5b16"/>
+            <constraint id="3f93-f12c-c2ab-0b34" field="selections" scope="parent" shared="true" type="max" value="1"/>
+            <constraint id="8365-af29-401c-5b16" field="selections" scope="parent" shared="true" type="min" value="1"/>
           </constraints>
           <modifiers>
-            <modifier type="increment" value="1" field="3f93-f12c-c2ab-0b34">
+            <modifier field="3f93-f12c-c2ab-0b34" type="increment" value="1">
               <repeats>
-                <repeat value="20" repeats="1" field="selections" scope="roster" childId="d936-c270-e692-1054" shared="true" roundUp="false" childName="CHIEFCON" includeChildSelections="true" includeChildForces="true"/>
+                <repeat childId="d936-c270-e692-1054" childName="CHIEFCON" field="selections" includeChildForces="true" includeChildSelections="true" repeats="1" roundUp="false" scope="roster" shared="true" value="20"/>
               </repeats>
             </modifier>
-            <modifier type="set" value="0" field="8365-af29-401c-5b16">
+            <modifier field="8365-af29-401c-5b16" type="set" value="0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
+                    <condition childId="bbc6-7eda-f613-00dd" childName="BYZANTINES" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
+                    <condition childId="feb9-5636-4b61-e263" childName="ROMANS (WESTERN AND EASTERN)" field="selections" scope="primary-catalogue" shared="true" type="instanceOf" value="1"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
         </categoryLink>
-        <categoryLink name="Warrior" hidden="false" id="e0ec-47c1-933f-e023" targetId="fbfe-2e24-1e84-8984"/>
-        <categoryLink name="Banner" hidden="false" id="7a2d-b56c-90af-486c" targetId="0d90-fe5f-a1e1-8fc5">
+        <categoryLink name="Warrior" id="e0ec-47c1-933f-e023" hidden="false" targetId="fbfe-2e24-1e84-8984"/>
+        <categoryLink name="Banner" id="7a2d-b56c-90af-486c" hidden="false" targetId="0d90-fe5f-a1e1-8fc5">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0e2d-4ab8-504d-f421"/>
+            <constraint id="0e2d-4ab8-504d-f421" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Warhorn" hidden="false" id="7a6a-b05d-b409-9c31" targetId="ef59-7677-afdd-3f24">
+        <categoryLink name="Warhorn" id="7a6a-b05d-b409-9c31" hidden="false" targetId="ef59-7677-afdd-3f24">
           <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3486-9f19-223d-bc8e"/>
+            <constraint id="3486-9f19-223d-bc8e" field="selections" scope="parent" shared="true" type="max" value="1"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Bők" hidden="false" id="03f4-8e03-ae53-2b1e" targetId="a638-5e21-8172-d006"/>
+        <categoryLink name="Bők" id="03f4-8e03-ae53-2b1e" hidden="false" targetId="a638-5e21-8172-d006"/>
+        <categoryLink name="Morale" id="48fc-b5e6-4794-0017" hidden="false" targetId="2787-4749-a5bf-b2d7"/>
       </categoryLinks>
       <rules>
         <rule name="Composite Bows" id="5cbd-eeeb-54cc-97fc" hidden="false">
@@ -73,39 +111,4 @@ Magyar infantry figures all have a -1” movement penalty. This penalty stacks 
       </rules>
     </forceEntry>
   </forceEntries>
-  <entryLinks>
-    <entryLink import="true" name="Chieftain" hidden="false" id="390a-c4ad-ea9e-da33" type="selectionEntry" targetId="5b79-2a8a-0ca0-4059" sortIndex="1">
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="30"/>
-      </costs>
-      <modifiers>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bbc6-7eda-f613-00dd" shared="true" childName="BYZANTINES"/>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="feb9-5636-4b61-e263" shared="true" childName="ROMANS (WESTERN AND EASTERN)"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-      <categoryLinks>
-        <categoryLink name="Chieftain" hidden="false" id="d218-8879-65f4-71b0" targetId="beac-c21e-5fb5-9ec0" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Warriors" hidden="false" id="de5d-edf8-755d-0ddf" type="selectionEntry" targetId="2478-7327-3509-6d5f" sortIndex="2">
-      <categoryLinks>
-        <categoryLink name="Warrior" hidden="false" id="d2d1-228d-90ae-9e94" targetId="fbfe-2e24-1e84-8984" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Bők" hidden="false" id="f0a4-68e9-2f10-9960" type="selectionEntry" targetId="e5a3-64d9-2534-e409" sortIndex="3">
-      <categoryLinks>
-        <categoryLink name="Bők" hidden="false" id="f707-648a-a4d3-79f8" targetId="a638-5e21-8172-d006" primary="true"/>
-      </categoryLinks>
-      <costs>
-        <cost name="Gold Pieces" typeId="4163-7d26-88e5-be23" value="25"/>
-      </costs>
-    </entryLink>
-  </entryLinks>
 </catalogue>
